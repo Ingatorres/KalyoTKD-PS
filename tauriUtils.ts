@@ -7,6 +7,13 @@ import { listen } from '@tauri-apps/api/event';
 const PDI_STORAGE_KEY = 'kalyo-pdi-payload';
 
 /**
+ * Detects if the current environment is Tauri desktop.
+ */
+const isTauri = () => {
+  return typeof window !== 'undefined' && (window as any).__TAURI_INTERNALS__ !== undefined;
+};
+
+/**
  * Trae la ventana de la Pantalla Pública al frente.
  */
 export async function focusPdi() {
@@ -31,7 +38,7 @@ export async function updatePdi(payload: PdiPayload) {
     // Also emit a Tauri event so that the PDI window (which may be in the same
     // WebView process and therefore never receives the 'storage' DOM event) can
     // react immediately.
-    if (window.__TAURI__) {
+    if (isTauri()) {
       try {
         const { emit } = await import('@tauri-apps/api/event');
         await emit('kalyo-pdi-update', payload);
@@ -49,7 +56,7 @@ export async function updatePdi(payload: PdiPayload) {
       }));
     }
   } catch (e) {
-    console.error("Failed to update PDI", e);
+    console.error("Failed to updatePdi", e);
   }
 }
 
@@ -65,7 +72,7 @@ interface ScorePayload {
  * @returns A promise that resolves to a function to stop listening.
  */
 export async function listenForScores(handler: (payload: ScorePayload) => void): Promise<() => void> {
-  if (!window.__TAURI__) return () => {}; // No-op if not in Tauri
+  if (!isTauri()) return () => {}; // No-op if not in Tauri
   try {
     const unlisten = await listen<ScorePayload>('score-update', (event) => {
       handler(event.payload);
@@ -83,8 +90,7 @@ export async function listenForScores(handler: (payload: ScorePayload) => void):
  * @returns A promise that resolves to the file content as a string, or null.
  */
 export async function importCsvFile(): Promise<string | null> {
-  // @ts-ignore
-  if (!window.__TAURI__) {
+  if (!isTauri()) {
     alert('La importación de archivos solo está disponible en la aplicación de escritorio.');
     return null;
   }
@@ -110,8 +116,7 @@ export async function importCsvFile(): Promise<string | null> {
  * @returns File path as string, or null if cancelled
  */
 export async function selectFile(extension: string): Promise<string | null> {
-  // @ts-ignore
-  if (!window.__TAURI__) {
+  if (!isTauri()) {
     alert('La selección de archivos solo está disponible en la aplicación de escritorio.');
     return null;
   }
@@ -144,8 +149,7 @@ export async function readTextFileContent(path: string): Promise<string> {
  * @returns Directory path as string, or null if cancelled
  */
 export async function selectExportDirectory(): Promise<string | null> {
-  // @ts-ignore
-  if (!window.__TAURI__) {
+  if (!isTauri()) {
     alert('La selección de carpetas solo está disponible en la aplicación de escritorio.');
     return null;
   }
