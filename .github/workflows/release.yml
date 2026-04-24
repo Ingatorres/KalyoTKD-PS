@@ -49,4 +49,4 @@ jobs:
           releaseBody: "Versión automatizada de KalyoTKD Scoring System."
           releaseDraft: true
           prerelease: false
-          args: ${{ matrix.platform == "macos-latest" && "--target universal-apple-darwin" || "" }}
+          args: ${{ matrix.platform == 'macos-latest' && '--target universal-apple-darwin' || '' }}
