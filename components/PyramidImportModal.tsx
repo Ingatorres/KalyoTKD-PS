@@ -106,6 +106,28 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
 
         {/* Content */}
         <div className="overflow-y-auto flex-1 p-8 space-y-6">
+          {/* Validation Errors - Visible in any step if they exist */}
+          {validationErrors.length > 0 && (
+            <div className="bg-error-container/30 border-l-4 border-error rounded-2xl p-6">
+              <p className="font-black text-error text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
+                <span className="text-lg">⚠️</span> {step === 'file-select' ? 'Error al cargar' : 'Errores de validación'}
+              </p>
+              <ul className="space-y-2 text-sm text-error">
+                {validationErrors.map((error, idx) => (
+                  <li key={idx}>• {error}</li>
+                ))}
+              </ul>
+              {step === 'file-select' && (
+                <button 
+                  onClick={() => setValidationErrors([])}
+                  className="mt-4 text-xs font-bold uppercase tracking-widest text-primary hover:underline"
+                >
+                  Limpiar error y reintentar
+                </button>
+              )}
+            </div>
+          )}
+
           {step === 'file-select' && (
             <div className="space-y-4">
               <div className="bg-primary/5 border-2 border-dashed border-primary/30 rounded-2xl p-8 text-center">
@@ -155,20 +177,6 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
                   ))}
                 </ul>
               </div>
-
-              {/* Validation Errors */}
-              {validationErrors.length > 0 && (
-                <div className="bg-error-container/30 border-l-4 border-error rounded-2xl p-6">
-                  <p className="font-black text-error text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
-                    <span className="text-lg">⚠️</span> Errores de validación
-                  </p>
-                  <ul className="space-y-2 text-sm text-error">
-                    {validationErrors.map((error, idx) => (
-                      <li key={idx}>• {error}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
           )}
         </div>

@@ -58,7 +58,7 @@
     },
     "dialog": true,
     "fs": {
-      "scope": ["$APP/*"]
+      "scope": ["$APP/*", "$HOME/*"]
     }
   }
 }
