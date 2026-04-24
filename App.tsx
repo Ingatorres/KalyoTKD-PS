@@ -162,7 +162,7 @@ export default function App() {
       case 'EXISTING_EVENTS':
         return <ExistingEventsScreen events={events} onSelectEvent={selectEvent} setScreen={setScreen} viewingEventId={viewingEventId} setViewingEventId={setViewingEventId} setCurrentEventId={setCurrentEventId} setCurrentCategoryId={setCurrentCategoryId} />;
       case 'CATEGORY':
-        return <CategoryScreen event={currentEvent} isActivated={isActivated} updateCategory={updateCategory} setScreen={setScreen} setCurrentCategoryId={setCurrentCategoryId} handleFinalizeEvent={handleFinalizeEvent} />;
+        return <CategoryScreen event={currentEvent} isActivated={isActivated} updateCategory={updateCategory} updateEvent={updateEvent} setScreen={setScreen} setCurrentCategoryId={setCurrentCategoryId} handleFinalizeEvent={handleFinalizeEvent} />;
       case 'POOMSAE_CONFIG':
         if (!currentEvent || !currentCategory) { setScreen('HOME'); return null; }
         return <PoomsaeConfigScreen event={currentEvent} category={currentCategory} updateCategory={updateCategory} setScreen={setScreen} setCurrentMatchId={setCurrentMatchId} />;

@@ -33,7 +33,7 @@ export interface PyramidMatch {
     isReady: boolean; // True when both competitor slots are filled
     nextMatchId: string | null; // The ID of the match the winner proceeds to
     winnerTargetSlot: 'blue' | 'red' | null; // The slot the winner will fill in the next match
-    vaiWinner?: 'blue' | 'red';
+    byeWinner?: 'blue' | 'red';
     scoreBlueP1?: Score | null;
     scoreRedP1?: Score | null;
     scoreBlueP2?: Score | null;

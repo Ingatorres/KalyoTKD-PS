@@ -69,10 +69,10 @@ export const PyramidLiveScreen: React.FC<PyramidLiveScreenProps> = ({
                         <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide mb-3 drop-shadow-lg">
                             HONG
                         </h2>
-                        <p className="text-2xl md:text-3xl font-semibold drop-shadow-md">
+                        <p className={`font-semibold drop-shadow-md ${isTeamEvent ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}`}>
                             {isTeamEvent ? competitorRed.delegation : competitorRed.name}
                         </p>
-                        <p className="text-lg md:text-xl text-red-200 mt-1">
+                        <p className={`text-red-200 mt-1 ${isTeamEvent ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>
                             {isTeamEvent ? competitorRed.name : competitorRed.delegation}
                         </p>
                     </div>
@@ -126,10 +126,10 @@ export const PyramidLiveScreen: React.FC<PyramidLiveScreenProps> = ({
                         <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide mb-3 drop-shadow-lg">
                             CHONG
                         </h2>
-                        <p className="text-2xl md:text-3xl font-semibold drop-shadow-md">
+                        <p className={`font-semibold drop-shadow-md ${isTeamEvent ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}`}>
                             {isTeamEvent ? competitorBlue.delegation : competitorBlue.name}
                         </p>
-                        <p className="text-lg md:text-xl text-blue-200 mt-1">
+                        <p className={`text-blue-200 mt-1 ${isTeamEvent ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>
                             {isTeamEvent ? competitorBlue.name : competitorBlue.delegation}
                         </p>
                     </div>

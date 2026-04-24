@@ -479,7 +479,7 @@ export const CompetitionScreen: React.FC<CompetitionScreenProps> = ({ event, cat
     } else {
         // No more ready matches (either end of list or waiting for other branches)
         // Check if there are ANY unfinished matches left
-        const hasUnfinished = matches.some(m => !m.winner && !m.vaiWinner);
+        const hasUnfinished = matches.some(m => !m.winner && !m.byeWinner);
         if (!hasUnfinished || category.status === 'completed') {
             setScreen('POOMSAE_CONFIG'); // Tournament or Phase finished
         } else {

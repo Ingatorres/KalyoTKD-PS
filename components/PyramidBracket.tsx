@@ -21,7 +21,7 @@ const DraggableCompetitor: React.FC<DraggableCompetitorProps> = ({ competitor, m
     const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
         id: `${matchId}-${slot}`,
         data: { matchId, slot, competitor },
-        disabled: !isEditable || competitor.name === 'VAI' || competitor.name === '---',
+        disabled: !isEditable || competitor.name === 'BYE' || competitor.name === '---',
     });
 
     const style = {
@@ -30,7 +30,7 @@ const DraggableCompetitor: React.FC<DraggableCompetitorProps> = ({ competitor, m
     };
 
     // Kinetic Arena Style
-    const isVAI = competitor.name === 'VAI' || competitor.name === '---';
+    const isBYE = competitor.name === 'BYE' || competitor.name === '---';
     
     let baseClasses = "flex items-center gap-3 p-3 rounded-full border transition-all relative overflow-hidden ";
     
@@ -44,7 +44,7 @@ const DraggableCompetitor: React.FC<DraggableCompetitorProps> = ({ competitor, m
             : (competitor.hasWarning ? "bg-amber-100 text-slate-700 border-amber-300 shadow-sm" : "bg-slate-50 text-slate-700 border-slate-100 hover:border-red-200 hover:bg-red-50/50");
     }
 
-    if (isVAI) baseClasses += " opacity-40 grayscale";
+    if (isBYE) baseClasses += " opacity-40 grayscale";
     if (isDragging) baseClasses += " opacity-0";
 
     return (
@@ -53,7 +53,7 @@ const DraggableCompetitor: React.FC<DraggableCompetitorProps> = ({ competitor, m
             style={style} 
             {...attributes} 
             {...listeners} 
-            className={`${baseClasses} ${isEditable && !isWinner && !isVAI ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            className={`${baseClasses} ${isEditable && !isWinner && !isBYE ? 'cursor-grab active:cursor-grabbing' : ''}`}
         >
             {/* Avatar Circle */}
             <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-black border-2 ${isWinner ? 'bg-white/20 border-white/40' : (competitor.hasWarning ? 'bg-amber-200 border-amber-400 text-amber-700' : 'bg-slate-200 border-white text-slate-400')}`}>
@@ -176,9 +176,9 @@ export const PyramidBracket: React.FC<PyramidBracketProps> = ({ matches, isEdita
             <div className="relative w-64 flex-shrink-0 py-6">
                 <div className="flex justify-between items-center mb-2 px-4">
                     <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest">
-                        {match.vaiWinner ? 'VAI (Pase Directo)' : `Match #${match.matchNumber || '?'}`}
+                        {match.byeWinner ? 'BYE (Pase Directo)' : `Match #${match.matchNumber || '?'}`}
                     </span>
-                    {match.isReady && !match.winner && !match.vaiWinner && (
+                    {match.isReady && !match.winner && !match.byeWinner && (
                         <div className="flex items-center gap-1">
                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                              <span className="text-[8px] font-bold text-emerald-600 uppercase">Listo</span>
@@ -212,9 +212,20 @@ export const PyramidBracket: React.FC<PyramidBracketProps> = ({ matches, isEdita
                     </DroppableSlot>
                 </div>
 
-                {/* Connectors (Simplified for Horizontal flow) */}
+                {/* Connector Lines */}
                 {!isLastInPhase && (
-                    <div className="absolute -right-6 top-1/2 w-6 h-px bg-slate-200"></div>
+                    <div className="absolute -right-12 top-0 bottom-0 w-12 pointer-events-none">
+                        {/* Horizontal branch from match */}
+                        <div className="absolute top-1/2 right-6 w-6 h-px bg-slate-300 dark:bg-slate-700"></div>
+                        
+                        {/* Vertical bridge to meet sibling */}
+                        <div className={`absolute right-6 w-px bg-slate-300 dark:bg-slate-700 ${match.matchNumber % 2 === 1 ? 'top-1/2 h-[calc(50%+0.5rem)]' : 'bottom-1/2 h-[calc(50%+0.5rem)]'}`}></div>
+                        
+                        {/* Final horizontal line to next match */}
+                        {match.matchNumber % 2 === 1 && (
+                            <div className="absolute top-[calc(100%+0.5rem)] right-0 w-6 h-px bg-slate-300 dark:bg-slate-700"></div>
+                        )}
+                    </div>
                 )}
             </div>
         );

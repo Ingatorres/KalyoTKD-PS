@@ -34,7 +34,7 @@ interface PoomsaeConfigScreenProps {
   setCurrentMatchId: (id: string | null) => void;
 }
 
-const DraggableCompetitor = ({ id, competitor }: { id: string, competitor: Competitor }) => {
+const DraggableCompetitor = ({ id, competitor, onDelete }: { id: string, competitor: Competitor, onDelete?: () => void }) => {
     const {
         attributes,
         listeners,
@@ -48,18 +48,37 @@ const DraggableCompetitor = ({ id, competitor }: { id: string, competitor: Compe
         transition,
     };
 
-    return <div ref={setNodeRef} style={style} {...attributes} {...listeners} className={`p-2 rounded shadow-sm cursor-move text-slate-900 dark:text-white border truncate max-w-full flex items-center justify-between ${competitor.hasWarning ? 'bg-amber-100 dark:bg-amber-900/30 border-amber-400' : 'bg-gray-200 dark:bg-slate-700 border-gray-300 dark:border-slate-600'}`}>
-        <div className="truncate">
-            <span className="font-bold">{competitor.name}</span>
-            <span className="text-xs ml-2 opacity-70">({competitor.delegation})</span>
+    return <div ref={setNodeRef} style={style} className={`p-2 rounded shadow-sm text-slate-900 dark:text-white border truncate max-w-full flex items-center justify-between ${competitor.hasWarning ? 'bg-amber-100 dark:bg-amber-900/30 border-amber-400' : 'bg-gray-200 dark:bg-slate-700 border-gray-300 dark:border-slate-600'}`}>
+        <div {...attributes} {...listeners} className="flex-1 truncate cursor-move flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 opacity-40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+            </svg>
+            <div className="truncate">
+                <span className="font-bold">{competitor.name || '---'}</span>
+                <span className="text-xs ml-2 opacity-70">({competitor.delegation || 'S/D'})</span>
+            </div>
         </div>
-        {competitor.hasWarning && (
-            <span title={competitor.warningMessage || "Revisar datos"} className="text-amber-600 dark:text-amber-400 animate-pulse ml-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-            </span>
-        )}
+        <div className="flex items-center gap-2 ml-2">
+            {competitor.hasWarning && (
+                <span title={competitor.warningMessage || "Revisar datos"} className="text-amber-600 dark:text-amber-400 animate-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </span>
+            )}
+            {onDelete && (
+                <button 
+                    onPointerDown={(e) => e.stopPropagation()} // Prevent drag start when clicking delete
+                    onClick={onDelete} 
+                    className="text-red-500 hover:text-red-700 p-1 hover:bg-red-500/10 rounded transition-colors"
+                    title="Eliminar competidor"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                </button>
+            )}
+        </div>
     </div>;
 };
 
@@ -152,6 +171,31 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
     const newCompetitors = [...competitors];
     newCompetitors[index][field] = value;
     setCompetitors(newCompetitors);
+  };
+
+  const handleDeleteCompetitor = (index: number) => {
+    if (competitors.length <= 2 && category.system === CompetitionSystem.Pyramid) {
+        alert("Se necesitan al menos 2 competidores para una llave de pirámide.");
+        return;
+    }
+    const newCompetitors = competitors.filter((_, i) => i !== index);
+    setCompetitors(newCompetitors);
+    setNumCompetitors(newCompetitors.length);
+    setPhase(getPhaseFromCompetitorCount(newCompetitors.length));
+    
+    // Auto-update category competitors
+    updateCategory({ ...category, competitors: newCompetitors });
+  };
+
+  const handleAddCompetitor = () => {
+    const newComp: Competitor = { id: uuidv4(), name: '', delegation: '' };
+    const newCompetitors = [...competitors, newComp];
+    setCompetitors(newCompetitors);
+    setNumCompetitors(newCompetitors.length);
+    setPhase(getPhaseFromCompetitorCount(newCompetitors.length));
+    
+    // Auto-update category competitors
+    updateCategory({ ...category, competitors: newCompetitors });
   };
 
   const handleImportCompetitors = async () => {
@@ -329,16 +373,17 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
         competitorBlue: competitorBlue.name ? competitorBlue : null,
         competitorRed: competitorRed.name ? competitorRed : null,
         winner: byeWinner,
+        byeWinner: byeWinner as 'blue' | 'red',
         isReady: false,
         nextMatchId: null,
         winnerTargetSlot: null,
     };
 
     const currentCompetitors = [...category.competitors];
-    if (competitorBlue.name && competitorBlue.name !== 'VAI' && !currentCompetitors.some(c => c.id === competitorBlue.id)) {
+    if (competitorBlue.name && competitorBlue.name !== 'BYE' && !currentCompetitors.some(c => c.id === competitorBlue.id)) {
         currentCompetitors.push(competitorBlue);
     }
-    if (competitorRed.name && competitorRed.name !== 'VAI' && !currentCompetitors.some(c => c.id === competitorRed.id)) {
+    if (competitorRed.name && competitorRed.name !== 'BYE' && !currentCompetitors.some(c => c.id === competitorRed.id)) {
         currentCompetitors.push(competitorRed);
     }
 
@@ -465,10 +510,10 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
     }
 
     const currentCompetitors = [...category.competitors];
-    if (startBlue?.name && startBlue?.name !== 'VAI' && !currentCompetitors.some(c => c.id === startBlue.id)) {
+    if (startBlue?.name && startBlue?.name !== 'BYE' && !currentCompetitors.some(c => c.id === startBlue.id)) {
         currentCompetitors.push(startBlue);
     }
-    if (startRed?.name && startRed?.name !== 'VAI' && !currentCompetitors.some(c => c.id === startRed.id)) {
+    if (startRed?.name && startRed?.name !== 'BYE' && !currentCompetitors.some(c => c.id === startRed.id)) {
         currentCompetitors.push(startRed);
     }
 
@@ -699,7 +744,11 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                                         <React.Fragment key={c.id}>
                                             {showSeparator && <div className="border-t border-dashed border-amber-500/30 my-3"></div>}
                                             <div className={groupColor}>
-                                                <DraggableCompetitor id={c.id} competitor={c} />
+                                                <DraggableCompetitor 
+                                                    id={c.id} 
+                                                    competitor={c} 
+                                                    onDelete={() => handleDeleteCompetitor(index)}
+                                                />
                                             </div>
                                         </React.Fragment>
                                     );
@@ -777,7 +826,7 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
         )}
 
         {/* Competitor Configuration Block (Common for Rounds and Pyramid) */}
-        {((category.system === CompetitionSystem.Rounds && category.round !== 'final') || (category.system === CompetitionSystem.Pyramid && category.pyramidMatches.length === 0)) ? (
+        {((category.system === CompetitionSystem.Rounds && category.round !== 'final') || (category.system === CompetitionSystem.Pyramid && !category.pyramidMatches.some(m => m.winner && !m.byeWinner))) ? (
             <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl shadow-xl mb-8 border border-white/5">
                 <div className="flex flex-wrap justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4 mb-6 gap-4">
                     <h3 className="font-bold text-green-600 dark:text-green-400 tracking-wide uppercase text-sm">Configuración de Competidores</h3>
@@ -796,9 +845,22 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                         </button>
                     </div>
                 </div>
-                <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Número de Competidores</label>
-                    <input type="number" value={numCompetitors} onChange={e => handleNumCompetitorsChange(parseInt(e.target.value))} min="2" className={inputStyles} />
+                <div className="flex items-center gap-4">
+                    <div className="flex-1">
+                        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Número de Competidores</label>
+                        <input type="number" value={numCompetitors} onChange={e => handleNumCompetitorsChange(parseInt(e.target.value))} min="2" className={inputStyles} />
+                    </div>
+                    <div className="pt-5">
+                        <button 
+                            onClick={handleAddCompetitor}
+                            className="bg-blue-600/10 text-blue-600 dark:text-blue-400 border border-blue-600/20 py-2 px-4 rounded-lg text-sm font-bold hover:bg-blue-600/20 transition-all flex items-center gap-2"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                            Agregar Competidor
+                        </button>
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     {(() => {
@@ -831,6 +893,15 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                                             <h4 className="font-bold text-slate-500 text-xs uppercase">
                                                 {groupSize > 1 ? `Integrante ${currentGroupMembers}` : `Competidor ${index + 1}`}
                                             </h4>
+                                            <button 
+                                                onClick={() => handleDeleteCompetitor(index)} 
+                                                className="text-red-400 hover:text-red-600 p-1 hover:bg-red-500/10 rounded transition-colors"
+                                                title="Eliminar competidor"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </button>
                                         </div>
                                         <div className="space-y-2">
                                             <input type="text" placeholder="Nombre" value={comp.name} onChange={e => handleCompetitorChange(index, 'name', e.target.value)} required className={inputStyles} />
@@ -854,7 +925,28 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                         <h3 className="text-lg font-black text-slate-800 dark:text-white uppercase tracking-wider flex items-center gap-3">
                             <span className="text-purple-600 dark:text-purple-400">❖</span> Llave de Competencia
                         </h3>
-                        {category.pyramidMatches && category.pyramidMatches.length > 0 && (
+                        <div className="flex gap-3">
+                            {(!category.pyramidMatches.some(m => m.winner && !m.byeWinner)) && (
+                                <>
+                                    <button 
+                                        onClick={() => updateCategory({ ...category, pyramidMatches: [] })}
+                                        className="bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 hover:bg-red-500/20 py-2 px-4 rounded-lg font-bold text-sm transition-colors flex items-center gap-2"
+                                        title="Eliminar la llave actual para volver a configurar competidores"
+                                    >
+                                        Reiniciar Sorteo
+                                    </button>
+                                    <button 
+                                        onClick={handleGeneratePyramidBrackets}
+                                        className="bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 hover:bg-purple-500/20 py-2 px-4 rounded-lg font-bold text-sm transition-colors flex items-center gap-2"
+                                        title="Sortear de nuevo. RECUERDE: Los 2 primeros competidores de la lista se mantendrán como SIEMBRAS en los extremos."
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
+                                        </svg>
+                                        Sortear de Nuevo
+                                    </button>
+                                </>
+                            )}
                             <button 
                                 onClick={() => setIsPdfModalOpen(true)}
                                 className="bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 hover:bg-red-500/20 py-2 px-4 rounded-lg font-bold text-sm transition-colors flex items-center gap-2"
@@ -864,7 +956,7 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                                 </svg>
                                 Imprimir PDF Gráfico
                             </button>
-                        )}
+                        </div>
                     </div>
                     <div className="bg-white dark:bg-slate-900/60 p-6 rounded-2xl shadow-inner border border-slate-200 dark:border-white/5 overflow-hidden backdrop-blur-sm">
                         <PyramidBracket 

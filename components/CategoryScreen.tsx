@@ -14,6 +14,7 @@ interface CategoryScreenProps {
   event: Event | null;
   isActivated: boolean;
   updateCategory: (category: Category) => void;
+  updateEvent: (event: Event) => void;
   setScreen: (screen: Screen) => void;
   setCurrentCategoryId: (id: string) => void;
   handleFinalizeEvent: () => void;
@@ -26,11 +27,13 @@ const TableBlock: React.FC<{
     event: Event;
     selectedCategories: string[];
     onToggleSelect: (id: string) => void;
+    onBulkSelect: (ids: string[], select: boolean) => void;
     onAction: (categoryId: string, actionType: 'start' | 'continue' | 'view' | 'export') => void;
+    onDelete: (categoryId: string) => void;
     actionText: string;
     actionButtonClass: string;
     onExport: (id: string) => void;
-}> = ({ title, borderColor, categories, onAction, actionText, actionButtonClass, event, selectedCategories, onToggleSelect, onExport }) => {
+}> = ({ title, borderColor, categories, onAction, actionText, actionButtonClass, event, selectedCategories, onToggleSelect, onBulkSelect, onDelete, onExport }) => {
     const borderClass = borderColor === 'blue' ? 'border-blue-500' : 'border-red-500';
     const textClass = borderColor === 'blue' ? 'text-blue-800' : 'text-red-800';
 
@@ -42,7 +45,13 @@ const TableBlock: React.FC<{
                     <thead className="bg-gray-50 dark:bg-slate-900/50">
                         <tr>
                             <th className="px-4 py-3 text-left">
-                                <span className="sr-only">Seleccionar</span>
+                                <input 
+                                    type="checkbox" 
+                                    checked={categories.length > 0 && categories.every(c => selectedCategories.includes(c.id))}
+                                    onChange={(e) => onBulkSelect(categories.map(c => c.id), e.target.checked)}
+                                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
+                                    title="Seleccionar/Deseleccionar Todas en esta sección"
+                                />
                             </th>
                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Título de Categoría</th>
                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Sistema de Competencia</th>
@@ -64,26 +73,38 @@ const TableBlock: React.FC<{
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 font-semibold">{cat.title}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{cat.system}</td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 capitalize">{cat.status === 'pending' ? 'Pendiente' : (cat.status === 'active' ? 'En Proceso' : 'Finalizada')}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    {event.status === 'completed' ? (
-                                        <div className="flex items-center space-x-4">
-                                            <button onClick={() => onAction(cat.id, 'view')} className="text-gray-600 hover:text-gray-800" title="Ver Resultado">Resultados</button>
-                                            <button onClick={() => onExport(cat.id)} className="text-blue-600 hover:text-blue-800 font-bold" title="Opciones de Exportación">Exportar</button>
-                                        </div>
-                                    ) : (
-                                        <>
-                                            {cat.status === 'pending' && <button onClick={() => onAction(cat.id, 'start')} className={actionButtonClass}>{actionText}</button>}
-                                            {cat.status === 'active' && (
-                                                <button onClick={() => onAction(cat.id, 'continue')} className="text-green-600 hover:text-green-800" title="Continuar">Continuar</button>
-                                            )}
-                                            {cat.status === 'completed' && (
-                                                <div className="flex items-center space-x-4">
-                                                    <button onClick={() => onAction(cat.id, 'view')} className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200" title="Ver Resultado">Resultados</button>
-                                                    <button onClick={() => onExport(cat.id)} className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-bold" title="Opciones de Exportación">Exportar</button>
-                                                </div>
-                                            )}
-                                        </>
-                                    )}
+                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                     <div className="flex items-center space-x-3">
+                                        {event.status === 'completed' ? (
+                                            <>
+                                                <button onClick={() => onAction(cat.id, 'view')} className="text-gray-600 hover:text-gray-800" title="Ver Resultado">Resultados</button>
+                                                <button onClick={() => onExport(cat.id)} className="text-blue-600 hover:text-blue-800 font-bold" title="Opciones de Exportación">Exportar</button>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {cat.status === 'pending' && <button onClick={() => onAction(cat.id, 'start')} className={actionButtonClass}>{actionText}</button>}
+                                                {cat.status === 'active' && (
+                                                    <button onClick={() => onAction(cat.id, 'continue')} className="text-green-600 hover:text-green-800 font-bold" title="Continuar">Continuar</button>
+                                                )}
+                                                {cat.status === 'completed' && (
+                                                    <>
+                                                        <button onClick={() => onAction(cat.id, 'view')} className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200" title="Ver Resultado">Resultados</button>
+                                                        <button onClick={() => onExport(cat.id)} className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-bold" title="Opciones de Exportación">Exportar</button>
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                        
+                                        <button 
+                                            onClick={() => onDelete(cat.id)}
+                                            className="text-red-400 hover:text-red-600 p-1 hover:bg-red-500/10 rounded transition-colors"
+                                            title="Eliminar Categoría"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
@@ -98,7 +119,7 @@ const TableBlock: React.FC<{
 }
 
 
-export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivated, updateCategory, setScreen, setCurrentCategoryId, handleFinalizeEvent }) => {
+export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivated, updateCategory, updateEvent, setScreen, setCurrentCategoryId, handleFinalizeEvent }) => {
   const [discipline, setDiscipline] = useState('Taekwondo');
   const [modality, setModality] = useState('Traditional');
   const [division, setDivision] = useState('Individual');
@@ -115,6 +136,34 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
     setSelectedCategories(prev => 
         prev.includes(id) ? prev.filter(catId => catId !== id) : [...prev, id]
     );
+  };
+
+  const handleBulkSelect = (ids: string[], select: boolean) => {
+    setSelectedCategories(prev => {
+        if (select) {
+            // Add unique ids to selection
+            return Array.from(new Set([...prev, ...ids]));
+        } else {
+            // Remove ids from selection
+            return prev.filter(id => !ids.includes(id));
+        }
+    });
+  };
+
+  const handleDeleteCategory = (categoryId: string) => {
+    if (!event) return;
+    const category = event.categories.find(c => c.id === categoryId);
+    if (!category) return;
+
+    if (window.confirm(`¿Estás seguro de que deseas eliminar la categoría "${category.title}"? Esta acción no se puede deshacer.`)) {
+        const updatedEvent = {
+            ...event,
+            categories: event.categories.filter(c => c.id !== categoryId)
+        };
+        updateEvent(updatedEvent);
+        // Also remove from selection if it was there
+        setSelectedCategories(prev => prev.filter(id => id !== categoryId));
+    }
   };
 
   const handleBulkExportClick = () => {
@@ -262,7 +311,19 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                 </button>
                 )}
                 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
+                    <button 
+                        onClick={() => {
+                            if (selectedCategories.length === event.categories.length) {
+                                setSelectedCategories([]);
+                            } else {
+                                setSelectedCategories(event.categories.map(c => c.id));
+                            }
+                        }}
+                        className="py-3 px-6 rounded-full font-bold border border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition duration-300 text-xs uppercase tracking-widest"
+                    >
+                        {selectedCategories.length === event.categories.length ? 'Deseleccionar Todas' : 'Seleccionar Todas'}
+                    </button>
                     <button 
                         onClick={handleBulkExportClick}
                         disabled={selectedCategories.length === 0}
@@ -341,7 +402,9 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                 categories={createdCategories}
                 selectedCategories={selectedCategories}
                 onToggleSelect={handleToggleSelect}
+                onBulkSelect={handleBulkSelect}
                 onAction={handleCategoryAction}
+                onDelete={handleDeleteCategory}
                 actionText="Comenzar"
                 actionButtonClass="bg-blue-600 text-white py-1 px-4 rounded hover:bg-blue-700"
                 onExport={(id) => { setExportTargetIds([id]); setIsChoiceModalOpen(true); }}
@@ -353,7 +416,9 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                 categories={inProgressCategories}
                 selectedCategories={selectedCategories}
                 onToggleSelect={handleToggleSelect}
+                onBulkSelect={handleBulkSelect}
                 onAction={handleCategoryAction}
+                onDelete={handleDeleteCategory}
                 actionText="Continuar"
                 actionButtonClass="bg-red-600 text-white py-1 px-4 rounded hover:bg-red-700"
                 onExport={(id) => { setExportTargetIds([id]); setIsChoiceModalOpen(true); }}

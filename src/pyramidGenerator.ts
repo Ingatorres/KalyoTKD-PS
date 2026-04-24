@@ -30,56 +30,58 @@ const generatePositionSequence = (n: number): number[] => {
  * Distributes competitors so that the first 2 are always top seeds (Seed 1 and Seed 2).
  * Then distributes the rest by delegation to avoid early conflicts.
  */
+/**
+ * Distributes competitors so that those from the same delegation are as far apart as possible.
+ * Uses a round-robin assignment into the optimal seeding sequence.
+ */
 function distributeByDelegation(competitors: Competitor[], bracketSize: number): (Competitor | null)[] {
     const bracket: (Competitor | null)[] = Array(bracketSize).fill(null);
     if (competitors.length === 0) return bracket;
 
-    // The user specifically requested that the first two competitors in the list
-    // are treated as the TOP 2 ranked and placed at the extremes of the pyramid.
-    // In our generatePositionSequence, Seed 1 and Seed 2 are placed at opposite halves.
-    
-    let unseeded = [...competitors];
-    
-    // 1. Force Seed 1 and Seed 2
-    if (unseeded.length > 0) {
-        bracket[0] = unseeded.shift()!; // Seed 1 (goes to top half)
-    }
-    if (unseeded.length > 0) {
-        bracket[1] = unseeded.shift()!; // Seed 2 (goes to bottom half)
-    }
+    // 1. Separate Seeds (the first two competitors)
+    const seeds = competitors.slice(0, 2);
+    const remaining = competitors.slice(2);
 
-    // 2. Group the rest by delegation
+    // 2. Group the remaining by delegation
     const groups: { [key: string]: Competitor[] } = {};
-    unseeded.forEach(c => {
-        const del = c.delegation.trim().toUpperCase();
+    remaining.forEach(c => {
+        const del = c.delegation.trim().toUpperCase() || 'SIN_DELEGACION';
         if (!groups[del]) groups[del] = [];
-        groups[del].push(c);
+        groups[del].push({...c});
     });
 
-    const sortedDelegations = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
-    
-    // We want to assign the remaining seeds in an order that separates them.
-    // E.g., if a delegation has 2 people left, give them Seed 3 and Seed 4.
-    // Seeds 3 and 4 are in opposite halves.
-    // Let's create an optimal seeding order for the remaining slots (3 to bracketSize).
-    // An easy way to spread them is simply sequentially: 3, 4, 5, 6...
-    // Because generatePositionSequence already scatters sequential seeds.
-    
-    const remainingPositions = [];
-    for (let i = 3; i <= bracketSize; i++) {
-        remainingPositions.push(i);
-    }
+    // 3. Shuffle members within groups and the list of delegations
+    Object.keys(groups).forEach(del => {
+        groups[del].sort(() => Math.random() - 0.5);
+    });
+    const sortedDelegations = Object.keys(groups).sort((a, b) => {
+        const diff = groups[b].length - groups[a].length;
+        return diff !== 0 ? diff : Math.random() - 0.5;
+    });
 
-    let posIdx = 0;
+    // 4. Assign remaining competitors to assigned list (seeds 3..N)
+    const assignedRest: Competitor[] = [];
+    let hasMore = true;
+    let memberIdx = 0;
     
-    for (const delName of sortedDelegations) {
-        const delCompetitors = groups[delName];
-        for (const comp of delCompetitors) {
-            if (posIdx < remainingPositions.length) {
-                bracket[remainingPositions[posIdx] - 1] = comp;
-                posIdx++;
+    while (hasMore) {
+        hasMore = false;
+        for (const del of sortedDelegations) {
+            if (memberIdx < groups[del].length) {
+                assignedRest.push(groups[del][memberIdx]);
+                hasMore = true;
             }
         }
+        memberIdx++;
+    }
+
+    // 5. Build final assigned list: [Seed 1, Seed 2, ...Rest]
+    const assignedCompetitors = [...seeds, ...assignedRest];
+
+    // 6. Fill the bracket using the assigned sequence for seeds 1..N
+    // Positions in matchOrder[pos-1] correspond to these indices
+    for (let i = 0; i < assignedCompetitors.length; i++) {
+        bracket[i] = assignedCompetitors[i];
     }
 
     return bracket;
@@ -133,11 +135,11 @@ export function generatePyramidBrackets(competitors: Competitor[]): PyramidMatch
 
         if (compBlue && !compRed) {
             match.winner = 'blue';
-            match.vaiWinner = 'blue';
+            match.byeWinner = 'blue';
             match.isReady = true;
         } else if (!compBlue && compRed) {
             match.winner = 'red';
-            match.vaiWinner = 'red';
+            match.byeWinner = 'red';
             match.isReady = true;
         } else if (compBlue && compRed) {
             match.isReady = true;
@@ -171,17 +173,39 @@ export function generatePyramidBrackets(competitors: Competitor[]): PyramidMatch
                 match.competitorRed = prevMatchRed.winner === 'blue' ? prevMatchRed.competitorBlue : prevMatchRed.competitorRed;
             }
             
-            // Recursive BYE logic: If only one competitor moved up to this match, they win automatically
-            if (match.competitorBlue && !match.competitorRed && prevMatchBlue.winner) {
-                match.winner = 'blue';
-                match.vaiWinner = 'blue';
-                match.isReady = true;
-            } else if (!match.competitorBlue && match.competitorRed && prevMatchRed.winner) {
-                match.winner = 'red';
-                match.vaiWinner = 'red';
-                match.isReady = true;
-            } else if (match.competitorBlue && match.competitorRed) {
-                match.isReady = true;
+            const seedsPerMatch = bracketSize / currentRoundSize;
+            
+            const countSeeds = (matchIdx: number) => {
+                const start = matchIdx * seedsPerMatch;
+                let count = 0;
+                for (let j = 0; j < seedsPerMatch; j++) {
+                    if (bracketSlots[matchOrder[start + j] - 1]) count++;
+                }
+                return count;
+            };
+
+            const blueSeedsCount = countSeeds(2 * i);
+            const redSeedsCount = countSeeds(2 * i + 1);
+
+            // Recursive BYE logic: A match is an automatic winner (BYE) 
+            // ONLY if one side has competitors and the other side is guaranteed to be empty.
+            if (blueSeedsCount > 0 && redSeedsCount === 0) {
+                if (match.competitorBlue) {
+                    match.winner = 'blue';
+                    match.byeWinner = 'blue';
+                    match.isReady = true;
+                }
+            } else if (blueSeedsCount === 0 && redSeedsCount > 0) {
+                if (match.competitorRed) {
+                    match.winner = 'red';
+                    match.byeWinner = 'red';
+                    match.isReady = true;
+                }
+            } else if (blueSeedsCount > 0 && redSeedsCount > 0) {
+                // Real match: ready only when both competitors are propagated
+                if (match.competitorBlue && match.competitorRed) {
+                    match.isReady = true;
+                }
             }
 
             roundMatches.push(match);
@@ -191,7 +215,7 @@ export function generatePyramidBrackets(competitors: Competitor[]): PyramidMatch
         currentRoundSize /= 2;
     }
 
-    const matchesToNumber = allMatches.filter(m => !m.vaiWinner).sort((a, b) => {
+    const matchesToNumber = allMatches.filter(m => !m.byeWinner).sort((a, b) => {
         const getRoundWeight = (p: string) => {
             if (p.includes('32avos')) return 64;
             if (p.includes('16avos')) return 32;
