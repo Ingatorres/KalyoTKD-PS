@@ -1,0 +1,5 @@
+{
+  "name": "Kalyo TKD - Poomsaes Scoring",
+  "description": "A scoring application for Taekwondo Poomsae competitions, designed with a minimalist UI for judges and registrars. It handles event creation, category management, and real-time scoring for both round-based and pyramid-style competitions.",
+  "requestFramePermissions": []
+}

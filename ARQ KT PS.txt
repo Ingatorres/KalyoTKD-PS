@@ -1,0 +1,541 @@
+﻿I. Introducción y Marco Arquitectónico
+1. Descripción General y Alcance del Proyecto
+1.1. Propósito del Sistema y Alcance
+El sistema "Kalyo TKD - Poomsaes Scoring" se define como una aplicación ejecutable (.exe) diseñada para gestionar y registrar las puntuaciones de las competencias de Poomsae de Taekwondo, alineándose con las normativas de la World Taekwondo (WT). Su principal alcance es proporcionar una interfaz de registrador eficiente y una visualización pública sincronizada para eventos de rondas y pirámides.
+1.2. Tecnologías Core (Stack Técnico)
+El marco tecnológico propuesto está sólidamente orientado al desarrollo de aplicaciones de escritorio modernas con foco en la portabilidad y el rendimiento local:
+Componente
+	Tecnología
+	Razón / Viabilidad Técnica
+	Fuente
+	Tipo de Aplicación
+	Ejecutable de Escritorio
+	Garantiza la operación sin dependencia de conexión a internet o navegador.
+	
+
+	Frontend/Lógica
+	Type Script y Vanilla JS
+	Proporciona tipado estático (Type Script) para robustez del código y alto rendimiento (Vanilla JS) en la interfaz del registrador.
+	
+
+	Estructura/Packaging
+	Tauri
+	Actúa como wrapper o framework para el desarrollo de aplicaciones de escritorio ligeras y multiplataforma, facilitando la distribución como un .exe.
+	
+
+	Persistencia de Datos
+	SQLite
+	Base de datos local ligera. Crítica para garantizar la persistencia de datos ante "cierres inesperados" o recesos, permitiendo "retomar la competencia sin pérdida de información".
+	
+
+	Análisis Full Stack Senior (Viabilidad): La elección de Tauri con Type Script y SQLite es óptima para un sistema de puntuación en eventos, ya que minimiza la latencia (operando de forma nativa) y garantiza la integridad de la información crítica de la competencia de manera local.
+2. Estándares de Diseño y Experiencia de Usuario (UI/UX)
+La Experiencia de Usuario (UX) de este sistema debe priorizar la eficiencia del flujo de trabajo del registrador y la claridad de la información, dada la naturaleza de alta presión del entorno de competencia.
+2.1. Estética General y Estilo Visual (UI)
+El diseño sigue una estética minimalista.
+* Fondo Principal: Color blanco.
+* Acentos y Contraste: Uso de bloques y líneas sutiles en tonos rojo y azul.
+* Aplicación de Color (UX Clave): El uso de bloques de color primario es funcional para la navegación inicial:
+   * Azul: Asociado a la creación y gestión de elementos nuevos o primarios (ej. "Crear Nuevo Evento").
+   * Rojo: Asociado a la continuidad, estado o acceso a elementos existentes/en curso (ej. "Continuar Evento").
+2.2. Principios de Accesibilidad y Eficiencia del Flujo (UX)
+Para asegurar un flujo de trabajo eficiente, se aplicarán los siguientes principios de diseño, derivados de los requisitos del sistema:
+1. Código de Color Funcional: La diferenciación Rojo/Azul no solo se aplica a la navegación inicial, sino que se extiende a la interfaz de puntuación de pirámides para identificar rápidamente a los competidores (Competidor Azul vs. Competidor Rojo).
+2. Sincronización Crítica: Se requiere una sincronización en tiempo real entre la interfaz principal del registrador (Página 4.0) y la Pantalla Pública (PDI). Esto es vital para la credibilidad y transparencia del evento, donde el ingreso de puntajes se reflejará "de forma inmediata y automática".
+3. Animación y Retroalimentación Temporal: El inicio de la aplicación incorpora una animación sutil de 2 a 3 segundos para feedback visual. La visualización de resultados clave, como el anuncio del ganador en pirámides, se mantiene estática por 7 segundos para asegurar la comprensión por parte del público y los atletas.
+4. Generación Automatizada de Títulos: Para reducir errores de ingreso de datos por parte del registrador, el título de la categoría se autogenerará con base en las selecciones de Disciplina, Edad, Nivel, etc..
+5. Persistencia Robusta: El uso de SQLite garantiza que, en caso de fallo, la data esencial (eventos, categorías y puntajes parciales) esté protegida.
+________________
+
+
+II. Flujo de Inicio y Activación
+Esta sección describe la lógica de ejecución, la experiencia visual de carga y los mecanismos de seguridad y licenciamiento que determinan si la aplicación está lista para operar.
+3. Ejecución e Inicio de la Aplicación
+3.1. Proceso de Inicialización (Splash Screen y Renderizado)
+Dev/Tecnología: El sistema opera como una aplicación ejecutable nativa (.exe) gracias al framework Tauri, utilizando Type Script y Vanilla JS para la lógica de la interfaz. El proceso de inicialización del runtime de Tauri precede la carga de la interfaz de usuario.
+UX/UI (Animación de Inicio): Se implementará una splash screen con una animación sutil para mejorar la percepción de rendimiento durante la carga.
+Elemento
+	Texto
+	Color
+	Título Principal (parte 1)
+	Kalyo
+	Azul
+	Título Principal (parte 2)
+	TKD
+	Rojo
+	Subtítulo
+	Poomsaes Scoring
+	Gris
+	La animación tendrá una duración precisa de 2 a 3 segundos, tras lo cual el sistema procede a verificar el estado de activación.
+3.2. Mecanismo de Primera Ejecución y Activación
+La viabilidad técnica requiere que el sistema compruebe un estado persistido (probablemente en la base de datos local SQLite o en la configuración del sistema operativo) para determinar si se ha ejecutado y activado anteriormente.
+3.2.1. Solicitud de Código de Activación (Licenciamiento Único)
+Flujo: Si el sistema detecta que es la primera vez que la aplicación se ejecuta en el equipo, se presentará un cuadro de diálogo modal (cuadrado) bloqueando el acceso a la interfaz principal.
+Requisito de Seguridad:
+* Se solicitará un código de activación.
+* El código predefinido y único para la activación inicial es: KalyoTkd@2025.
+* Lógica Dev: Una vez ingresado y validado, este estado de activación debe ser persistido (en SQLite).
+3.2.2. Activación de la Función "Crear Evento" (PIN de Tiempo)
+Este paso ocurre inmediatamente después de la activación inicial (o en la primera ejecución exitosa) y funciona como una capa de seguridad adicional para controlar el ciclo de vida operativo del software.
+Flujo y Clave:
+* El sistema solicitará el PIN de tiempo.
+* La clave de habilitación es: Admin2025.
+* Funcionalidad Vinculada: La clave Admin2025 está destinada a habilitar la función de "Crear Evento".
+UX/UI (Designación Temporal): Al asignar el PIN correcto, la interfaz presentará un cuadro de calendario. Este calendario es el mecanismo por el cual el usuario debe designar la fecha límite hasta la cual el programa permanecerá habilitado para crear nuevos eventos.
+Consideraciones Técnicas: La fecha seleccionada debe ser almacenada de manera segura (en SQLite), y la lógica de la aplicación debe validar esta fecha cada vez que se intente iniciar un evento nuevo o continuar con la operación, asegurando que el software cumpla con el periodo de licenciamiento temporal asignado.
+
+
+________________
+
+
+III. Pantalla Principal y Gestión de Eventos (Página 2.0)
+5. Gestión de Eventos Finalizados (Flujo Detallado de Navegación 2.1)
+Cuando el usuario selecciona un evento que ha sido marcado con el estado Evento Finalizado, el sistema presenta una vista consolidada que minimiza la interacción de edición y maximiza el acceso a la información y la capacidad de generación de reportes.
+5.1. Bloque de Resumen del Evento Finalizado (Metadata)
+Este bloque proporciona una vista estática e inmutable de los datos logísticos y de personal que fueron definidos al momento de la creación del evento.
+UX/UI (Diseño): El bloque será visualmente limpio, probablemente ubicado en la parte superior de la pantalla, utilizando un fondo de contraste sutil para distinguirlo del área de gestión de categorías.
+Campo de Visualización
+	Origen de Datos (SQLite)
+	Nombre del Evento
+	Metadato del Evento
+	Jefe de Área
+	Metadato del Evento
+	Número de Área
+	Metadato del Evento
+	Registrador
+	Nombre del Registrador
+	Jueces
+	Listado completo de los Nombres de Jueces (N=3, 5 o 7) configurados inicialmente.
+	Lógica de Implementación (Dev): La aplicación debe realizar una consulta eficiente a la base de datos SQLite para recuperar todos los metadatos asociados al ID del evento seleccionado.
+5.2. Bloque de Categorías Finalizadas (Gestión de Resultados)
+Debajo del resumen, se presenta un listado tabular con todas las categorías que se disputaron bajo dicho evento.
+UX/UI (Tabla Dinámica):
+Columna
+	Descripción
+	Título de Categoría
+	El título autogenerado (ej: "ParaTaekwondo, Individual, Femenino...").
+	Sistema
+	Indica si fue competencia por Pirámide (1 vs 1) o Ronda.
+	Estado
+	Siempre debe mostrar "Finalizado".
+	Acciones
+	Contiene el Call-to-Action principal: "Ver Resultados".
+	Acción "Ver Resultados" (Botón y Flujo de Generación de Informe): Según la descripción de la arquitectura, esta opción está diseñada para descargar un archivo Excel con toda la información por categoría. Sin embargo, para cumplir con el requisito de generación de un informe configurable, se intercala un flujo modal de configuración antes de la exportación final.
+5.2.1. Flujo Modal de Configuración de Reporte (UX)
+Al hacer clic en "Ver Resultados", se despliega un modal que permite al usuario seleccionar qué información incluir en el archivo Excel, optimizando el reporte según las necesidades del evento.
+Opciones de Inclusión (Casillas/Checkboxes):
+Elemento de Reporte (Casilla)
+	Mapeo a Estructura de Excel
+	Resultados Finales y Clasificación
+	Hoja "Clasificación Final" (para Rondas) y Resumen de Top 4.
+	Datos de la Categoría y Divisiones
+	Hoja "Página Principal de Resumen" (incluye Título de Categoría, Sistema).
+	Identificación de Jueces
+	Hoja "Página Principal de Resumen" (Lista de jueces con su cargo).
+	Desglose de Calificaciones Generales
+	Puntaje Técnica Promedio (Prom_T) y Puntaje Presentación Promedio (Prom_P).
+	Desglose de Calificaciones Discriminadas
+	Calificaciones Individuales de cada Juez (T~j~ y P~j~) y la indicación de puntajes descartados (si aplica N=5 o N=7).
+	Pirámide Visual de la Categoría
+	Hoja "Pirámide de la Categoría" (Solo aplica si el sistema fue Pirámide).
+	Lógica de Implementación (Dev - Módulo de Exportación): El sistema, aprovechando la persistencia de datos en SQLite, utiliza un módulo de exportación de datos (probablemente una biblioteca para generar .xlsx en el entorno Tauri/JS).
+1. Validación de Opciones: El sistema debe verificar las casillas seleccionadas.
+2. Generación Dinámica de Hojas: La estructura del archivo Excel será generada dinámicamente:
+   * La hoja "Página Principal de Resumen" es la base.
+   * La hoja "Detalle de Puntajes por Encuentro" incluye el desglose de calificaciones finales, generales y discriminadas (técnica y presentación, con descartes).
+   * La hoja "Pirámide de la Categoría" solo se genera si el sistema de la categoría fue Pirámide.
+   * La hoja "Clasificación Final" solo se genera si el sistema de la categoría fue Rondas.
+3. Acción Final: Botón "Generar y Descargar Informe" (ej. en color verde).
+
+
+IV. Gestión y Creación de Categorías (Página 2.3)
+La Página 2.3, denominada Página de Categoría, es el hub central para la configuración logística de la competencia dentro de un evento específico.
+UX/UI (Estructura de la Página) La interfaz comenzará mostrando el título del evento activo y un subtítulo claro: "Crea y gestiona las categorías de la competencia". El diseño debe garantizar que el registrador pueda crear nuevas categorías rápidamente o acceder al progreso de las categorías existentes con alta eficiencia.
+7. Formulario de Creación de Nueva Categoría
+Se presentará un formulario estructurado como un bloque principal para la "Nueva Categoría", diseñado para definir todos los parámetros necesarios que definen a un grupo de competidores.
+Campos de Selección y Especificaciones de Datos (Input UX)
+Los campos deben ser menús desplegables (dropdowns) o selectores que guíen al usuario a través de las clasificaciones requeridas, muchas de las cuales se basan en la reglamentación de la World Taekwondo (WT):
+Campo
+	Opciones de Selección
+	Origen de la Definición
+	Lógica de Viabilidad Técnica (Dev)
+	Disciplina
+	Taekwondo / Para-Taekwondo
+	Reglamento general de Poomsae
+	Control de flujo: La selección de "Para-Taekwondo" activa campos condicionales.
+	Modalidad
+	Tradicional / Freestyle
+	Reglamento general de Poomsae
+	
+
+	División
+	Individual / Pareja / Equipo
+	Reglamento general de Poomsae
+	
+
+	Género
+	Femenino / Masculino / Mixto
+	Reglamento general de Poomsae
+	
+
+	Edad
+	Pre-cadete / Cadete (12-14) / Junior (15-17) / Under 30 (18-30) / Under 40 (31-40) / Under 50 (41-50) / Under 60 (51-60) / Under 65 (61-65) / Over 65 (66+)
+	Reglamento WT (con la adición de Pre-cadete)
+	
+
+	Nivel
+	Principiante (Blanco a Verde) / Avanzado (Azul a Rojo) / Negro
+	Nivel de cinturón/grado
+	
+
+	Sistema de Competencia
+	Opciones de torneos y copas (según Artículos 5, 6, 7, 8, 9, 15, 16, 18 para Poomsae; y 4.1.6, 5, 6, 7, 9, 16, 17, 19 para Para Taekwondo).
+	Reglamento WT (Poomsae y Para Taekwondo)
+	La lógica deberá filtrar las opciones de sistema de competencia en función de la Disciplina, Modalidad y División seleccionadas.
+	7.1. Lógica Condicional para Para-Taekwondo (P30, P70, etc.)
+Si la Disciplina seleccionada es "Para-Taekwondo", el sistema deberá habilitar inmediatamente una nueva casilla de selección para especificar el "Grupos de Discapacidad" (Impairment Groups).
+* Grupos de Discapacidad disponibles (Poomsae): P10 (Discapacidades Visuales), P20 (Discapacidades Intelectuales), P30 (Discapacidades Neurológicas), P40 (Discapacidades Físicas), P50 (Dispositivos de asistencia), P60 (Sordos), P70 (Baja estatura).
+7.2. Generación Automática del Título (UX/Dev)
+Para evitar la inconsistencia de datos y mejorar la eficiencia del registrador, se implementará un campo de Título Generado. Este campo se autocompletará y actualizará dinámicamente en función de las selecciones realizadas en el formulario (ejemplo: "ParaTaekwondo, Individual, Femenino, Under 30 (18-30), Tradicional, Negro").
+7.3. Acción de Guardado
+El formulario se completará con un botón de acción en la esquina inferior derecha.
+* Botón: "Guardar Categoría".
+* Estilo: Relleno verde, texto blanco.
+8. Bloques de Gestión de Categorías
+Debajo del formulario de creación, la página se dividirá en dos bloques con tablas dinámicas que permiten al registrador monitorear y avanzar en la gestión del evento.
+8.1. Bloque "Categorías Creadas" (Activas)
+Este bloque lista las categorías que han sido definidas pero que aún no han iniciado su fase de configuración de competencia.
+* Estilo Visual: Borde Azul.
+* Contenido de la Tabla: Columnas de "Título de Categoría" y "Sistema de Competencia".
+* Acción: Columna "Estado" que contendrá un botón "Comenzar".
+* Flujo de Navegación: Al presionar "Comenzar", el sistema dirigirá al usuario a la "Página de Configuración Poomsaes" (Sección 3.0).
+8.2. Bloque "Categorías Finalizadas o en Proceso"
+Este bloque es crucial para la trazabilidad y la reanudación de competencias interrumpidas.
+* Estilo Visual: Borde Rojo.
+* Contenido de la Tabla: Columnas de "Título de Categoría" y "Sistema de Competencia".
+* Acciones: La columna "Estado" presentará diferentes opciones según el estado de la categoría:
+   1. Categoría Finalizada: Botón "Ver Resultado". Esta acción permitirá la descarga de los resultados en formato Excel.
+   2. Categoría Interrumpida/En Proceso: Botón "Continuar". Esta acción dirigirá al usuario a la "Página de Configuración Poomsaes" (Sección 3.0) para retomar la configuración o la puntuación.
+Nota de Implementación (Dev): La distinción visual Rojo/Azul en los bloques facilita al usuario identificar rápidamente el tipo de acción a tomar: Azul (Inicio de un nuevo proceso/configuración) vs. Rojo (Continuidad o revisión de un proceso ya iniciado/finalizado).
+V. Configuración de Poomsaes y Competencia (Página 3.0)
+La Página 3.0 es el centro de control logístico de la competencia. El diseño debe ser adaptable dinámicamente según el Sistema de Competencia (Rondas o Pirámides) seleccionado previamente en la Página 2.3.
+9. Configuración General de Poomsaes
+Este bloque define los requisitos de ejecución de la forma y debe ser completado antes de configurar la lista de competidores o las llaves.
+9.1. Definición de Poomsaes Requeridos
+Se mantiene la funcionalidad de selección del número de Poomsaes:
+* Opción para seleccionar 1 o 2 poomsaes.
+9.2. Lógica de Selección y Sorteo (Reglamento WT)
+El sistema debe gestionar automáticamente la lista de poomsaes disponibles según la Categoría, Edad y Nivel:
+Configuración
+	Flujo UX/UI
+	Viabilidad Técnica (Dev)
+	Poomsaes Estándar (Taekwondo)
+	Opción "Sortear" (Sí/No). Si "No", listas desplegables para selección manual de dos poomsaes.
+	La lógica debe aplicar las tablas obligatorias del Artículo 8 según la división (Cadete, Junior, Under 30, etc.).
+	Para-Taekwondo (P-Classes)
+	Opción forzada a "Poomsae sin Sorteo". Listas desplegables para elegir 1 Poomsae del Grupo 1 y 1 del Grupo 2.
+	Exclusión obligatoria del Poomsae Keumgang para las clases deportivas P30.
+	________________
+
+
+10. Configuración de Rondas (Bloque Específico)
+Este bloque se habilita si el sistema es Cut-off (Rondas).
+10.1. Registro de Competidores (Mejora UX: Pegado de Datos)
+El enfoque principal es la eficiencia en la entrada de grandes volúmenes de datos.
+1. Número de Competidores (Q): Campo numérico.
+2. Tabla de Entrada Dinámica: Se presenta una tabla con las columnas Nombre y Delegación.
+3. Funcionalidad de Pegado (Paste):
+   * UX/UI: El área de la tabla de competidores debe tener un mensaje claro que indique: "Pegar datos aquí (formato: Nombre; Delegación)".
+   * Viabilidad Técnica (Dev): El front-end (Vanilla JS/Type Script) debe implementar una función robusta de parsing que detecte la estructura tabular copiada desde una hoja de cálculo (ej. Excel, Google Sheets), asumiendo que los datos están segregados por tabulación, coma o punto y coma, y que las columnas coinciden con el orden Nombre; Delegación. Esto poblará la tabla automáticamente, estableciendo el orden de competencia inicial según el orden de pegado.
+10.2. Lógica de Sistema de Rondas (Automatizada)
+La aplicación debe calcular automáticamente el flujo de rondas en el back-end (Type Script) y reflejarlo en la interfaz:
+* Q ≤ 8: Ronda Única (Final).
+* Q > 8: Ronda Clasificatoria (Todos ejecutan) → Ronda Final (8 mejores).
+10.3. Inicio de la Competencia
+* Botón "Iniciar Competencia" (relleno verde, texto blanco). Dirige a la Página 4.1.
+________________
+
+
+11. Configuración de Pirámides (Bloque Específico - 1 vs 1)
+Este bloque se activa si el sistema es Elimination Tournament (Pirámide). La complejidad radica en la gestión de las llaves y los Bye (VAI).
+11.1. Gestión de Competidores (Pegado y Numeración)
+Se utiliza la misma funcionalidad de Pegado de Datos (Nombre; Delegación) que en la sección de Rondas (Sección 10.1). El orden de pegado establece la numeración inicial de los competidores (Posición 1, 2, 3, etc.) en la llave.
+11.2. Visualización y Manipulación de la Pirámide (Mejora UX: Scroll)
+El UX se centra en una vista interactiva de la llave de eliminación:
+* Wireframe Conceptual (Vista Dinámica): El área principal del bloque se transformará en una visualización de llave de árbol horizontal (Pirámide).
+* Funcionalidad Scroll: La visualización debe ser desplazable (scrollable) horizontalmente (para ver las diferentes Fases: 16avos, Octavos, Cuartos, Semi, Final) y verticalmente (para ver todos los encuentros).
+* Manipulación (UX/UI): Antes del inicio de la puntuación, el registrador debe poder arrastrar y soltar competidores dentro de la llave, si es necesario, para ajustar la Llave de Eliminación "a su antojo", aunque la recomendación es seguir la lógica automática de sorteo.
+11.3. Lógica Automática de Confección de Llaves y VAI
+El sistema debe calcular automáticamente la estructura de la llave basándose en el Número BASE (potencia de 2 superior inmediata) y el Número de VAI (Bye), como se define en la lógica del sistema.
+* Cálculo (Dev): El sistema identifica la Fase de la Llave inicial, el Número BASE (ej., 8 para 7 competidores) y los Competidores que pasan por VAI (Número BASE - Competidores).
+* Manejo de VAI (Mejora UX): La interfaz visual de la pirámide (el scrollable tree) debe mostrar a los competidores que avanzan por VAI (Bye) avanzando automáticamente a la siguiente ronda.
+   * Constraint Fulfillment: Se cumple la restricción de no mostrar encuentros N/A contra N/A, ya que el competidor con VAI simplemente aparece en la fase siguiente, sin crear un encuentro de placeholder en la fase inicial.
+11.4. Gestión de Encuentros y Flujo de Avance
+Una vez generada la pirámide:
+* Selección de Encuentro: El registrador selecciona la Fase de la Llave y el Número de Encuentro.
+* Población Automática (Dev): Los campos Competidor Azul y Competidor Rojo se pueblan automáticamente con los nombres (Delegación y Nombre) correspondientes a ese encuentro, utilizando los ganadores de rondas anteriores (o los competidores iniciales).
+* Gestión de Ausencia (VAI por Retiro): El botón "Uno de los competidores gana por VAI (ausencia)" se mantiene. Si se presiona, la lógica interna registra al oponente como ganador y el botón "Iniciar Puntuación" cambia a "Guardar Ronda", sin requerir calificaciones.
+* Asignación Automática de Podio: El sistema debe tener precargada la lógica de asignación de 3er y 4to lugar (Perdedor de Semifinal vs. Campeón, Perdedor de Semifinal vs. Subcampeón).
+11.5. Inicio de la Puntuación
+* Botón "Iniciar Puntuación" (relleno verde, texto blanco). Dirige a la Página 4.2.
+12. Navegación de Control
+* Botón: "Volver a categorías".
+* Estilo: Relleno gris con texto negro en negrita.
+* Ubicación: Parte inferior izquierda de la pantalla.
+VI. Módulo de Competencia y Puntuación (Página 4.0)
+13. Interfaz de Competencia por Rondas (Página 4.1)
+Esta interfaz está diseñada para gestionar la puntuación secuencial de múltiples competidores bajo el sistema Cut-off (Rondas).
+13.1. Cabecera y Contexto Visual
+La parte superior de la interfaz debe ser dinámica para orientar al registrador en todo momento.
+* Título Principal: Muestra la clasificación completa de la categoría activa (ej.: "Individual, Femenino, Pre-cadete, Tradicional, Principiante").
+* Subtítulo: Indica el tipo de ronda actual (Clasificatoria o Final).
+13.2. Componentes de Visualización y Flujo del Competidor
+El flujo de puntuación está impulsado por una lista de trabajo clara:
+* "Lista de Competidores": Un panel lateral (o sección visible) que muestra el listado numerado de todos los participantes activos en la ronda. El competidor actualmente en puntuación debe estar visualmente resaltado.
+* "Puntuando a:": Muestra el nombre completo del competidor activo y el progreso del Poomsae (ej.: "Nombre del Competidor (Poomsae 1 (Koryo)/2)"),.
+13.3. Secciones de Ingreso de Puntuación (Técnica y Presentación)
+La entrada de datos debe reflejar la estructura de puntuación WT, adaptándose al número de jueces ($N$).
+Sección
+	Componentes UX/UI
+	Lógica de Viabilidad Técnica (Dev)
+	Fuente
+	Técnica
+	Campos de entrada para Juez 1, Juez 2, etc., adaptándose a 3, 5 o 7 jueces,.
+	Cálculo en tiempo real del promedio ($\text{Prom}_{T}$), aplicando la regla de descarte del puntaje máximo y mínimo si $N=5$ o $N=7$,,.
+	,,,
+	Presentación
+	Campos de entrada para Juez 1, Juez 2, etc., idénticos a Técnica.
+	Cálculo en tiempo real del promedio ($\text{Prom}_{P}$), aplicando la regla de descarte del puntaje máximo y mínimo si $N=5$ o $N=7$,,.
+	,,
+	Puntaje Final
+	Campo de visualización de gran tamaño que muestra el resultado: $\text{Puntaje Total}$.
+	Cálculo automático: $\text{Puntaje Total} = \text{Prom}{T} + \text{Prom}{P}$,, mostrando el resultado con dos decimales (#,##).
+	,,
+	13.4. Flujo de Avance y Resultados (UX/UI)
+1. Botón de Guardado Progresivo:
+   * Si se requiere un solo Poomsae, el botón es "Guardar P1 y Siguiente Competidor".
+   * Si se requieren dos Poomsaes, el botón cambia de "Guardar P1 y Siguiente Poomsae" a "Guardar P2 y Siguiente Competidor" después de calificar el Poomsae 1.
+2. Transición de Ronda: Una vez que todos los poomsaes (o el poomsae único) han sido calificados para todos los competidores, el botón cambia a "4 Mejores".
+3. Visualización Final (Post-clic en "4 Mejores"):
+   * Si es Ronda Final: El sistema muestra en la Pantalla Pública (PDI) a los cuatro competidores con los puntajes más altos, ordenados de mayor a menor puntaje, incluyendo la Delegación, Nombre y Puesto,.
+   * Si es Ronda Clasificatoria: La PDI imprime la lista de los 8 competidores con los puntajes más altos. Estos deben ser ordenados de menor a mayor puntaje para generar suspenso en la PDI,.
+________________
+
+
+14. Interfaz de Competencia por Pirámides (Página 4.2)
+Esta interfaz está optimizada para la confrontación directa (1 vs 1), usando una metáfora visual de dos bloques contrastantes.
+14.1. Cabecera y Contexto Visual
+El encabezado mantiene el contexto de la llave de eliminación,:
+* Título Principal: Título de la Categoría.
+* Detalle del Encuentro: Muestra la fase actual y el número de encuentro (ej.: "Fase de Llave y Número de Encuentro: Final - Encuentro #1").
+* Poomsae: Indica el número y nombre del Poomsae que se está calificando (ej.: "Puntuando Poomsae 1 de 2"),.
+14.2. Estructura Bifurcada de Puntuación (UX/UI)
+La pantalla se divide en dos paneles idénticos para el ingreso de datos,,:
+Bloque
+	Color de Fondo
+	Contenido Esencial
+	Competidor Azul
+	Azul,
+	Nombre y Delegación del competidor.
+	Competidor Rojo
+	Rojo,
+	Nombre y Delegación del competidor.
+	Ambos bloques contienen las secciones de Técnica y Presentación, idénticas en funcionalidad a las descritas para la Página 4.1, incluyendo los campos de entrada por Juez y el cálculo automático en tiempo real del Puntaje Final de cada competidor,.
+14.3. Flujo de Determinación del Ganador y Navegación
+El flujo de Pirámides se centra en la determinación inmediata del vencedor por encuentro.
+1. Activación de Decisión: Después de que se han calificado el poomsae o los poomsaes requeridos, aparecerá el botón "Dar Ganador".
+2. Protocolo de Anuncio (Trigger PDI): Al presionar "Dar Ganador":
+   * Si Azul es el vencedor, la Pantalla Pública (PDI) se torna completamente azul,.
+   * Si Rojo es el vencedor, la Pantalla Pública (PDI) se torna completamente roja,.
+   * El texto "¡GANADOR!" se superpone en blanco y gran tamaño,.
+   * La visualización estática se mantiene durante 7 segundos para la PDI,.
+3. Navegación Post-Encuentro: La etiqueta del botón cambiará automáticamente según la fase de la llave:
+   * Si el Encuentro es la Final: El botón cambia a "Cerrar Categoría" (después del periodo de 7 segundos).
+   * Si el Encuentro NO es la Final: El botón cambia a "Guardar Encuentro y Seguir", redirigiendo al registrador a la Página de Configuración de Pirámides (Sección 3.2) para cargar los datos del siguiente encuentro.
+________________
+
+
+VII. Lógica de Implementación (Dev) y Algoritmos de Puntuación
+Esta sección define el núcleo matemático y algorítmico del sistema, vital para la fiabilidad de la aplicación, independientemente de si el flujo es por Rondas o por Pirámides.
+15. Algoritmo de Cálculo de Puntaje Total (Regla WT)
+El cálculo del puntaje total de un competidor se basa en la suma de los promedios de la Calificación de Técnica ($\text{Prom}{T}$) y la Calificación de Presentación ($\text{Prom}{P}$).
+15.1. Definición de Variables
+* $N$: Número total de jueces (3, 5 o 7).
+* $T_j$: Calificación de Técnica otorgada por el juez $j$.
+* $P_j$: Calificación de Presentación otorgada por el juez $j$.
+15.2. Regla de Descarte de Puntajes (Descarte WT)
+El sistema debe determinar el conjunto de calificaciones válidas ($N'$) antes de calcular el promedio:
+Condición (N = Jueces)
+	Regla de Descarte
+	Divisor ($N'$)
+	$N=3$
+	Se utilizan todos los valores.
+	$N' = 3$.
+	$N=5$ o $N=7$
+	Se elimina el valor máximo y el valor mínimo en la calificación de Técnica ($T$) y se eliminan el valor máximo y el valor mínimo en la calificación de Presentación ($P$).
+	$N' = N - 2$.
+	15.3. Cálculo de Promedios y Puntaje Total
+1. Promedio de Técnica: $\text{Prom}_{T} = (\sum T_j) / N'$.
+2. Promedio de Presentación: $\text{Prom}_{P} = (\sum P_j) / N'$.
+3. Puntaje Total: $\text{Puntaje Total} = \text{Prom}{T} + \text{Prom}{P}$. Este resultado debe mostrarse con dos decimales (#,##).
+15.4. Manejo de Poomsaes Múltiples
+Cuando la configuración requiere dos poomsaes, se califica el Poomsae 1 y luego el Poomsae 2. Posteriormente, los puntajes finales de ambos poomsaes (P1 y P2) se deben sumar y promediar para obtener el puntaje total del competidor en esa ronda o encuentro.
+16. Algoritmo de Desempate (Lógica de Negocio 2)
+La lógica de desempate se aplica cuando los $\text{Puntaje Total}$ de dos competidores son idénticos, o al definir el ranking en Rondas.
+Paso
+	Criterio de Comparación
+	Acción Lógica
+	Fuente
+	Paso 1
+	$\text{Puntaje Total}$ (Puntaje Total)
+	Si son diferentes, gana el puntaje más alto.
+	
+
+	Paso 2
+	$\text{Prom}_{P}$ (Presentación Promedio)
+	Si $\text{Puntaje Total}$ es igual, se compara el promedio de Presentación. Gana el competidor con mayor $\text{Prom}_{P}$.
+	
+
+	Paso 3
+	Empate Técnico
+	Si el $\text{Prom}_{P}$ es igual, se declara Empate Técnico y el sistema debe habilitar el botón "Iniciar Poomsae de Desempate".
+	
+
+	Nota sobre Desempate Post-Rematch (Recalificación): Si se realiza un re-match (Poomsae adicional) y el puntaje resulta nuevamente en empate, el sistema debe recurrir al puntaje total original, incluyendo los puntajes máximos y mínimos que fueron descartados en el cálculo inicial. El competidor con el puntaje total más alto, utilizando todos los valores, será el ganador.
+17. Lógica de Asignación de Puestos en Pirámides (Eliminación Directa)
+Para las categorías de eliminación directa (1 vs 1), una vez definida la llave y jugados todos los encuentros hasta la Final, el sistema debe asignar los puestos 1°, 2°, 3° y 4° basándose en el flujo de la llave.
+Puesto
+	Definición
+	Razón Lógica (Flujo del Torneo)
+	Fuente
+	1° Lugar
+	Campeón
+	Ganador del Encuentro Final.
+	
+
+	2° Lugar
+	Subcampeón
+	Perdedor del Encuentro Final.
+	
+
+	3° Lugar
+	Bronce
+	Se asigna al competidor que perdió en la Semifinal contra el Campeón.
+	
+
+	4° Lugar
+	Bronce
+	Se asigna al competidor que perdió en la Semifinal contra el Subcampeón.
+	
+
+	Nota técnica (VAI): El sistema debe gestionar encuentros donde uno o ambos competidores pasan por VAI (Bye). Si un competidor avanza por VAI (ausencia), el botón "Iniciar Puntuación" debe cambiar a "Guardar Ronda" para registrar el avance sin ingresar calificaciones, y el competidor avanza directamente a la siguiente fase de la pirámide.
+Como Expertos en Diseño UX/UI y Arquitectura de Software, presentamos el diseño detallado y la lógica de sincronización de la Sección VIII: Interfaz de Visualización Pública (PDI). La PDI (Public Display Interface) es fundamental para la transparencia y la experiencia del espectador, por lo que su rendimiento en tiempo real y su claridad visual son de máxima prioridad.
+________________
+
+
+VIII. Interfaz de Visualización Pública (PDI) y Sincronización
+La PDI es la pantalla secundaria que se proyecta en el recinto de competencia, actuando como un espejo en tiempo real de la información crucial gestionada por el registrador.
+18. Arquitectura y Sincronización de la PDI
+Arquitectura Dev (Sincronización): La PDI debe implementarse como una interfaz de solo lectura que se suscribe a los cambios de estado de los datos gestionados en la interfaz principal (Páginas 4.1 y 4.2). Esto asegura que cualquier modificación de datos, como el ingreso de un puntaje de un juez o el cálculo de un promedio, se refleje de forma inmediata y automática en la PDI.
+19. Módulo de Estado Inactivo (Idle State)
+El estado de reposo es el estado por defecto de la PDI cuando no hay una categoría activa en puntuación.
+UX/UI (Composición Visual):
+* Fondo: Color oscuro uniforme.
+* Elementos Tipográficos: Muestra el título principal y el subtítulo, centrado en el viewport.
+   * "Kalyo" y "Poomsaes Scoring": Color de fuente blanco.
+   * "TKD": Color de fuente ROJO INTENSO.
+20. Módulo de Competencia por Rondas
+Este módulo gestiona la visualización de las competencias en formato Cut-off (Rondas), asegurando que el público siga el progreso y el resultado final.
+20.1. Animación de Inicio y Vista de Puntuación en Vivo (PDI 5.2.1)
+1. Animación Previa: Al iniciar la competencia, la PDI debe mostrar primero el título de la categoría en un fondo oscuro, seguido por el nombre del o los poomsaes que se ejecutarán.
+2. Header: En la región superior, se mostrará el título de la categoría activa.
+3. Panel de Competidores: Un panel lateral (izquierdo) listará a los participantes. El competidor que está siendo puntuado actualmente será resaltado visualmente en sincronía con la interfaz del registrador.
+4. Panel de Puntuación Activa: El área principal mostrará:
+   * Nombre del competidor.
+   * Indicador de Poomsae actual (ej.: "Poomsae 1 de 2").
+   * Puntaje Final: Campo numérico de gran tamaño que se actualiza en tiempo real conforme se ingresan las calificaciones.
+   * Desglose: Mostrará los puntajes promediados de TÉCNICA y PRESENTACIÓN.
+20.2. Vista de Resultados de Ronda (PDI 5.2.2)
+La visualización de resultados varía intencionalmente para la clasificación y la final:
+* Ronda Clasificatoria ($Q > 8$): Muestra los 8 competidores de mayor puntaje. La tabla se ordena de menor a mayor puntaje (ranking invertido) para generar suspenso antes del anuncio oficial de los clasificados.
+* Ronda Final ($Q \leq 8$): Muestra la clasificación definitiva del Top 4. La tabla se ordena de mayor a menor puntaje, e incluye la Delegación, Nombre y Puesto del competidor.
+21. Módulo de Competencia por Pirámides (1 vs 1)
+Este módulo se enfoca en la confrontación directa, utilizando un diseño que refuerza la distinción Azul/Rojo.
+21.1. Vista de Encuentro en Vivo (PDI 5.3.1)
+1. Header: Muestra el título de la categoría, la fase de la llave (ej.: Semifinal) y el número de encuentro.
+2. Interfaz Bifurcada: La pantalla se divide en dos secciones verticales, sincronizando la información desde la Página 4.2 del registrador:
+   * Sección Izquierda: Fondo de color azul (Competidor Azul).
+   * Sección Derecha: Fondo de color rojo (Competidor Rojo).
+3. Sincronización Detallada: Cada sección es un espejo de la puntuación e incluye:
+   * Nombre del competidor.
+   * Puntaje Final (actualización en tiempo real).
+   * Desglose de los promedios de TÉCNICA y PRESENTACIÓN.
+   * Calificaciones Individuales de Cada Juez (J1, J2, J3, etc.), reflejando los datos de la interfaz del registrador.
+21.2. Protocolo de Anuncio del Ganador (PDI 5.3.2)
+Esta secuencia se ejecuta automáticamente al presionar "Dar Ganador" en el sistema del registrador.
+1. Transformación: El fondo completo de la PDI se tornará al color del competidor vencedor (azul o rojo).
+2. Mensaje: Se superpone el texto "¡GANADOR!" en color blanco y gran tamaño.
+3. Duración y Transición: Esta pantalla de resultado se mantendrá estática por 7 segundos. Después de este periodo, el sistema del registrador determinará si debe mostrar "Cerrar Categoría" (si fue la final) o "Guardar Encuentro y Seguir" (si es una fase preliminar).
+________________
+
+
+IX. Persistencia de Datos y Reportes (Módulo de Datos)
+22. Arquitectura de Datos (SQLite)
+El sistema Kalyo TKD - Poomsaes Scoring está diseñado como una aplicación ejecutable (.exe) que opera localmente. Por lo tanto, requiere un motor de base de datos embebido y robusto.
+22.1. Stack de Persistencia
+* Tecnología: SQLite.
+* Justificación Técnica (Arquitecto): SQLite es la elección óptima para aplicaciones de escritorio desarrolladas con Tauri/JS, ya que proporciona una base de datos local ligera y eficiente. Esto cumple directamente con el requisito de "garantizar la persistencia de datos ante cierres inesperados, permitiendo retomar la competencia sin pérdida de información".
+22.2. Esquema de Datos (Entidades Principales)
+El modelo de datos relacional debe capturar la jerarquía completa del evento y la puntuación, asegurando la trazabilidad de cada calificación:
+Entidad Principal
+	Descripción y Relaciones Clave
+	Evento
+	Almacena la metadata del evento: Título, Fecha, Número de Área, Jefe de Área, Registrador, y la lista de Jueces ($N$). Debe incluir el estado (En Proceso / Finalizado).
+	Categoria
+	Almacena la configuración completa de la categoría: Disciplina, Modalidad, División, Género, Edad, Nivel, Sistema de Competencia (Ronda o Pirámide). Enlace uno a muchos con Evento.
+	Competidor
+	Almacena Nombre y Delegación del atleta. Enlace uno a muchos con Categoria.
+	Encuentro/Ronda
+	Define los enfrentamientos 1 vs 1 (Pirámides) o la secuencia de ejecución (Rondas). Almacena Poomsaes seleccionados/sorteados y el resultado del encuentro/ronda (Ganador/Puesto).
+	Calificación
+	Es la tabla de hechos detallada. Almacena las puntuaciones individuales de cada Juez ($T_j$, $P_j$) para un Poomsae específico de un Competidor, incluyendo los cálculos de $\text{Prom}{T}$, $\text{Prom}{P}$ y $\text{Puntaje Total}$. Debe registrar qué puntajes fueron descartados si aplica (N=5 o N=7).
+	23. Módulo de Exportación de Datos a Excel
+El sistema debe ofrecer la opción "Ver Resultados" para los eventos finalizados, permitiendo la descarga de un archivo Excel consolidado con toda la información por categoría.
+23.1. Objetivo de la Exportación
+Generar un único archivo .xlsx (Excel) por categoría, que contenga múltiples hojas de trabajo para garantizar la transparencia y el detalle de la auditoría de los puntajes.
+23.2. Estructura del Archivo de Reporte (Worksheets)
+La estructura del archivo debe reflejar los requerimientos específicos de los datos de trazabilidad y reporte:
+Hoja de Trabajo
+	Contenido y Finalidad (UX/UI y Lógica)
+	Origen del Dato
+	I. Resumen del Evento y Metadata
+	Proporciona el contexto administrativo del evento. Incluye el Título del Evento, Jefe de Área, Número de Área, Registrador, Nombre de la Categoría y Sistema de Competencia.
+	Entidades Evento y Categoría
+	II. Personal de Arbitraje
+	Lista los Jueces que participaron en la categoría con su cargo (Ej.: Juez #1).
+	Entidad Evento
+	III. Resultados Finales y Clasificación
+	Muestra la clasificación definitiva de la categoría. Para Rondas, incluye el ranking completo (Puestos 1° a N). Para Pirámides, define el 1°, 2°, 3° y 4° lugar.
+	Entidad Encuentro/Ronda
+	IV. Detalle de Puntuación
+	Hoja crítica que ofrece la auditoría completa de cada actuación.
+	Entidad Calificación
+	23.3. Contenido Detallado de la Hoja de Puntuación (IV)
+Esta hoja es vital para el cumplimiento de los requisitos de detalle de puntajes:
+1. Contexto del Encuentro: Número del Encuentro (si aplica), Nombres de los Competidores (Azul/Rojo o Competidor Único), Delegación.
+2. Puntaje Final Consolidado: El $\text{Puntaje Total}$ final de cada competidor.
+3. Desglose de Puntuación por Juez:
+   * Técnica: Calificaciones individuales $T_j$ de cada juez, indicando claramente (visualmente o con una etiqueta) cuáles fueron los puntajes máximo y mínimo descartados (si N=5 o N=7).
+   * Presentación: Calificaciones individuales $P_j$ de cada juez, indicando los puntajes descartados.
+4. Cálculos Intermedios: Muestra los valores de $\text{Prom}{T}$ y $\text{Prom}{P}$ (Promedio de Presentación y Técnica) utilizados para generar el Puntaje Total.
+24. Riesgos de Implementación y Stack Sugerido (Dev)
+Riesgo Técnico
+	Mitigación y Componente de Solución
+	Resiliencia de Datos
+	SQLite Management: Implementar bindings o librerías estables en Tauri para manejar transacciones seguras y garantizar que la persistencia de datos ante cierres inesperados funcione correctamente.
+	Cálculo de Algoritmos
+	TypeScript Core Logic: El algoritmo de descarte ($N'$) y desempate debe ser encapsulado en módulos de TypeScript con pruebas unitarias exhaustivas para evitar errores en la lógica de negocio.
+	Generación de Reportes
+	Librería de Exportación: Utilizar una librería de exportación a Excel (ej. xlsx o similar compatible con Node.js/Tauri) que soporte la creación de múltiples hojas de trabajo y la manipulación precisa de celdas para el desglose detallado.
+	Sincronización PDI
+	Event Emitters/State Management: El sistema debe usar un patrón de gestión de estado reactivo (tipo Redux/Zustand o Context API) que garantice que el ingreso de puntajes active un evento de notificación inmediato al módulo de la PDI.

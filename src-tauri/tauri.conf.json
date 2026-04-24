@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "kalyo-tkd-poomsaes-scoring",
+  "version": "0.1.0",
+  "identifier": "com.kalyo.tkd.poomsaes",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Kalyo TKD - Poomsaes Scoring",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": true,
+        "url": "index.html"
+      },
+      {
+        "label": "public",
+        "title": "Kalyo TKD - Public Display",
+        "url": "public.html",
+        "width": 1024,
+        "height": 768,
+        "resizable": true,
+        "fullscreen": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "capabilities": [],
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APP/src/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+  "plugins": {
+    "sql": {
+      "preload": ["sqlite:kalyo_events.db"]
+    },
+    "dialog": true,
+    "fs": {
+      "scope": ["$APP/*"]
+    }
+  }
+}
