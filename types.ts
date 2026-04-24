@@ -166,7 +166,7 @@ export interface PdiFreestylePresentationData {
 export interface PdiTechnicalTieData {
   categoryTitle: string;
   position: number;
-  competitors: { name: string }[];
+  competitors: { name: string; delegation: string }[];
 }
 
 export interface PdiRoundsFinalistsData {
