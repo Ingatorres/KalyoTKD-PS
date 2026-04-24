@@ -2,7 +2,6 @@ import { Event, Category, CompetitionSystem, PyramidMatch, Competitor, Score } f
 import * as ExcelJS from 'exceljs';
 import { sortCompetitors } from './src/scoring';
 import { sortCategories } from './categorySorter';
-import { writeFile, mkdir, exists } from '@tauri-apps/plugin-fs';
 import { saveFileToEventFolder } from './tauriFileSaver';
 
 // --- Styling Constants ---
@@ -237,23 +236,7 @@ export const exportCategoryToExcel = async (event: Event, category: Category, ta
     const fileName = `Resultados_${category.title.replace(/[^a-z0-9]/gi, '_')}.xlsx`;
     const uint8Array = new Uint8Array(buffer);
 
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array, targetDir);
-            if (savedPath) alert(`Reporte guardado exitosamente en: ${savedPath}`);
-        } catch (error) {
-            console.error("Error al exportar a Excel en Tauri:", error);
-        }
-    } else {
-        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    await saveFileToEventFolder(event.name, fileName, uint8Array, targetDir);
 };
 
 export const exportEventToExcel = async (event: Event, targetDir?: string) => {
@@ -302,21 +285,5 @@ export const exportEventToExcel = async (event: Event, targetDir?: string) => {
     const fileName = `Informe_General_${event.name.replace(/[^a-z0-9]/gi, '_')}.xlsx`;
     const uint8Array = new Uint8Array(buffer);
 
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array, targetDir);
-            if (savedPath) alert(`Informe general guardado en: ${savedPath}`);
-        } catch (error) {
-            console.error("Error al exportar evento a Excel:", error);
-        }
-    } else {
-        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    await saveFileToEventFolder(event.name, fileName, uint8Array, targetDir);
 };

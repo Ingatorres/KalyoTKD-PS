@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Event, Screen, Category } from '../types';
 import { Header } from './Header';
 import { exportEventToPdf } from '../pdfExporter';
+import { exportFinalResultsToPdf } from '../pdfExporterEnhanced';
 import { exportEventToExcel } from '../excelExporter';
 import { exportEventToJson } from '../jsonExporter';
 import { PdfExportModal } from './PdfExportModal';
@@ -55,6 +56,19 @@ const CompletedEventDetails: React.FC<{ event: Event; onBack: () => void; onView
                         onSelectPdf={() => setIsPdfModalOpen(true)}
                         onSelectExcel={() => exportEventToExcel({ ...event, categories: event.categories.filter(c => selectedIds.includes(c.id)) })}
                         onSelectJson={() => exportEventToJson({ ...event, categories: event.categories.filter(c => selectedIds.includes(c.id)) })}
+                        onSelectFinalResults={() => {
+                            console.log("Click en Premiación");
+                            const selectedCategories = event.categories.filter(c => selectedIds.includes(c.id));
+                            if (selectedCategories.length === 0) {
+                                alert("Por favor, selecciona al menos una categoría.");
+                                return;
+                            }
+                            alert("Procesando " + selectedCategories.length + " categorías...");
+                            exportFinalResultsToPdf(event, selectedCategories).catch(err => {
+                                console.error("Error en exportFinalResultsToPdf:", err);
+                                alert("Error al iniciar exportación: " + err);
+                            });
+                        }}
                     />
 
                     <PdfExportModal 

@@ -138,5 +138,20 @@ Toda actualización en la estructura de la pirámide (`updateCategory`) se enví
 - `COMPETITION_START`: Inicializa el marcador para el match actual.
 - `SCORE_UPDATE`: Propaga los puntos en tiempo real para visualización pública.
 
+
+---
+
+## 7. Protocolo de Corrección y Seguridad (PIN)
+
+Para garantizar la integridad del torneo pero permitir la flexibilidad ante errores humanos, se ha implementado un sistema de corrección protegida:
+
+1.  **Activación**: En la vista administrativa de la llave, los encuentros finalizados muestran un botón de **"Corregir"**.
+2.  **Seguridad**: Al hacer clic, el sistema solicita un **PIN de autorización: 0913**.
+3.  **Lógica de Reset Recursivo**: Al autorizar la corrección:
+    - Se eliminan los puntajes y el ganador del encuentro actual.
+    - El sistema identifica al competidor que había avanzado y lo **elimina de todas las fases posteriores** donde haya sido propagado.
+    - Si un encuentro posterior ya había sido jugado basándose en ese ganador, ese encuentro también se resetea automáticamente de forma recursiva para evitar inconsistencias en la cadena de resultados.
+4.  **Sincronización**: El cambio se refleja inmediatamente en el PDI, regresando la llave a su estado previo al error.
+
 ---
 *Este documento es propiedad técnica de KalyoTKD. Versión 2.1 - Estabilizada.*

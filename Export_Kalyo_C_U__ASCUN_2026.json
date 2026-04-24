@@ -1,0 +1,6156 @@
+{
+  "version": "2.1.0",
+  "exportDate": "2026-04-24T12:10:55.149Z",
+  "eventName": "C.U. ASCUN 2026",
+  "eventId": "fac269b6-f513-433e-951a-9940693ee0d0",
+  "pyramidCategories": [
+    {
+      "categoryId": "14f2cf31-2145-4c21-8275-58941f54c2e0",
+      "categoryTitle": "Taekwondo, Individual, Masculino, Under 30, Traditional, Principiante",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Principiante",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "f3dc8b59-7826-49bf-b040-9015a0bd51ac",
+          "name": "Jairo Camilo Jojoa Benavides",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "ccaa46ba-981c-460a-8a9f-ca5722f51c77",
+          "name": "Josue Daniel Ortiz Velasquez",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "c54e3725-6683-492e-94d1-3ebd348db94a",
+          "name": "Samuel Alexander Sanabria Rico",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "74f4a06c-256a-4250-8000-377579afcbf2",
+          "name": "Duban Estiben Aragon Ortiz",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "dc486462-753e-4e9f-aa34-489ce87427fa",
+          "name": "Jaime Andrés Valle González",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "589db225-4644-4bf8-adfd-38151b0feb63",
+          "name": "Darwin Andrey Salazar Sanabria",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "0d8c4064-4f29-4f4e-8cb3-3cf482d2b21b",
+          "name": "Jose David Jaramillo Aguirre",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "5859e5b8-8291-4a74-accb-01a3ceb681f3",
+          "name": "Carlos David Bello Ortiz",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "e1a129fe-42cb-4e0e-aeb4-3ff57aa01798",
+          "name": "Jonatan Vergara Suárez",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "6206814f-9576-436b-9bf7-4989097ee453",
+          "name": "Helberth Alejandro Garcia Melo",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "4d1e2f2f-1e97-4941-bf6a-b20f9be3f2e7",
+          "name": "Julian Francisco Arenales Perez",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "c0d4eae5-585e-41ea-83a5-ce5ef4951a16",
+          "name": "Jonny Esteban Gomez Alvarado",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "bf076174-0156-4442-a2d5-053d53f69c0c",
+          "name": "Jose David Castañeda Gonzalez",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "eb782ed9-6252-4abb-9079-2bf8821efacd",
+          "name": "Simon Obando Sanchez",
+          "delegation": "Universidad Externado de Colombia"
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "70d6225f-8e64-4123-9169-96df1f461f7b",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "f3dc8b59-7826-49bf-b040-9015a0bd51ac",
+            "name": "Jairo Camilo Jojoa Benavides",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "ae81f940-f08f-48ff-b2f5-63a46f449a4f",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "5e1c7cda-e083-49d8-91c1-5dae5ab91da0",
+          "phase": "Octavos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "e1a129fe-42cb-4e0e-aeb4-3ff57aa01798",
+            "name": "Jonatan Vergara Suárez",
+            "delegation": "Universidad de La Sabana"
+          },
+          "competitorRed": {
+            "id": "6206814f-9576-436b-9bf7-4989097ee453",
+            "name": "Helberth Alejandro Garcia Melo",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "ae81f940-f08f-48ff-b2f5-63a46f449a4f",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "588f8ebb-aeee-4741-b893-942c53dcd645",
+          "phase": "Octavos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "dc486462-753e-4e9f-aa34-489ce87427fa",
+            "name": "Jaime Andrés Valle González",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": {
+            "id": "c54e3725-6683-492e-94d1-3ebd348db94a",
+            "name": "Samuel Alexander Sanabria Rico",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "ada9991c-f844-4b61-934e-b83a78fae344",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "e14251e3-07c7-4aa2-bbdf-6137dcccf7da",
+          "phase": "Octavos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "589db225-4644-4bf8-adfd-38151b0feb63",
+            "name": "Darwin Andrey Salazar Sanabria",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "competitorRed": {
+            "id": "eb782ed9-6252-4abb-9079-2bf8821efacd",
+            "name": "Simon Obando Sanchez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "ada9991c-f844-4b61-934e-b83a78fae344",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "1905a200-3ef4-452b-801d-25e102a4f5b1",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "ccaa46ba-981c-460a-8a9f-ca5722f51c77",
+            "name": "Josue Daniel Ortiz Velasquez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "7d9e2ccc-9d8c-42a0-9bd5-95f73ecf5e0c",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "47822374-3826-4f6d-9634-8d032d6a48ba",
+          "phase": "Octavos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "5859e5b8-8291-4a74-accb-01a3ceb681f3",
+            "name": "Carlos David Bello Ortiz",
+            "delegation": "Universidad de La Sabana"
+          },
+          "competitorRed": {
+            "id": "4d1e2f2f-1e97-4941-bf6a-b20f9be3f2e7",
+            "name": "Julian Francisco Arenales Perez",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "7d9e2ccc-9d8c-42a0-9bd5-95f73ecf5e0c",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "904f3655-e556-4e07-a822-cc148aed15ac",
+          "phase": "Octavos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "74f4a06c-256a-4250-8000-377579afcbf2",
+            "name": "Duban Estiben Aragon Ortiz",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": {
+            "id": "c0d4eae5-585e-41ea-83a5-ce5ef4951a16",
+            "name": "Jonny Esteban Gomez Alvarado",
+            "delegation": "Universidad EAN"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "9879f10e-2bb2-404d-9707-9356562238b0",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "9bf011cf-9873-4763-a38c-fd32ec9759d8",
+          "phase": "Octavos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "0d8c4064-4f29-4f4e-8cb3-3cf482d2b21b",
+            "name": "Jose David Jaramillo Aguirre",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "competitorRed": {
+            "id": "bf076174-0156-4442-a2d5-053d53f69c0c",
+            "name": "Jose David Castañeda Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "9879f10e-2bb2-404d-9707-9356562238b0",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ae81f940-f08f-48ff-b2f5-63a46f449a4f",
+          "phase": "Cuartos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "f3dc8b59-7826-49bf-b040-9015a0bd51ac",
+            "name": "Jairo Camilo Jojoa Benavides",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "92118dd3-3af1-4bc5-8751-6ec2b54470ed",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ada9991c-f844-4b61-934e-b83a78fae344",
+          "phase": "Cuartos de Final",
+          "matchNumber": 8,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "92118dd3-3af1-4bc5-8751-6ec2b54470ed",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "7d9e2ccc-9d8c-42a0-9bd5-95f73ecf5e0c",
+          "phase": "Cuartos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "ccaa46ba-981c-460a-8a9f-ca5722f51c77",
+            "name": "Josue Daniel Ortiz Velasquez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2264097c-2abe-49e8-b173-8ff640a1933e",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "9879f10e-2bb2-404d-9707-9356562238b0",
+          "phase": "Cuartos de Final",
+          "matchNumber": 10,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2264097c-2abe-49e8-b173-8ff640a1933e",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "92118dd3-3af1-4bc5-8751-6ec2b54470ed",
+          "phase": "Semifinal",
+          "matchNumber": 11,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "f34b0bf0-f2e4-4fbf-bea3-e2ec46932cb5",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "2264097c-2abe-49e8-b173-8ff640a1933e",
+          "phase": "Semifinal",
+          "matchNumber": 12,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "f34b0bf0-f2e4-4fbf-bea3-e2ec46932cb5",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "f34b0bf0-f2e4-4fbf-bea3-e2ec46932cb5",
+          "phase": "Final",
+          "matchNumber": 13,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "e230f885-aafa-4778-8e46-33205461f49c",
+      "categoryTitle": "Taekwondo, Individual, Femenino, Under 30, Traditional, Principiante",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Femenino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Principiante",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "f8d258cc-3269-44c8-b72c-41e848169c8a",
+          "name": "Lizeth Esteffania Piranquive Gomez",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "2c243260-90d1-48d5-9f9a-bce6879cd48b",
+          "name": "Luisa Maria Uchamocha Franco",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "2f48ad27-79a5-4b6d-acdb-fc6ab3829502",
+          "name": "Gabriela Alejandra Torres Cardenas",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "5c0cd564-7729-4eb8-9f23-fd05ac01766d",
+          "name": "Karen Stefanny Castillo Vargas",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "dfd5178b-886e-43ba-9186-bd60d988dcbf",
+          "name": "Ana María Saldaña Páez",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "df9df2cd-3612-4f61-9e20-c3da0966fede",
+          "name": "Julieta Baudet Castañeda",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "8d9b4078-c2fd-4cbb-9975-a674229bc434",
+          "name": "Laura Valentina Gonzalez Quilindo",
+          "delegation": "UDCA"
+        },
+        {
+          "id": "a82e8d3b-f14f-40ce-a795-e6e8c9039097",
+          "name": "Karol Vanessa Martínez Porras",
+          "delegation": "Universidad Catolica de Colombia"
+        },
+        {
+          "id": "28488d48-f73e-4a0f-aef9-f836119b524f",
+          "name": "Loren Sofia Rojas Ortiz",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "45d48ba0-8b11-4d27-9346-1c835eb80118",
+          "name": "Marlen Yulieth Beltran Mendez",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "cf514635-778b-44f8-b55b-5c5080f19b87",
+          "name": "Sofia Beltran Peña",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "b02be2ca-b00d-4195-a56b-3404f29bb9d0",
+          "name": "Ana Camila Martinez Rivera",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "e4e877f2-68dd-4221-8ebd-9ef2c65d412b",
+          "name": "Valentina Alfonso Vargas",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "1723ea18-b2b3-4624-a339-155411217f11",
+          "name": "Sofia Reyes Duarte",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "5f16945d-8687-43ad-84bc-016e9f233380",
+          "name": "Alejandra Posso Bustillo",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "25dea12d-a8d5-44db-85c0-87f10d014981",
+          "name": "Maria Jose Diaz Rojas",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "86bdcd8f-21ee-4f9e-a260-44c8c2717b7c",
+          "name": "Yuliana Sofia Perez Gonzalez",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "c0baf98e-8ec0-43c4-b232-f038d0e18997",
+          "name": "Natalia Góngora Rasmussen",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "91b7d481-992c-40e9-837f-07c4132ccf11",
+          "name": "Zaida Alejandra Guzman Martinez",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "855b1ea2-cab6-433e-b51f-5b2b07a24740",
+          "name": "Justinne Mishell Forero Cristancho",
+          "delegation": "Universidad Pedagógica Nacional"
+        },
+        {
+          "id": "6d9b4d7c-88f0-4868-8942-81cf9af84680",
+          "name": "Sara Bernal Linares",
+          "delegation": "Universidad Pedagógica Nacional"
+        },
+        {
+          "id": "775a4041-b199-4295-9837-92789c0586bb",
+          "name": "Isabella Llinás Alvarado",
+          "delegation": "Universidad Sergio Arboleda."
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "9fdb88f4-1195-4ad2-9902-48c85ac05331",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "f8d258cc-3269-44c8-b72c-41e848169c8a",
+            "name": "Lizeth Esteffania Piranquive Gomez",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "232c25bf-521d-4caf-9be9-a8ec5f288730",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "51af3997-f082-4df7-9eac-d413fce29767",
+          "phase": "16avos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "5c0cd564-7729-4eb8-9f23-fd05ac01766d",
+            "name": "Karen Stefanny Castillo Vargas",
+            "delegation": "Universidad EAN"
+          },
+          "competitorRed": {
+            "id": "8d9b4078-c2fd-4cbb-9975-a674229bc434",
+            "name": "Laura Valentina Gonzalez Quilindo",
+            "delegation": "UDCA"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "232c25bf-521d-4caf-9be9-a8ec5f288730",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "6fa30422-ecc9-4363-aacc-aaba5d8af5ae",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "dfd5178b-886e-43ba-9186-bd60d988dcbf",
+            "name": "Ana María Saldaña Páez",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "aaa3afdf-7995-4049-839e-4bac68baabdc",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "3b436e00-08ee-4ba7-96fd-6aa65c7a9a3c",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "df9df2cd-3612-4f61-9e20-c3da0966fede",
+            "name": "Julieta Baudet Castañeda",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "aaa3afdf-7995-4049-839e-4bac68baabdc",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "8d8d69aa-e453-4d07-b9b1-2c150ce50ba4",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "25dea12d-a8d5-44db-85c0-87f10d014981",
+            "name": "Maria Jose Diaz Rojas",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "a777d297-35c0-48f9-bced-54b71e760f6d",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "2b9996a5-0e56-48e8-832c-24060eac181d",
+          "phase": "16avos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "91b7d481-992c-40e9-837f-07c4132ccf11",
+            "name": "Zaida Alejandra Guzman Martinez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "45d48ba0-8b11-4d27-9346-1c835eb80118",
+            "name": "Marlen Yulieth Beltran Mendez",
+            "delegation": "Universidad de La Sabana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "a777d297-35c0-48f9-bced-54b71e760f6d",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ad7e9b6c-bc95-4d38-80f5-617d8ed68caa",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "86bdcd8f-21ee-4f9e-a260-44c8c2717b7c",
+            "name": "Yuliana Sofia Perez Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "08943702-a097-4ba8-aded-23d33eb1912f",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "25f0a011-358f-4985-a081-cc70b50be5a6",
+          "phase": "16avos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "c0baf98e-8ec0-43c4-b232-f038d0e18997",
+            "name": "Natalia Góngora Rasmussen",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "cf514635-778b-44f8-b55b-5c5080f19b87",
+            "name": "Sofia Beltran Peña",
+            "delegation": "Universidad de Los Andes"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "08943702-a097-4ba8-aded-23d33eb1912f",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "646ca49e-472d-4f36-948b-c12187f466e5",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "2c243260-90d1-48d5-9f9a-bce6879cd48b",
+            "name": "Luisa Maria Uchamocha Franco",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "8f109609-2ae2-4f1f-a714-3e23449fb500",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "5b96bc44-1648-4934-a634-c54ac44aa151",
+          "phase": "16avos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "6d9b4d7c-88f0-4868-8942-81cf9af84680",
+            "name": "Sara Bernal Linares",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "competitorRed": {
+            "id": "a82e8d3b-f14f-40ce-a795-e6e8c9039097",
+            "name": "Karol Vanessa Martínez Porras",
+            "delegation": "Universidad Catolica de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "8f109609-2ae2-4f1f-a714-3e23449fb500",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "9d0e7fa5-bce7-4deb-bab4-492a8d8d9535",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "1723ea18-b2b3-4624-a339-155411217f11",
+            "name": "Sofia Reyes Duarte",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "d0e47b09-ae35-4d5b-9f55-b888b6b27f09",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "fc32864c-10d8-41cd-8021-1b185fc5c18f",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "b02be2ca-b00d-4195-a56b-3404f29bb9d0",
+            "name": "Ana Camila Martinez Rivera",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "d0e47b09-ae35-4d5b-9f55-b888b6b27f09",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "0766d598-0cca-4c40-ad6d-d1f154be69d9",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "5f16945d-8687-43ad-84bc-016e9f233380",
+            "name": "Alejandra Posso Bustillo",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "99859fea-e684-4751-b6ab-847b004e102e",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "3a6f857e-3ae1-4399-a058-9ae04fc05579",
+          "phase": "16avos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "855b1ea2-cab6-433e-b51f-5b2b07a24740",
+            "name": "Justinne Mishell Forero Cristancho",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "competitorRed": {
+            "id": "28488d48-f73e-4a0f-aef9-f836119b524f",
+            "name": "Loren Sofia Rojas Ortiz",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "99859fea-e684-4751-b6ab-847b004e102e",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ca9cb14a-e5c0-4b2f-b732-f2fb9d891d99",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "2f48ad27-79a5-4b6d-acdb-fc6ab3829502",
+            "name": "Gabriela Alejandra Torres Cardenas",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "bc83d86f-b069-43e9-882f-ec9d3326c49a",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "f2745a8e-9168-46de-b0d7-d4642640fadb",
+          "phase": "16avos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "e4e877f2-68dd-4221-8ebd-9ef2c65d412b",
+            "name": "Valentina Alfonso Vargas",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "competitorRed": {
+            "id": "775a4041-b199-4295-9837-92789c0586bb",
+            "name": "Isabella Llinás Alvarado",
+            "delegation": "Universidad Sergio Arboleda."
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "bc83d86f-b069-43e9-882f-ec9d3326c49a",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "232c25bf-521d-4caf-9be9-a8ec5f288730",
+          "phase": "Octavos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "f8d258cc-3269-44c8-b72c-41e848169c8a",
+            "name": "Lizeth Esteffania Piranquive Gomez",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "78978411-9a9a-460a-9a41-4a8408588d25",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "aaa3afdf-7995-4049-839e-4bac68baabdc",
+          "phase": "Octavos de Final",
+          "matchNumber": 8,
+          "competitorBlue": {
+            "id": "dfd5178b-886e-43ba-9186-bd60d988dcbf",
+            "name": "Ana María Saldaña Páez",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": {
+            "id": "df9df2cd-3612-4f61-9e20-c3da0966fede",
+            "name": "Julieta Baudet Castañeda",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "78978411-9a9a-460a-9a41-4a8408588d25",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "a777d297-35c0-48f9-bced-54b71e760f6d",
+          "phase": "Octavos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "25dea12d-a8d5-44db-85c0-87f10d014981",
+            "name": "Maria Jose Diaz Rojas",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "0af03af2-da39-4242-9596-881f6a0727bf",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "08943702-a097-4ba8-aded-23d33eb1912f",
+          "phase": "Octavos de Final",
+          "matchNumber": 10,
+          "competitorBlue": {
+            "id": "86bdcd8f-21ee-4f9e-a260-44c8c2717b7c",
+            "name": "Yuliana Sofia Perez Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "0af03af2-da39-4242-9596-881f6a0727bf",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "8f109609-2ae2-4f1f-a714-3e23449fb500",
+          "phase": "Octavos de Final",
+          "matchNumber": 11,
+          "competitorBlue": {
+            "id": "2c243260-90d1-48d5-9f9a-bce6879cd48b",
+            "name": "Luisa Maria Uchamocha Franco",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "ae9aa924-fb33-4bdc-af91-b9710aebf036",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "d0e47b09-ae35-4d5b-9f55-b888b6b27f09",
+          "phase": "Octavos de Final",
+          "matchNumber": 12,
+          "competitorBlue": {
+            "id": "1723ea18-b2b3-4624-a339-155411217f11",
+            "name": "Sofia Reyes Duarte",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": {
+            "id": "b02be2ca-b00d-4195-a56b-3404f29bb9d0",
+            "name": "Ana Camila Martinez Rivera",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "ae9aa924-fb33-4bdc-af91-b9710aebf036",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "99859fea-e684-4751-b6ab-847b004e102e",
+          "phase": "Octavos de Final",
+          "matchNumber": 13,
+          "competitorBlue": {
+            "id": "5f16945d-8687-43ad-84bc-016e9f233380",
+            "name": "Alejandra Posso Bustillo",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "46a9a8a6-00f5-4b5f-8723-d4eff4786156",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "bc83d86f-b069-43e9-882f-ec9d3326c49a",
+          "phase": "Octavos de Final",
+          "matchNumber": 14,
+          "competitorBlue": {
+            "id": "2f48ad27-79a5-4b6d-acdb-fc6ab3829502",
+            "name": "Gabriela Alejandra Torres Cardenas",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "46a9a8a6-00f5-4b5f-8723-d4eff4786156",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "78978411-9a9a-460a-9a41-4a8408588d25",
+          "phase": "Cuartos de Final",
+          "matchNumber": 15,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "3b00ea07-50d9-4a46-9bbf-5f5e95ca6837",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "0af03af2-da39-4242-9596-881f6a0727bf",
+          "phase": "Cuartos de Final",
+          "matchNumber": 16,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "3b00ea07-50d9-4a46-9bbf-5f5e95ca6837",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ae9aa924-fb33-4bdc-af91-b9710aebf036",
+          "phase": "Cuartos de Final",
+          "matchNumber": 17,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2874bf1f-2dd4-4b39-bfc7-720c2dc98619",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "46a9a8a6-00f5-4b5f-8723-d4eff4786156",
+          "phase": "Cuartos de Final",
+          "matchNumber": 18,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2874bf1f-2dd4-4b39-bfc7-720c2dc98619",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "3b00ea07-50d9-4a46-9bbf-5f5e95ca6837",
+          "phase": "Semifinal",
+          "matchNumber": 19,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "fa0ea7ef-2933-4428-9980-e4d6b4104e58",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "2874bf1f-2dd4-4b39-bfc7-720c2dc98619",
+          "phase": "Semifinal",
+          "matchNumber": 20,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "fa0ea7ef-2933-4428-9980-e4d6b4104e58",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "fa0ea7ef-2933-4428-9980-e4d6b4104e58",
+          "phase": "Final",
+          "matchNumber": 21,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "e9826259-cfc0-4508-be80-4fe2a83e683b",
+      "categoryTitle": "Taekwondo, Individual, Mixto, Under 30, Traditional, Principiante",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Mixto",
+      "ageGroup": "Under 30",
+      "beltLevel": "Principiante",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "2155be84-28a0-4d26-9566-eedce76a9bf2",
+          "name": "Jonny Esteban Gomez Alvarado",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "fec9a6da-33cc-424b-944f-4241559a4706",
+          "name": "Karen Stefanny Castillo Vargas",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "f484ccd2-8a5b-43bf-b324-05cbb7a5d0e9",
+          "name": "Ana María Saldaña Páez",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "4d9701a7-38bf-4020-b266-b99647ce75c2",
+          "name": "Duban Estiben Aragon Ortiz",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "de063628-540a-443c-88d7-d7071d1fa69d",
+          "name": "Jose David Castañeda Gonzalez",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "77289e56-8434-4f48-936a-60c3ab4ba8a3",
+          "name": "Maria Jose Diaz Rojas",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "49b1db2f-f3bc-48d5-96ad-403641a877a4",
+          "name": "Simon Obando Sanchez",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "850f204d-bb25-4155-8c82-408bd03bcf02",
+          "name": "Yuliana Sofia Perez Gonzalez",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "ad2c6d2d-0dce-4d2f-b88c-c738f34d0644",
+          "name": "Jairo Camilo Jojoa Benavides",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "a8b220ad-e6e1-4a74-97fa-b3bc9b0d6735",
+          "name": "Luisa Maria Uchamocha Franco",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "ebeaf6f1-2e9f-4370-8264-198648067606",
+          "name": "Jaime Andrés Valle González",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "d9634b46-95f0-42c3-ab37-7626d057cc47",
+          "name": "Julieta Baudet Castañeda",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "089fbc93-a083-4774-a600-083926b1be77",
+          "name": "Jose David Jaramillo Aguirre",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "73de4db0-4834-401a-9daf-1cbf0d6caa45",
+          "name": "Loren Sofia Rojas Ortiz",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "fe795d43-d0be-4ecf-82be-4cb6936ea638",
+          "name": "Jonatan Vergara Suárez",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "36f739a7-b35e-441f-8295-ff5dd13f9c02",
+          "name": "Marlen Yulieth Beltran Mendez",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "6aa64834-58a5-423f-af05-4d2a85d34ba4",
+          "name": "Josue Daniel Ortiz Velasquez",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "d0ac6bb7-13eb-44be-aed6-fff80dcfad73",
+          "name": "Zaida Alejandra Guzman Martinez",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "b107b6b3-5649-4bb1-949c-61de15a5ddd2",
+          "name": "Juliana Góngora Rasmussen",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "d0ac57b5-c5bd-45b2-b7d4-627ca1e19c27",
+          "name": "Thomas Alejandro Casas Gonzalvez",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "b1469a88-03ad-4221-a087-6136f9ea28a0",
+          "name": "Jhonny Damián Saavedra Plazas",
+          "delegation": "Universidad Pedagógica Nacional"
+        },
+        {
+          "id": "8fcc7dde-fdb8-46a2-8e46-32b6f1db6dc2",
+          "name": "Justinne Mishell Forero Cristancho",
+          "delegation": "Universidad Pedagógica Nacional"
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "dd50ed7c-4c40-4ef5-96ab-6ff38aca1944",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "2155be84-28a0-4d26-9566-eedce76a9bf2",
+            "name": "Jonny Esteban Gomez Alvarado",
+            "delegation": "Universidad EAN"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "c36dd111-16d7-4759-bd8b-86120fcae89a",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "70234368-6b71-421e-9eeb-7dd9e6babe5a",
+          "phase": "16avos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "a8b220ad-e6e1-4a74-97fa-b3bc9b0d6735",
+            "name": "Luisa Maria Uchamocha Franco",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": {
+            "id": "089fbc93-a083-4774-a600-083926b1be77",
+            "name": "Jose David Jaramillo Aguirre",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "c36dd111-16d7-4759-bd8b-86120fcae89a",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "eef97033-0f1c-46ee-b089-bdfb63d93b60",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "77289e56-8434-4f48-936a-60c3ab4ba8a3",
+            "name": "Maria Jose Diaz Rojas",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "e081baa6-d159-48ea-95e4-821cfd2cf9f4",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "0eb51d09-134a-4f04-b125-262c4b9b8ce5",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "49b1db2f-f3bc-48d5-96ad-403641a877a4",
+            "name": "Simon Obando Sanchez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "e081baa6-d159-48ea-95e4-821cfd2cf9f4",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "526527f1-2955-49cc-b760-83656046e917",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "4d9701a7-38bf-4020-b266-b99647ce75c2",
+            "name": "Duban Estiben Aragon Ortiz",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "67ce3342-565b-4d9b-9afb-6005ffca46b9",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "b1619dc8-6f82-401b-adf1-f351e84d6882",
+          "phase": "16avos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "b107b6b3-5649-4bb1-949c-61de15a5ddd2",
+            "name": "Juliana Góngora Rasmussen",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "36f739a7-b35e-441f-8295-ff5dd13f9c02",
+            "name": "Marlen Yulieth Beltran Mendez",
+            "delegation": "Universidad de La Sabana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "67ce3342-565b-4d9b-9afb-6005ffca46b9",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "e8eb2e50-8d1c-44cb-a023-5f7d169a1b99",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "ebeaf6f1-2e9f-4370-8264-198648067606",
+            "name": "Jaime Andrés Valle González",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "01db9eb5-fe08-4c2c-9e15-a790f456fa99",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "e3063647-caa2-47a5-b008-576ab376cb27",
+          "phase": "16avos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "d0ac6bb7-13eb-44be-aed6-fff80dcfad73",
+            "name": "Zaida Alejandra Guzman Martinez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "b1469a88-03ad-4221-a087-6136f9ea28a0",
+            "name": "Jhonny Damián Saavedra Plazas",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "01db9eb5-fe08-4c2c-9e15-a790f456fa99",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "101a8a9b-214a-43d3-b3ed-8a5fa663ca7e",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "fec9a6da-33cc-424b-944f-4241559a4706",
+            "name": "Karen Stefanny Castillo Vargas",
+            "delegation": "Universidad EAN"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "467358c6-c5fc-4f26-b978-a6db7e979bac",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "1a99b08f-4476-47a4-b1b3-b555e855268e",
+          "phase": "16avos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "ad2c6d2d-0dce-4d2f-b88c-c738f34d0644",
+            "name": "Jairo Camilo Jojoa Benavides",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": {
+            "id": "73de4db0-4834-401a-9daf-1cbf0d6caa45",
+            "name": "Loren Sofia Rojas Ortiz",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "467358c6-c5fc-4f26-b978-a6db7e979bac",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "9d32258f-1a2d-4de2-939d-8e2f1321926c",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "de063628-540a-443c-88d7-d7071d1fa69d",
+            "name": "Jose David Castañeda Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "8a1bbbc1-295e-4bd1-af73-0120ca95a5c3",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "0b17ac22-d35a-4fe3-9e8e-84b129e30a89",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "850f204d-bb25-4155-8c82-408bd03bcf02",
+            "name": "Yuliana Sofia Perez Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "8a1bbbc1-295e-4bd1-af73-0120ca95a5c3",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "341e6a79-0f6a-4017-9213-2a03b0ee4389",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "f484ccd2-8a5b-43bf-b324-05cbb7a5d0e9",
+            "name": "Ana María Saldaña Páez",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "37ef11e4-87dd-4549-8637-ac4920a30884",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "86f90193-0a57-47f0-af10-32c7972eafcd",
+          "phase": "16avos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "d0ac57b5-c5bd-45b2-b7d4-627ca1e19c27",
+            "name": "Thomas Alejandro Casas Gonzalvez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "fe795d43-d0be-4ecf-82be-4cb6936ea638",
+            "name": "Jonatan Vergara Suárez",
+            "delegation": "Universidad de La Sabana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "37ef11e4-87dd-4549-8637-ac4920a30884",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "d6e2e8f7-b39b-443c-a308-fbbc02db8e61",
+          "phase": "16avos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "d9634b46-95f0-42c3-ab37-7626d057cc47",
+            "name": "Julieta Baudet Castañeda",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "131480e5-db1f-420c-ac3c-2513b1daf9ca",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "243fac62-345a-48aa-ab06-cad2aee70152",
+          "phase": "16avos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "6aa64834-58a5-423f-af05-4d2a85d34ba4",
+            "name": "Josue Daniel Ortiz Velasquez",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "8fcc7dde-fdb8-46a2-8e46-32b6f1db6dc2",
+            "name": "Justinne Mishell Forero Cristancho",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "131480e5-db1f-420c-ac3c-2513b1daf9ca",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "c36dd111-16d7-4759-bd8b-86120fcae89a",
+          "phase": "Octavos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "2155be84-28a0-4d26-9566-eedce76a9bf2",
+            "name": "Jonny Esteban Gomez Alvarado",
+            "delegation": "Universidad EAN"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "233a295e-5085-4585-9323-aa4aedcaabac",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "e081baa6-d159-48ea-95e4-821cfd2cf9f4",
+          "phase": "Octavos de Final",
+          "matchNumber": 8,
+          "competitorBlue": {
+            "id": "77289e56-8434-4f48-936a-60c3ab4ba8a3",
+            "name": "Maria Jose Diaz Rojas",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": {
+            "id": "49b1db2f-f3bc-48d5-96ad-403641a877a4",
+            "name": "Simon Obando Sanchez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "233a295e-5085-4585-9323-aa4aedcaabac",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "67ce3342-565b-4d9b-9afb-6005ffca46b9",
+          "phase": "Octavos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "4d9701a7-38bf-4020-b266-b99647ce75c2",
+            "name": "Duban Estiben Aragon Ortiz",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "294e15f2-02ab-4e06-8037-03dd6002079d",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "01db9eb5-fe08-4c2c-9e15-a790f456fa99",
+          "phase": "Octavos de Final",
+          "matchNumber": 10,
+          "competitorBlue": {
+            "id": "ebeaf6f1-2e9f-4370-8264-198648067606",
+            "name": "Jaime Andrés Valle González",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "294e15f2-02ab-4e06-8037-03dd6002079d",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "467358c6-c5fc-4f26-b978-a6db7e979bac",
+          "phase": "Octavos de Final",
+          "matchNumber": 11,
+          "competitorBlue": {
+            "id": "fec9a6da-33cc-424b-944f-4241559a4706",
+            "name": "Karen Stefanny Castillo Vargas",
+            "delegation": "Universidad EAN"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "af0b5873-8aaf-4902-921d-2f12985587dd",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "8a1bbbc1-295e-4bd1-af73-0120ca95a5c3",
+          "phase": "Octavos de Final",
+          "matchNumber": 12,
+          "competitorBlue": {
+            "id": "de063628-540a-443c-88d7-d7071d1fa69d",
+            "name": "Jose David Castañeda Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": {
+            "id": "850f204d-bb25-4155-8c82-408bd03bcf02",
+            "name": "Yuliana Sofia Perez Gonzalez",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "af0b5873-8aaf-4902-921d-2f12985587dd",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "37ef11e4-87dd-4549-8637-ac4920a30884",
+          "phase": "Octavos de Final",
+          "matchNumber": 13,
+          "competitorBlue": {
+            "id": "f484ccd2-8a5b-43bf-b324-05cbb7a5d0e9",
+            "name": "Ana María Saldaña Páez",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "a26391f0-7182-4888-bdb2-fccab67967aa",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "131480e5-db1f-420c-ac3c-2513b1daf9ca",
+          "phase": "Octavos de Final",
+          "matchNumber": 14,
+          "competitorBlue": {
+            "id": "d9634b46-95f0-42c3-ab37-7626d057cc47",
+            "name": "Julieta Baudet Castañeda",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "a26391f0-7182-4888-bdb2-fccab67967aa",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "233a295e-5085-4585-9323-aa4aedcaabac",
+          "phase": "Cuartos de Final",
+          "matchNumber": 15,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2019c14c-0ff2-4983-b430-0a123420b748",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "294e15f2-02ab-4e06-8037-03dd6002079d",
+          "phase": "Cuartos de Final",
+          "matchNumber": 16,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2019c14c-0ff2-4983-b430-0a123420b748",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "af0b5873-8aaf-4902-921d-2f12985587dd",
+          "phase": "Cuartos de Final",
+          "matchNumber": 17,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "67189a5d-856a-41c8-8dcf-ca714269a93d",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "a26391f0-7182-4888-bdb2-fccab67967aa",
+          "phase": "Cuartos de Final",
+          "matchNumber": 18,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "67189a5d-856a-41c8-8dcf-ca714269a93d",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "2019c14c-0ff2-4983-b430-0a123420b748",
+          "phase": "Semifinal",
+          "matchNumber": 19,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "41667690-dbb4-4191-9f19-4a8981d9b4eb",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "67189a5d-856a-41c8-8dcf-ca714269a93d",
+          "phase": "Semifinal",
+          "matchNumber": 20,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "41667690-dbb4-4191-9f19-4a8981d9b4eb",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "41667690-dbb4-4191-9f19-4a8981d9b4eb",
+          "phase": "Final",
+          "matchNumber": 21,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "b81d9efd-a8df-41f1-8a3f-88f04a5c6976",
+      "categoryTitle": "Taekwondo, Equipo, Masculino, Under 30, Traditional, Principiante",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Equipo",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Principiante",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "ddf9c941-1251-4747-a394-88025aa7a697",
+          "name": "Josue Daniel Ortiz Velasquez / Juan Camilo Perilla Jaramillo / Samuel Alexander Sanabria Rico",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        },
+        {
+          "id": "bf711dde-4bde-465b-bac2-9f250c972889",
+          "name": "Duban Estiben Aragon Ortiz / Jaime Andrés Valle González / Manuel Santiago Ibáñez Nova",
+          "delegation": "Pontificia Universidad Javeriana",
+          "hasWarning": false
+        },
+        {
+          "id": "d4d1cd51-b266-4888-8f97-401ef812c8d0",
+          "name": "Jose David Castañeda Gonzalez / Juan Pablo Navarrete Herrera / Simon Obando Sanchez",
+          "delegation": "Universidad Externado de Colombia",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "a8abe9b7-d2c6-4c27-871c-6ce57207ef7b",
+          "phase": "Semifinal",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "ddf9c941-1251-4747-a394-88025aa7a697",
+            "name": "Josue Daniel Ortiz Velasquez / Juan Camilo Perilla Jaramillo / Samuel Alexander Sanabria Rico",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "ee28ae93-389f-45df-acb4-4397ea5262ac",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "18cc8756-2c84-42be-b922-2f628269cd5a",
+          "phase": "Semifinal",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "bf711dde-4bde-465b-bac2-9f250c972889",
+            "name": "Duban Estiben Aragon Ortiz / Jaime Andrés Valle González / Manuel Santiago Ibáñez Nova",
+            "delegation": "Pontificia Universidad Javeriana",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "d4d1cd51-b266-4888-8f97-401ef812c8d0",
+            "name": "Jose David Castañeda Gonzalez / Juan Pablo Navarrete Herrera / Simon Obando Sanchez",
+            "delegation": "Universidad Externado de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "ee28ae93-389f-45df-acb4-4397ea5262ac",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ee28ae93-389f-45df-acb4-4397ea5262ac",
+          "phase": "Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "ddf9c941-1251-4747-a394-88025aa7a697",
+            "name": "Josue Daniel Ortiz Velasquez / Juan Camilo Perilla Jaramillo / Samuel Alexander Sanabria Rico",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "9dc77651-0d69-43d4-b50b-153b19271d61",
+      "categoryTitle": "Taekwondo, Equipo, Femenino, Under 30, Traditional, Principiante",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Equipo",
+      "gender": "Femenino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Principiante",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "af4809ef-e750-4368-8eae-fb134a1686ea",
+          "name": "Alejandra Posso Bustillo / Maria Jose Diaz Rojas / Yuliana Sofia Perez Gonzalez",
+          "delegation": "Universidad Externado de Colombia",
+          "hasWarning": false
+        },
+        {
+          "id": "80c9fca6-ce38-4433-97d5-2c8ac78c079b",
+          "name": "Derly Nayibe Rios Leon / Isabel Johana Castro Sierra / Loren Sofia Rojas Ortiz",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca",
+          "hasWarning": false
+        },
+        {
+          "id": "e933f9be-19c9-48a2-b64a-5e2172cec179",
+          "name": "Juliana Góngora Rasmussen / Natalia Góngora Rasmussen / Zaida Alejandra Guzman Martinez",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        },
+        {
+          "id": "0a212cee-d9c0-4606-ba43-cde718e97cd6",
+          "name": " / DELEGADO (SIN CLUB) / DELEGADO (SIN CLUB)",
+          "delegation": "SIN CLUB",
+          "hasWarning": true,
+          "warningMessage": "Incompleto: Cambio de delegación o fin de lista."
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "8cd5de4d-fe63-4601-8efe-8983c1a15656",
+          "phase": "Semifinal",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "af4809ef-e750-4368-8eae-fb134a1686ea",
+            "name": "Alejandra Posso Bustillo / Maria Jose Diaz Rojas / Yuliana Sofia Perez Gonzalez",
+            "delegation": "Universidad Externado de Colombia",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "0a212cee-d9c0-4606-ba43-cde718e97cd6",
+            "name": " / DELEGADO (SIN CLUB) / DELEGADO (SIN CLUB)",
+            "delegation": "SIN CLUB",
+            "hasWarning": true,
+            "warningMessage": "Incompleto: Cambio de delegación o fin de lista."
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "b3186f9d-2e3e-41d4-8234-48cca5140ed6",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "06223a59-9b88-48e4-a05b-577e1b9d60c2",
+          "phase": "Semifinal",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "80c9fca6-ce38-4433-97d5-2c8ac78c079b",
+            "name": "Derly Nayibe Rios Leon / Isabel Johana Castro Sierra / Loren Sofia Rojas Ortiz",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "e933f9be-19c9-48a2-b64a-5e2172cec179",
+            "name": "Juliana Góngora Rasmussen / Natalia Góngora Rasmussen / Zaida Alejandra Guzman Martinez",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "b3186f9d-2e3e-41d4-8234-48cca5140ed6",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "b3186f9d-2e3e-41d4-8234-48cca5140ed6",
+          "phase": "Final",
+          "matchNumber": 3,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "dbfbb373-a807-4562-8868-13a37a797ca0",
+      "categoryTitle": "Taekwondo, Individual, Masculino, Under 30, Traditional, Avanzado",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Avanzado",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "2c3f9cef-cf77-4b86-b49b-33d209f251f3",
+          "name": "Sebastian Andres Martinez Zambrano",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "7872c546-6ebe-4606-9c1e-964655946d09",
+          "name": "Juan Camilo Rodriguez Rojas",
+          "delegation": "Universidad Santo Tomas"
+        },
+        {
+          "id": "b7fe144f-5a3c-4405-8a9a-e6a32e04023a",
+          "name": "Joan Andres Molina Lopez",
+          "delegation": "Universidad Pedagógica Nacional"
+        },
+        {
+          "id": "028667ac-5cca-4f2a-83ce-dc92cb2e8a5b",
+          "name": "Esteban Torres Palacio",
+          "delegation": "Corporación Universitaria Iberoamericana"
+        },
+        {
+          "id": "c96edd8e-274f-4c18-b53b-b5988002046b",
+          "name": "Juan Diego Ramos Tordecilla",
+          "delegation": "Corporación Universitaria Iberoamericana"
+        },
+        {
+          "id": "60281709-6401-41f4-bb49-a856b70d9811",
+          "name": "Edison Santiago Ramirez Calderón",
+          "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+        },
+        {
+          "id": "5bfcc353-8d4a-4a04-a986-4ee5b39d589d",
+          "name": "Maicol Steven Martin Baron",
+          "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+        },
+        {
+          "id": "6edd3fc5-2cad-494c-953d-a084d6157280",
+          "name": "Christian Alejandro Cifuentes Rico",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "1ceca0fa-afdc-4ff9-ac9d-9ee191a501ea",
+          "name": "Andres Martin Ochoa Toro",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "a2d12118-5521-4f86-bfe2-cb422af4d1d5",
+          "name": "Daniel Esteban Galindo Tarazona",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "93c9dec6-b019-4ba8-8558-86d185257dd6",
+          "name": "Nicolas Parga Oyola",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "f763654e-1eb4-4b54-aedc-2e864056d020",
+          "name": "David Ricardo Revelo Hernández",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "8416de83-cdc8-45e3-96e8-e31beacb08a9",
+          "name": "William Andres Parada Antonio",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "4a6d02d3-bd5d-47b3-85e9-801dbb68a9ca",
+          "name": "Jeronimo Guerra Arrieta",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "6323694b-5e42-4ed5-8600-c4e36d2a4c2f",
+          "name": "Nicolas Andres Salazar Leguizamon",
+          "delegation": "Universidad Pedagógica Nacional"
+        },
+        {
+          "id": "544fde6e-a637-4eec-b07c-35db47449bee",
+          "name": "Yesid Damian Dello Martinez",
+          "delegation": "Universidad Sergio Arboleda."
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "f006d81d-d3eb-4618-9c2c-9acd6a2ba559",
+          "phase": "Octavos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "2c3f9cef-cf77-4b86-b49b-33d209f251f3",
+            "name": "Sebastian Andres Martinez Zambrano",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "competitorRed": {
+            "id": "544fde6e-a637-4eec-b07c-35db47449bee",
+            "name": "Yesid Damian Dello Martinez",
+            "delegation": "Universidad Sergio Arboleda."
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "f26c58bc-3705-427a-ac5e-c9e9a465fa93",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "a8dd77dd-8ae9-4e91-a144-2a9d3573423c",
+          "phase": "Octavos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "5bfcc353-8d4a-4a04-a986-4ee5b39d589d",
+            "name": "Maicol Steven Martin Baron",
+            "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+          },
+          "competitorRed": {
+            "id": "1ceca0fa-afdc-4ff9-ac9d-9ee191a501ea",
+            "name": "Andres Martin Ochoa Toro",
+            "delegation": "Universidad de Los Andes"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "f26c58bc-3705-427a-ac5e-c9e9a465fa93",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "d3894fbb-8aff-401f-90e9-1a4352d52abe",
+          "phase": "Octavos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "6323694b-5e42-4ed5-8600-c4e36d2a4c2f",
+            "name": "Nicolas Andres Salazar Leguizamon",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "competitorRed": {
+            "id": "6edd3fc5-2cad-494c-953d-a084d6157280",
+            "name": "Christian Alejandro Cifuentes Rico",
+            "delegation": "Universidad de La Sabana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "631435b2-0a8a-4d64-94bc-2fa1b256b338",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "b9427b56-6848-4954-a473-8e18f0eb8034",
+          "phase": "Octavos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "028667ac-5cca-4f2a-83ce-dc92cb2e8a5b",
+            "name": "Esteban Torres Palacio",
+            "delegation": "Corporación Universitaria Iberoamericana"
+          },
+          "competitorRed": {
+            "id": "8416de83-cdc8-45e3-96e8-e31beacb08a9",
+            "name": "William Andres Parada Antonio",
+            "delegation": "Universidad EAN"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "631435b2-0a8a-4d64-94bc-2fa1b256b338",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "c8d2e9f3-8217-47e1-a887-6c0175bc5dcc",
+          "phase": "Octavos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "7872c546-6ebe-4606-9c1e-964655946d09",
+            "name": "Juan Camilo Rodriguez Rojas",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": {
+            "id": "4a6d02d3-bd5d-47b3-85e9-801dbb68a9ca",
+            "name": "Jeronimo Guerra Arrieta",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "870244fb-149c-4e73-9b1d-216062b41411",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "02454f99-36cb-4d3f-b833-f9d93c70c88b",
+          "phase": "Octavos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "60281709-6401-41f4-bb49-a856b70d9811",
+            "name": "Edison Santiago Ramirez Calderón",
+            "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+          },
+          "competitorRed": {
+            "id": "a2d12118-5521-4f86-bfe2-cb422af4d1d5",
+            "name": "Daniel Esteban Galindo Tarazona",
+            "delegation": "Universidad de Los Andes"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "870244fb-149c-4e73-9b1d-216062b41411",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "6a7c55b6-1641-45c0-b44f-02f92a708bf9",
+          "phase": "Octavos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "b7fe144f-5a3c-4405-8a9a-e6a32e04023a",
+            "name": "Joan Andres Molina Lopez",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "competitorRed": {
+            "id": "93c9dec6-b019-4ba8-8558-86d185257dd6",
+            "name": "Nicolas Parga Oyola",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "3da3d4a9-6e8f-4ea7-bd6c-fe29daded6a7",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "81e35ef5-8885-4fbc-a2c1-7eeb6119341b",
+          "phase": "Octavos de Final",
+          "matchNumber": 8,
+          "competitorBlue": {
+            "id": "c96edd8e-274f-4c18-b53b-b5988002046b",
+            "name": "Juan Diego Ramos Tordecilla",
+            "delegation": "Corporación Universitaria Iberoamericana"
+          },
+          "competitorRed": {
+            "id": "f763654e-1eb4-4b54-aedc-2e864056d020",
+            "name": "David Ricardo Revelo Hernández",
+            "delegation": "Universidad EAN"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "3da3d4a9-6e8f-4ea7-bd6c-fe29daded6a7",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "f26c58bc-3705-427a-ac5e-c9e9a465fa93",
+          "phase": "Cuartos de Final",
+          "matchNumber": 9,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "e53a5105-75e0-479e-bf43-22b5ad497544",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "631435b2-0a8a-4d64-94bc-2fa1b256b338",
+          "phase": "Cuartos de Final",
+          "matchNumber": 10,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "e53a5105-75e0-479e-bf43-22b5ad497544",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "870244fb-149c-4e73-9b1d-216062b41411",
+          "phase": "Cuartos de Final",
+          "matchNumber": 11,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "36cf9cb6-d2dd-4f1d-b8c2-d1ede8e4b9d1",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "3da3d4a9-6e8f-4ea7-bd6c-fe29daded6a7",
+          "phase": "Cuartos de Final",
+          "matchNumber": 12,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "36cf9cb6-d2dd-4f1d-b8c2-d1ede8e4b9d1",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "e53a5105-75e0-479e-bf43-22b5ad497544",
+          "phase": "Semifinal",
+          "matchNumber": 13,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2b1c762e-3807-4a83-b7af-62886748ee8c",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "36cf9cb6-d2dd-4f1d-b8c2-d1ede8e4b9d1",
+          "phase": "Semifinal",
+          "matchNumber": 14,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "2b1c762e-3807-4a83-b7af-62886748ee8c",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "2b1c762e-3807-4a83-b7af-62886748ee8c",
+          "phase": "Final",
+          "matchNumber": 15,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "10574456-8536-4afa-b036-2cdc314de25f",
+      "categoryTitle": "Taekwondo, Individual, Femenino, Under 30, Traditional, Avanzado",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Femenino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Avanzado",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "4f3d54d2-0826-4995-bd28-3dd8dd242b5d",
+          "name": "Angie Natalia Ramirez Hernandez",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "98c6d314-4bf7-4191-8c6b-8b0097044e91",
+          "name": "Angela Estefania Gomez Sanchez",
+          "delegation": "Universidad Antonio Nariño"
+        },
+        {
+          "id": "369ba214-d1b7-4e98-876d-36b522558000",
+          "name": "Mariam Angelin Mora Suarez",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "c1ca0e91-25c5-4abb-b1be-73c47b2673c6",
+          "name": "Danna Sofia Castellanos Lima",
+          "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+        },
+        {
+          "id": "af78b5e3-ef77-41e3-be2a-937d5118a586",
+          "name": "Oriana Sehinek Mattar Ramirez",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "3fd3f902-7c01-4b36-9082-ba5835bd9ed8",
+          "name": "Nicol Daniela Martinez Araque",
+          "delegation": "UDCA"
+        },
+        {
+          "id": "1b4489ca-640f-4ad2-8807-82fb20e7f45e",
+          "name": "July Alejandra Peña Robayo",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "d6c1a10f-a925-4e32-bdb9-6a91e6c01224",
+          "name": "María Alejandra Collazos Amaya",
+          "delegation": "Universidad Colegio Mayor de Cundinamarca"
+        },
+        {
+          "id": "371632a1-9c9a-49df-bc19-4057e83cf25a",
+          "name": "Mariana Montero Martinez",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "c58e04d5-3edf-4cae-b002-f3c5af531804",
+          "name": "Gisselle Johanna Fontalvo Londoño",
+          "delegation": "Universidad EAN"
+        },
+        {
+          "id": "feccda18-73e0-412c-953d-80cad704787e",
+          "name": "Gabriela Sofía Rodríguez Fonseca",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "32e19968-3621-491b-80f4-eab278510f2e",
+          "name": "Laura Daniela Paez Vaca",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "b641edef-d341-4832-b3f0-4f208fac708c",
+          "name": "Nathalia Castro Ortega",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "bd225d0c-0bba-4532-9e39-95b4b0bd106d",
+          "name": "Heidy Tatiana Figueroa Roa",
+          "delegation": "Universidad Pedagógica Nacional"
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "3ebeba9c-62d0-42e3-81f4-8b84c8a76c0d",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "4f3d54d2-0826-4995-bd28-3dd8dd242b5d",
+            "name": "Angie Natalia Ramirez Hernandez",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "35d814a5-8794-43b8-9c21-18f016c67c90",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "25d7c6a1-9055-4774-a8e2-b2382a98a685",
+          "phase": "Octavos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "c1ca0e91-25c5-4abb-b1be-73c47b2673c6",
+            "name": "Danna Sofia Castellanos Lima",
+            "delegation": "Corporación Universitaria Minuto de Dios Bogotá"
+          },
+          "competitorRed": {
+            "id": "af78b5e3-ef77-41e3-be2a-937d5118a586",
+            "name": "Oriana Sehinek Mattar Ramirez",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "35d814a5-8794-43b8-9c21-18f016c67c90",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "88f573ae-871d-4ef9-b5a9-dae63e2efc5e",
+          "phase": "Octavos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "d6c1a10f-a925-4e32-bdb9-6a91e6c01224",
+            "name": "María Alejandra Collazos Amaya",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "competitorRed": {
+            "id": "b641edef-d341-4832-b3f0-4f208fac708c",
+            "name": "Nathalia Castro Ortega",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "14969d04-b516-4230-8427-d3e6379474c4",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "a044f664-84d7-4699-b485-81d8cb95ec13",
+          "phase": "Octavos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "feccda18-73e0-412c-953d-80cad704787e",
+            "name": "Gabriela Sofía Rodríguez Fonseca",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": {
+            "id": "c58e04d5-3edf-4cae-b002-f3c5af531804",
+            "name": "Gisselle Johanna Fontalvo Londoño",
+            "delegation": "Universidad EAN"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "14969d04-b516-4230-8427-d3e6379474c4",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "0e4693d3-f412-41e8-8e45-43741ddf801a",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "98c6d314-4bf7-4191-8c6b-8b0097044e91",
+            "name": "Angela Estefania Gomez Sanchez",
+            "delegation": "Universidad Antonio Nariño"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "7b2ca29f-64b0-4591-803e-bf88dbbcd9fe",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "8f39fa17-4f41-424c-b006-c9d8d190cfd4",
+          "phase": "Octavos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "369ba214-d1b7-4e98-876d-36b522558000",
+            "name": "Mariam Angelin Mora Suarez",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": {
+            "id": "3fd3f902-7c01-4b36-9082-ba5835bd9ed8",
+            "name": "Nicol Daniela Martinez Araque",
+            "delegation": "UDCA"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "7b2ca29f-64b0-4591-803e-bf88dbbcd9fe",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "1b27176a-fa81-4f71-841a-7185f2488493",
+          "phase": "Octavos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "1b4489ca-640f-4ad2-8807-82fb20e7f45e",
+            "name": "July Alejandra Peña Robayo",
+            "delegation": "Universidad Colegio Mayor de Cundinamarca"
+          },
+          "competitorRed": {
+            "id": "bd225d0c-0bba-4532-9e39-95b4b0bd106d",
+            "name": "Heidy Tatiana Figueroa Roa",
+            "delegation": "Universidad Pedagógica Nacional"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "1f53338a-dba4-4d4d-9eed-239f834879e0",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ae7161da-3423-45ec-abdc-467c5105c4eb",
+          "phase": "Octavos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "32e19968-3621-491b-80f4-eab278510f2e",
+            "name": "Laura Daniela Paez Vaca",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": {
+            "id": "371632a1-9c9a-49df-bc19-4057e83cf25a",
+            "name": "Mariana Montero Martinez",
+            "delegation": "Universidad de Los Andes"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "1f53338a-dba4-4d4d-9eed-239f834879e0",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "35d814a5-8794-43b8-9c21-18f016c67c90",
+          "phase": "Cuartos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "4f3d54d2-0826-4995-bd28-3dd8dd242b5d",
+            "name": "Angie Natalia Ramirez Hernandez",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "5f68e7e5-9e2b-48bc-959a-1e481336333f",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "14969d04-b516-4230-8427-d3e6379474c4",
+          "phase": "Cuartos de Final",
+          "matchNumber": 8,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "5f68e7e5-9e2b-48bc-959a-1e481336333f",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "7b2ca29f-64b0-4591-803e-bf88dbbcd9fe",
+          "phase": "Cuartos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "98c6d314-4bf7-4191-8c6b-8b0097044e91",
+            "name": "Angela Estefania Gomez Sanchez",
+            "delegation": "Universidad Antonio Nariño"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "1efde769-4c00-4ba1-b73d-b23be189612a",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "1f53338a-dba4-4d4d-9eed-239f834879e0",
+          "phase": "Cuartos de Final",
+          "matchNumber": 10,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "1efde769-4c00-4ba1-b73d-b23be189612a",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "5f68e7e5-9e2b-48bc-959a-1e481336333f",
+          "phase": "Semifinal",
+          "matchNumber": 11,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "f72f5090-cbda-4028-bac5-57e059c6a29e",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "1efde769-4c00-4ba1-b73d-b23be189612a",
+          "phase": "Semifinal",
+          "matchNumber": 12,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "f72f5090-cbda-4028-bac5-57e059c6a29e",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "f72f5090-cbda-4028-bac5-57e059c6a29e",
+          "phase": "Final",
+          "matchNumber": 13,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "949b3f79-7235-4ba8-9195-da2d634d5036",
+      "categoryTitle": "Taekwondo, Pareja, Mixto, Under 30, Traditional, Avanzado",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Pareja",
+      "gender": "Mixto",
+      "ageGroup": "Under 30",
+      "beltLevel": "Avanzado",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "ab7bcc6e-76f3-4e5c-abbd-9c1d7a537845",
+          "name": "Heidy Tatiana Figueroa Roa / Joan Andres Molina Lopez",
+          "delegation": "Universidad Pedagógica Nacional",
+          "hasWarning": false
+        },
+        {
+          "id": "13b661bf-8152-44fc-98f3-04aa517ceb18",
+          "name": "Daniel Esteban Galindo Tarazona / Mariana Montero Martinez",
+          "delegation": "Universidad de Los Andes",
+          "hasWarning": false
+        },
+        {
+          "id": "d1af4f89-8eff-4c93-8b38-a35c14376b34",
+          "name": "Angie Natalia Ramirez Hernandez / Nicolas Parga Oyola",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas",
+          "hasWarning": false
+        },
+        {
+          "id": "7c522a2c-5c62-4c4c-8b8d-81c3c0586576",
+          "name": "Gisselle Johanna Fontalvo Londoño / William Andres Parada Antonio",
+          "delegation": "Universidad EAN",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "9be1f56e-6bec-4d41-92a0-e16f291f149b",
+          "phase": "Semifinal",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "ab7bcc6e-76f3-4e5c-abbd-9c1d7a537845",
+            "name": "Heidy Tatiana Figueroa Roa / Joan Andres Molina Lopez",
+            "delegation": "Universidad Pedagógica Nacional",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "7c522a2c-5c62-4c4c-8b8d-81c3c0586576",
+            "name": "Gisselle Johanna Fontalvo Londoño / William Andres Parada Antonio",
+            "delegation": "Universidad EAN",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "467e68c8-e1d3-4daf-84e5-b8b799915092",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "78c36d40-4393-4ab3-bfa3-ed2fa691d7d9",
+          "phase": "Semifinal",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "13b661bf-8152-44fc-98f3-04aa517ceb18",
+            "name": "Daniel Esteban Galindo Tarazona / Mariana Montero Martinez",
+            "delegation": "Universidad de Los Andes",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "d1af4f89-8eff-4c93-8b38-a35c14376b34",
+            "name": "Angie Natalia Ramirez Hernandez / Nicolas Parga Oyola",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "467e68c8-e1d3-4daf-84e5-b8b799915092",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "467e68c8-e1d3-4daf-84e5-b8b799915092",
+          "phase": "Final",
+          "matchNumber": 3,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "e43295ae-c9ca-4986-8001-cc5bd85840b8",
+      "categoryTitle": "Taekwondo, Equipo, Masculino, Under 30, Traditional, Avanzado",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Equipo",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Avanzado",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "dc7cf535-363a-4bb6-9c78-6fb1c1b6aee7",
+          "name": "Jeronimo Guerra Arrieta / Nicolas Abril Robayo / Sebastian Andres Martinez Zambrano",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        },
+        {
+          "id": "b63dbaa3-c6ca-4588-a9c2-cbd3383be477",
+          "name": "Jake Samir Peña Salinas / Joan Andres Molina Lopez / Nicolas Andres Salazar Leguizamon",
+          "delegation": "Universidad Pedagógica Nacional",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "1d7d3b8b-a216-4f0f-ac34-0e22fe35c250",
+          "phase": "Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "dc7cf535-363a-4bb6-9c78-6fb1c1b6aee7",
+            "name": "Jeronimo Guerra Arrieta / Nicolas Abril Robayo / Sebastian Andres Martinez Zambrano",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "b63dbaa3-c6ca-4588-a9c2-cbd3383be477",
+            "name": "Jake Samir Peña Salinas / Joan Andres Molina Lopez / Nicolas Andres Salazar Leguizamon",
+            "delegation": "Universidad Pedagógica Nacional",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "53d6002d-7c1c-4d3b-b5c0-aac0c233ca2a",
+      "categoryTitle": "Taekwondo, Individual, Masculino, Under 30, Traditional, Negro",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Negro",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "1999daec-f8f7-43a6-83ed-17a2fd016a98",
+          "name": "Jehison Camilo Mateus Barreto",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "095cbdd7-33e0-453f-b1f3-60c5099ff88b",
+          "name": "Ivan Santiago Vargas Corredor",
+          "delegation": "Universidad Catolica de Colombia"
+        },
+        {
+          "id": "bb93ce56-8148-4dc1-94a7-f5000cc59a8a",
+          "name": "Michael Stiven Montaña Sastoque",
+          "delegation": "Universidad Santo Tomas"
+        },
+        {
+          "id": "db65af7e-3e2e-4591-982d-cd5e6162d471",
+          "name": "Julian Camilo Ramirez Gutierrez",
+          "delegation": "Universidad Santo Tomas"
+        },
+        {
+          "id": "7fb86c4f-c24d-4ca1-a7a5-c17bf5159082",
+          "name": "Alejandro Briñez Zuluaga",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "e7618db2-99c8-43bc-a503-f9e002f49584",
+          "name": "Oscar Samuel Pinilla Alvira",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "ea043334-467e-46f6-829b-2fdc319d6a97",
+          "name": "Juan Pablo Codina Serrano",
+          "delegation": "Universidad Catolica de Colombia"
+        },
+        {
+          "id": "2e2e12d0-33e0-4a3a-98b4-4961ffb368ed",
+          "name": "David Mauricio Valoyes Porras",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "8ee2da05-ea49-46e4-a38d-b402df8045a7",
+          "name": "Esteban Torres Cruz",
+          "delegation": "Universidad de Los Andes"
+        },
+        {
+          "id": "8e906a53-c6bf-496b-b9a5-875496313abf",
+          "name": "Juan Camilo Arismendi Contreras",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "8bb83b23-874f-4831-97ab-47eefb0c72a9",
+          "name": "Juan Camilo Álvarez Sandoval",
+          "delegation": "Universidad Externado de Colombia"
+        },
+        {
+          "id": "6a845e23-7b44-4703-ba1d-da1f0877fba5",
+          "name": "Daniel Alejandro Arias Cortes",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "b026f403-1030-415c-8bc0-abb4e59d9baf",
+          "name": "Hoover David Diaz Ruiz",
+          "delegation": "Universidad Nacional de Colombia"
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "e8d4bb4d-caf1-4def-9ac9-367e6953819b",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "1999daec-f8f7-43a6-83ed-17a2fd016a98",
+            "name": "Jehison Camilo Mateus Barreto",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "8f7b2792-af52-4c77-b5cb-d8ed6574992c",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "569d7ee2-3134-4490-b984-541c66108723",
+          "phase": "Octavos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "8bb83b23-874f-4831-97ab-47eefb0c72a9",
+            "name": "Juan Camilo Álvarez Sandoval",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": {
+            "id": "6a845e23-7b44-4703-ba1d-da1f0877fba5",
+            "name": "Daniel Alejandro Arias Cortes",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "8f7b2792-af52-4c77-b5cb-d8ed6574992c",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "fec250e1-a00c-4533-af75-ae4c322356b1",
+          "phase": "Octavos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "db65af7e-3e2e-4591-982d-cd5e6162d471",
+            "name": "Julian Camilo Ramirez Gutierrez",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": {
+            "id": "ea043334-467e-46f6-829b-2fdc319d6a97",
+            "name": "Juan Pablo Codina Serrano",
+            "delegation": "Universidad Catolica de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "4dbde6cb-0498-4a6b-b517-a79046161166",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "ff26f2af-6584-4cab-a9ab-e5357eb2e7db",
+          "phase": "Octavos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "2e2e12d0-33e0-4a3a-98b4-4961ffb368ed",
+            "name": "David Mauricio Valoyes Porras",
+            "delegation": "Universidad de Los Andes"
+          },
+          "competitorRed": {
+            "id": "e7618db2-99c8-43bc-a503-f9e002f49584",
+            "name": "Oscar Samuel Pinilla Alvira",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "4dbde6cb-0498-4a6b-b517-a79046161166",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "150f19fd-4430-4f79-a411-716584ab9387",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "095cbdd7-33e0-453f-b1f3-60c5099ff88b",
+            "name": "Ivan Santiago Vargas Corredor",
+            "delegation": "Universidad Catolica de Colombia"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "c4e0804a-a528-4c27-995b-32dbfb96ccd7",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "600115ff-9cef-4418-9b4b-00ac943357c7",
+          "phase": "Octavos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "8e906a53-c6bf-496b-b9a5-875496313abf",
+            "name": "Juan Camilo Arismendi Contreras",
+            "delegation": "Universidad Externado de Colombia"
+          },
+          "competitorRed": {
+            "id": "b026f403-1030-415c-8bc0-abb4e59d9baf",
+            "name": "Hoover David Diaz Ruiz",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "c4e0804a-a528-4c27-995b-32dbfb96ccd7",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "0ef24cde-11e7-4f01-8ed5-9054f0c0da6a",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "bb93ce56-8148-4dc1-94a7-f5000cc59a8a",
+            "name": "Michael Stiven Montaña Sastoque",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "acadf06b-40f9-4de1-a235-7f38d68ff6b6",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "4a894e69-b6a7-4686-9c65-ab612c3041ab",
+          "phase": "Octavos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "8ee2da05-ea49-46e4-a38d-b402df8045a7",
+            "name": "Esteban Torres Cruz",
+            "delegation": "Universidad de Los Andes"
+          },
+          "competitorRed": {
+            "id": "7fb86c4f-c24d-4ca1-a7a5-c17bf5159082",
+            "name": "Alejandro Briñez Zuluaga",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "acadf06b-40f9-4de1-a235-7f38d68ff6b6",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "8f7b2792-af52-4c77-b5cb-d8ed6574992c",
+          "phase": "Cuartos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "1999daec-f8f7-43a6-83ed-17a2fd016a98",
+            "name": "Jehison Camilo Mateus Barreto",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "b819ab25-21b4-422e-8e5a-753a0b96010d",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "4dbde6cb-0498-4a6b-b517-a79046161166",
+          "phase": "Cuartos de Final",
+          "matchNumber": 7,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "b819ab25-21b4-422e-8e5a-753a0b96010d",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "c4e0804a-a528-4c27-995b-32dbfb96ccd7",
+          "phase": "Cuartos de Final",
+          "matchNumber": 8,
+          "competitorBlue": {
+            "id": "095cbdd7-33e0-453f-b1f3-60c5099ff88b",
+            "name": "Ivan Santiago Vargas Corredor",
+            "delegation": "Universidad Catolica de Colombia"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "58cbc399-fbe0-4765-88b0-f66421bb22cf",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "acadf06b-40f9-4de1-a235-7f38d68ff6b6",
+          "phase": "Cuartos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "bb93ce56-8148-4dc1-94a7-f5000cc59a8a",
+            "name": "Michael Stiven Montaña Sastoque",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "58cbc399-fbe0-4765-88b0-f66421bb22cf",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "b819ab25-21b4-422e-8e5a-753a0b96010d",
+          "phase": "Semifinal",
+          "matchNumber": 10,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "b079d69a-8262-46c7-9242-8895313e75dd",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "58cbc399-fbe0-4765-88b0-f66421bb22cf",
+          "phase": "Semifinal",
+          "matchNumber": 11,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "b079d69a-8262-46c7-9242-8895313e75dd",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "b079d69a-8262-46c7-9242-8895313e75dd",
+          "phase": "Final",
+          "matchNumber": 12,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "d4d9e8be-b884-46ef-ad8c-7128ad40e37b",
+      "categoryTitle": "Taekwondo, Individual, Femenino, Under 30, Traditional, Negro",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Individual",
+      "gender": "Femenino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Negro",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "c130eae9-dcd4-4f5b-b269-94ff53245dcd",
+          "name": "Valentina González Gómez",
+          "delegation": "Universidad Santo Tomas"
+        },
+        {
+          "id": "ed51a44b-4f21-4978-ab7a-b0a3bb5d76da",
+          "name": "Paula Daniela Cañon Barrios",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "14a55f71-9e64-4e8c-93de-32dbf0f28ba7",
+          "name": "Laura Juliana Cañon Barrios",
+          "delegation": "Universidad Santo Tomas"
+        },
+        {
+          "id": "8b4c3217-7abd-430d-8972-53c22e759837",
+          "name": "Paula Helena Reyes Rico",
+          "delegation": "Fundacion Universitaria del Area Andina"
+        },
+        {
+          "id": "dd06e392-7c8c-4832-b544-816ec4443788",
+          "name": "Mariana Guevara Diaz",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "023d9f7f-af8e-4d44-bbc3-9f4e04dfdb23",
+          "name": "Sara Camila Alfonso Campos",
+          "delegation": "Pontificia Universidad Javeriana"
+        },
+        {
+          "id": "ad0db52f-10e6-4b29-824b-352d7ebe2457",
+          "name": "Maria Fernanda Avila Cubillos",
+          "delegation": "Universidad de La Sabana"
+        },
+        {
+          "id": "802c5136-f7e7-4f7d-9d5c-53c349238b24",
+          "name": "Angela Sofia Malagon Palomíno",
+          "delegation": "Universidad Distrital Francisco Jose de Caldas"
+        },
+        {
+          "id": "3ea33358-bce4-42c1-8a5e-adc2ee2cd28c",
+          "name": "Ana Sofia Caicedo Leal",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "5bfbf07b-9ca3-47b5-9506-c9d7f3d4a8a2",
+          "name": "Betsy Melissa Castro Chiquiza",
+          "delegation": "Universidad El Bosque"
+        },
+        {
+          "id": "4c81126a-dae5-4075-999e-f0f4186d34d6",
+          "name": "Airlyn Meribeth Vivas Vásquez",
+          "delegation": "Universidad Jorge Tadeo Lozano"
+        },
+        {
+          "id": "b0d15bc4-f0eb-49fc-9e55-d9248b141986",
+          "name": "Katherine Angelica Contreras Sanabria",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "01230456-6d60-4687-835d-803905813523",
+          "name": "Maria Estefania Figueroa Ronderos",
+          "delegation": "Universidad Nacional de Colombia"
+        },
+        {
+          "id": "65661938-ea4d-4019-a600-29788f91e8a2",
+          "name": "Maria Fernanda Valderrama Ortiz",
+          "delegation": "Universidad Santo Tomas"
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "4d502faa-2d81-4a4b-b90c-7d7520ee06be",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "c130eae9-dcd4-4f5b-b269-94ff53245dcd",
+            "name": "Valentina González Gómez",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "8c7f1e52-47ae-49a5-b693-0fb3fa3ece7f",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "7fb0b963-78d1-483d-8663-169af90f8e3f",
+          "phase": "Octavos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "5bfbf07b-9ca3-47b5-9506-c9d7f3d4a8a2",
+            "name": "Betsy Melissa Castro Chiquiza",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": {
+            "id": "b0d15bc4-f0eb-49fc-9e55-d9248b141986",
+            "name": "Katherine Angelica Contreras Sanabria",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "8c7f1e52-47ae-49a5-b693-0fb3fa3ece7f",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "42d4644d-3f7f-4dca-84a6-4795881cc433",
+          "phase": "Octavos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "65661938-ea4d-4019-a600-29788f91e8a2",
+            "name": "Maria Fernanda Valderrama Ortiz",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": {
+            "id": "802c5136-f7e7-4f7d-9d5c-53c349238b24",
+            "name": "Angela Sofia Malagon Palomíno",
+            "delegation": "Universidad Distrital Francisco Jose de Caldas"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "6ae56e93-f18b-4d60-822f-e26d1e40432b",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "e7fab599-7b53-4064-8b8a-ce5fae3d23ef",
+          "phase": "Octavos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "dd06e392-7c8c-4832-b544-816ec4443788",
+            "name": "Mariana Guevara Diaz",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": {
+            "id": "ad0db52f-10e6-4b29-824b-352d7ebe2457",
+            "name": "Maria Fernanda Avila Cubillos",
+            "delegation": "Universidad de La Sabana"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "6ae56e93-f18b-4d60-822f-e26d1e40432b",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "a526d008-2180-41e6-932e-026e8826a364",
+          "phase": "Octavos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "ed51a44b-4f21-4978-ab7a-b0a3bb5d76da",
+            "name": "Paula Daniela Cañon Barrios",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "7dc3f4e5-45ac-4625-8c58-d5404e3aa468",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "4cd409b5-3673-45e6-838b-f72fb8d27940",
+          "phase": "Octavos de Final",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "3ea33358-bce4-42c1-8a5e-adc2ee2cd28c",
+            "name": "Ana Sofia Caicedo Leal",
+            "delegation": "Universidad El Bosque"
+          },
+          "competitorRed": {
+            "id": "01230456-6d60-4687-835d-803905813523",
+            "name": "Maria Estefania Figueroa Ronderos",
+            "delegation": "Universidad Nacional de Colombia"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "7dc3f4e5-45ac-4625-8c58-d5404e3aa468",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "73a354e4-de93-48d6-a3fd-7d1af37477a1",
+          "phase": "Octavos de Final",
+          "matchNumber": 5,
+          "competitorBlue": {
+            "id": "14a55f71-9e64-4e8c-93de-32dbf0f28ba7",
+            "name": "Laura Juliana Cañon Barrios",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": {
+            "id": "4c81126a-dae5-4075-999e-f0f4186d34d6",
+            "name": "Airlyn Meribeth Vivas Vásquez",
+            "delegation": "Universidad Jorge Tadeo Lozano"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "26239520-56c6-438a-82d4-6c4c1472028d",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "c2b75cbe-3ba3-450b-b0a9-c1cab4234f3e",
+          "phase": "Octavos de Final",
+          "matchNumber": 6,
+          "competitorBlue": {
+            "id": "023d9f7f-af8e-4d44-bbc3-9f4e04dfdb23",
+            "name": "Sara Camila Alfonso Campos",
+            "delegation": "Pontificia Universidad Javeriana"
+          },
+          "competitorRed": {
+            "id": "8b4c3217-7abd-430d-8972-53c22e759837",
+            "name": "Paula Helena Reyes Rico",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "26239520-56c6-438a-82d4-6c4c1472028d",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "8c7f1e52-47ae-49a5-b693-0fb3fa3ece7f",
+          "phase": "Cuartos de Final",
+          "matchNumber": 7,
+          "competitorBlue": {
+            "id": "c130eae9-dcd4-4f5b-b269-94ff53245dcd",
+            "name": "Valentina González Gómez",
+            "delegation": "Universidad Santo Tomas"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "89ac94bc-e0ad-487c-a792-72b2f9599bab",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "6ae56e93-f18b-4d60-822f-e26d1e40432b",
+          "phase": "Cuartos de Final",
+          "matchNumber": 8,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "89ac94bc-e0ad-487c-a792-72b2f9599bab",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "7dc3f4e5-45ac-4625-8c58-d5404e3aa468",
+          "phase": "Cuartos de Final",
+          "matchNumber": 9,
+          "competitorBlue": {
+            "id": "ed51a44b-4f21-4978-ab7a-b0a3bb5d76da",
+            "name": "Paula Daniela Cañon Barrios",
+            "delegation": "Fundacion Universitaria del Area Andina"
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "77295b97-164e-4296-8226-94bcb086a807",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "26239520-56c6-438a-82d4-6c4c1472028d",
+          "phase": "Cuartos de Final",
+          "matchNumber": 10,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "77295b97-164e-4296-8226-94bcb086a807",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "89ac94bc-e0ad-487c-a792-72b2f9599bab",
+          "phase": "Semifinal",
+          "matchNumber": 11,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "75856d05-bb7b-4e62-981c-afd90cc03ba5",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "77295b97-164e-4296-8226-94bcb086a807",
+          "phase": "Semifinal",
+          "matchNumber": 12,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "75856d05-bb7b-4e62-981c-afd90cc03ba5",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "75856d05-bb7b-4e62-981c-afd90cc03ba5",
+          "phase": "Final",
+          "matchNumber": 13,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "89b83a55-d0f3-41bc-a59e-e036294b25a4",
+      "categoryTitle": "Taekwondo, Pareja, Mixto, Under 30, Traditional, Negro",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Pareja",
+      "gender": "Mixto",
+      "ageGroup": "Under 30",
+      "beltLevel": "Negro",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "b919a6ce-9786-44ec-82b7-4a00a54a3229",
+          "name": "Julian Camilo Ramirez Gutierrez / Laura Juliana Cañon Barrios",
+          "delegation": "Universidad Santo Tomas",
+          "hasWarning": false
+        },
+        {
+          "id": "2bc24f6b-4157-4919-8206-26532be28a4c",
+          "name": "Michael Stiven Montaña Sastoque / Valentina González Gómez",
+          "delegation": "Universidad Santo Tomas",
+          "hasWarning": false
+        },
+        {
+          "id": "6ed50d8c-b1d5-4121-9a6d-0e7c56a7e946",
+          "name": "Jehison Camilo Mateus Barreto / Paula Daniela Cañon Barrios",
+          "delegation": "Fundacion Universitaria del Area Andina",
+          "hasWarning": false
+        },
+        {
+          "id": "f7ef8ede-cb1a-475f-af48-4b3f96ab677e",
+          "name": "Mariana Guevara Diaz / Mateo Acosta Ortiz",
+          "delegation": "Pontificia Universidad Javeriana",
+          "hasWarning": false
+        },
+        {
+          "id": "f5fbf155-67a2-4ffd-9ed8-30148fd9a256",
+          "name": "Oscar Samuel Pinilla Alvira / Sara Camila Alfonso Campos",
+          "delegation": "Pontificia Universidad Javeriana",
+          "hasWarning": false
+        },
+        {
+          "id": "f8e0164f-cd7b-4ee3-978b-b0552e88fe31",
+          "name": "Daniel Alejandro Arias Cortes / Isabel Gimenez Villalobos",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        },
+        {
+          "id": "283b7408-d944-4618-bb4d-1a5d014c5895",
+          "name": "Hoover David Diaz Ruiz / Katherine Angelica Contreras Sanabria",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "c15875c5-129e-4026-a01f-055e505e5dab",
+          "phase": "Cuartos de Final",
+          "matchNumber": 0,
+          "competitorBlue": {
+            "id": "b919a6ce-9786-44ec-82b7-4a00a54a3229",
+            "name": "Julian Camilo Ramirez Gutierrez / Laura Juliana Cañon Barrios",
+            "delegation": "Universidad Santo Tomas",
+            "hasWarning": false
+          },
+          "competitorRed": null,
+          "winner": "blue",
+          "isReady": true,
+          "nextMatchId": "4d092c4e-33b6-4002-85bb-15076f84bf62",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": [],
+          "byeWinner": "blue"
+        },
+        {
+          "id": "9ab51a34-e96c-4d73-8763-0371579b6c3e",
+          "phase": "Cuartos de Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "f5fbf155-67a2-4ffd-9ed8-30148fd9a256",
+            "name": "Oscar Samuel Pinilla Alvira / Sara Camila Alfonso Campos",
+            "delegation": "Pontificia Universidad Javeriana",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "f8e0164f-cd7b-4ee3-978b-b0552e88fe31",
+            "name": "Daniel Alejandro Arias Cortes / Isabel Gimenez Villalobos",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "4d092c4e-33b6-4002-85bb-15076f84bf62",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "3300dc3c-f02f-4f9b-a9f7-17463f266610",
+          "phase": "Cuartos de Final",
+          "matchNumber": 2,
+          "competitorBlue": {
+            "id": "2bc24f6b-4157-4919-8206-26532be28a4c",
+            "name": "Michael Stiven Montaña Sastoque / Valentina González Gómez",
+            "delegation": "Universidad Santo Tomas",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "6ed50d8c-b1d5-4121-9a6d-0e7c56a7e946",
+            "name": "Jehison Camilo Mateus Barreto / Paula Daniela Cañon Barrios",
+            "delegation": "Fundacion Universitaria del Area Andina",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "0bb84dcf-5363-42a4-8889-3e5e2b88a0ce",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "20c1956b-a1a9-44f0-8b23-a9412645d0c8",
+          "phase": "Cuartos de Final",
+          "matchNumber": 3,
+          "competitorBlue": {
+            "id": "f7ef8ede-cb1a-475f-af48-4b3f96ab677e",
+            "name": "Mariana Guevara Diaz / Mateo Acosta Ortiz",
+            "delegation": "Pontificia Universidad Javeriana",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "283b7408-d944-4618-bb4d-1a5d014c5895",
+            "name": "Hoover David Diaz Ruiz / Katherine Angelica Contreras Sanabria",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": "0bb84dcf-5363-42a4-8889-3e5e2b88a0ce",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "4d092c4e-33b6-4002-85bb-15076f84bf62",
+          "phase": "Semifinal",
+          "matchNumber": 4,
+          "competitorBlue": {
+            "id": "b919a6ce-9786-44ec-82b7-4a00a54a3229",
+            "name": "Julian Camilo Ramirez Gutierrez / Laura Juliana Cañon Barrios",
+            "delegation": "Universidad Santo Tomas",
+            "hasWarning": false
+          },
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "4f052a55-8aa1-472d-808f-bf03b93a957f",
+          "winnerTargetSlot": "blue",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "0bb84dcf-5363-42a4-8889-3e5e2b88a0ce",
+          "phase": "Semifinal",
+          "matchNumber": 5,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": "4f052a55-8aa1-472d-808f-bf03b93a957f",
+          "winnerTargetSlot": "red",
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        },
+        {
+          "id": "4f052a55-8aa1-472d-808f-bf03b93a957f",
+          "phase": "Final",
+          "matchNumber": 6,
+          "competitorBlue": null,
+          "competitorRed": null,
+          "winner": null,
+          "isReady": false,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "d8d59871-b90f-4bc7-8df3-15c71e375e45",
+      "categoryTitle": "Taekwondo, Equipo, Masculino, Under 30, Traditional, Negro",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Equipo",
+      "gender": "Masculino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Negro",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "731197e4-04e4-4602-899a-739a610ebe38",
+          "name": "Alejandro Briñez Zuluaga / Jehison Camilo Mateus Barreto / Juan Nicolás Cabral Sanchez",
+          "delegation": "Fundacion Universitaria del Area Andina",
+          "hasWarning": false
+        },
+        {
+          "id": "02d6e275-7068-43c9-8abb-f23b74ca1f42",
+          "name": "Daniel Alejandro Arias Cortes / Dierick Sebastian Rodriguez Malagon / Hoover David Diaz Ruiz",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "e45c0f05-f68b-4872-b532-029415dc0081",
+          "phase": "Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "731197e4-04e4-4602-899a-739a610ebe38",
+            "name": "Alejandro Briñez Zuluaga / Jehison Camilo Mateus Barreto / Juan Nicolás Cabral Sanchez",
+            "delegation": "Fundacion Universitaria del Area Andina",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "02d6e275-7068-43c9-8abb-f23b74ca1f42",
+            "name": "Daniel Alejandro Arias Cortes / Dierick Sebastian Rodriguez Malagon / Hoover David Diaz Ruiz",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    },
+    {
+      "categoryId": "64adbce3-ce58-480e-81c4-bd7335114e34",
+      "categoryTitle": "Taekwondo, Equipo, Femenino, Under 30, Traditional, Negro",
+      "system": "Pirámide",
+      "discipline": "Taekwondo",
+      "modality": "Traditional",
+      "division": "Equipo",
+      "gender": "Femenino",
+      "ageGroup": "Under 30",
+      "beltLevel": "Negro",
+      "poomsaeConfig": {
+        "count": 1,
+        "useLottery": true,
+        "poomsaes": [
+          null,
+          null
+        ]
+      },
+      "competitors": [
+        {
+          "id": "4b68a4a0-e065-4ff5-9394-8869a6ddbd7c",
+          "name": "Laura Juliana Cañon Barrios / Maria Fernanda Valderrama Ortiz / Valentina González Gómez",
+          "delegation": "Universidad Santo Tomas",
+          "hasWarning": false
+        },
+        {
+          "id": "7c675bef-f8fd-47c0-a5a0-89bfe652b13b",
+          "name": "Isabel Gimenez Villalobos / Katherine Angelica Contreras Sanabria / Maria Estefania Figueroa Ronderos",
+          "delegation": "Universidad Nacional de Colombia",
+          "hasWarning": false
+        }
+      ],
+      "pyramidMatches": [
+        {
+          "id": "d202ffcf-7646-47b1-96b4-6a0dab730326",
+          "phase": "Final",
+          "matchNumber": 1,
+          "competitorBlue": {
+            "id": "4b68a4a0-e065-4ff5-9394-8869a6ddbd7c",
+            "name": "Laura Juliana Cañon Barrios / Maria Fernanda Valderrama Ortiz / Valentina González Gómez",
+            "delegation": "Universidad Santo Tomas",
+            "hasWarning": false
+          },
+          "competitorRed": {
+            "id": "7c675bef-f8fd-47c0-a5a0-89bfe652b13b",
+            "name": "Isabel Gimenez Villalobos / Katherine Angelica Contreras Sanabria / Maria Estefania Figueroa Ronderos",
+            "delegation": "Universidad Nacional de Colombia",
+            "hasWarning": false
+          },
+          "winner": null,
+          "isReady": true,
+          "nextMatchId": null,
+          "winnerTargetSlot": null,
+          "scoreBlueP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP1": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreBlueP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "scoreRedP2": {
+            "technical": [],
+            "presentation": []
+          },
+          "poomsaes": []
+        }
+      ]
+    }
+  ]
+}

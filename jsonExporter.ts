@@ -28,23 +28,7 @@ export const exportCategoryToJson = async (event: Event, category: Category) => 
     const fileName = `Export_Kalyo_${category.title.replace(/[^a-z0-9]/gi, '_')}.json`;
     const uint8Array = new TextEncoder().encode(data);
 
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array);
-            if (savedPath) alert(`Archivo JSON guardado en: ${savedPath}`);
-        } catch (error) {
-            console.error("Error al exportar JSON:", error);
-        }
-    } else {
-        const blob = new Blob([data], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    await saveFileToEventFolder(event.name, fileName, uint8Array);
 };
 
 export const exportEventToJson = async (event: Event) => {
@@ -52,23 +36,7 @@ export const exportEventToJson = async (event: Event) => {
     const fileName = `Backup_Evento_${event.name.replace(/[^a-z0-9]/gi, '_')}.json`;
     const uint8Array = new TextEncoder().encode(data);
 
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array);
-            if (savedPath) alert(`Backup completo del evento guardado en: ${savedPath}`);
-        } catch (error) {
-            console.error("Error al exportar JSON del evento:", error);
-        }
-    } else {
-        const blob = new Blob([data], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    await saveFileToEventFolder(event.name, fileName, uint8Array);
 };
 
 export const exportMultipleCategoriesToJson = async (event: Event, categories: Category[]) => {
@@ -99,21 +67,5 @@ export const exportMultipleCategoriesToJson = async (event: Event, categories: C
     const fileName = `Export_Kalyo_${event.name.replace(/[^a-z0-9]/gi, '_')}.json`;
     const uint8Array = new TextEncoder().encode(data);
 
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array);
-            if (savedPath) alert(`Archivo de intercambio JSON guardado en: ${savedPath}\n\nEste archivo puede ser cargado en otro computador usando la opción "Importar Pirámides".`);
-        } catch (error) {
-            console.error("Error al exportar JSON:", error);
-        }
-    } else {
-        const blob = new Blob([data], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    await saveFileToEventFolder(event.name, fileName, uint8Array);
 };

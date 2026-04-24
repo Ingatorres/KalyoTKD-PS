@@ -4,7 +4,7 @@ import { Category, Event, Screen, CompetitionSystem, CompetitorScore } from '../
 import { Header } from './Header';
 import { sortCompetitors, getTieBreakDetails } from '../src/scoring';
 import { exportCategoryToExcel } from '../excelExporter';
-import { exportCategoryToPdf } from '../pdfExporterEnhanced';
+import { exportCategoryToPdf, exportFinalResultsToPdf } from '../pdfExporterEnhanced';
 import { exportCategoryToJson } from '../jsonExporter';
 import { ExportChoiceModal } from './ExportChoiceModal';
 
@@ -43,11 +43,20 @@ const RoundsResults: React.FC<{ category: Category, event: Event }> = ({ categor
                                 ? 'bg-amber-50 dark:bg-amber-500/10 hover:bg-amber-100 dark:hover:bg-amber-500/20' 
                                 : 'hover:bg-slate-50 dark:hover:bg-white/5 transition-colors';
                             
-                            const medalColor = index === 0 ? 'text-yellow-500 dark:text-yellow-400' : index === 1 ? 'text-slate-400 dark:text-gray-300' : index === 2 ? 'text-amber-600' : 'text-slate-400';
+                            const medalIcon = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : null;
+                            const badgeBg = index === 0 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300 ring-1 ring-yellow-400/50'
+                                : index === 1 ? 'bg-slate-100 text-slate-600 dark:bg-slate-500/20 dark:text-slate-300 ring-1 ring-slate-400/50'
+                                : index === 2 ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 ring-1 ring-amber-500/50'
+                                : 'bg-slate-50 text-slate-500 dark:bg-slate-800 dark:text-slate-400';
 
                             return (
                                 <tr key={score.id} className={rowClass}>
-                                    <td className={`px-6 py-4 whitespace-nowrap text-sm font-black ${medalColor}`}>{index + 1}°</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${badgeBg}`}>
+                                            {medalIcon && <span className="text-base leading-none">{medalIcon}</span>}
+                                            {index + 1}°
+                                        </span>
+                                    </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-900 dark:text-white">{score.name || 'N/A'}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">{score.delegation || 'N/A'}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-right font-mono text-blue-600 dark:text-blue-300">{(score.techAvg || 0).toFixed(2)}</td>
@@ -153,9 +162,19 @@ const PyramidResults: React.FC<{ category: Category, event: Event }> = ({ catego
                                     const medalColorClass = winner.medal === 'Oro' ? 'text-yellow-500 dark:text-yellow-400' : winner.medal === 'Plata' ? 'text-slate-400 dark:text-gray-300' : winner.medal === 'Bronce' ? 'text-amber-600' : 'text-slate-400';
                                     const rowClass = 'hover:bg-slate-50 dark:hover:bg-white/5 transition-colors';
 
+                                    const placeIcon = winner.place === 1 ? '🥇' : winner.place === 2 ? '🥈' : '🥉';
+                                    const placeBg = winner.place === 1 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300 ring-1 ring-yellow-400/50'
+                                        : winner.place === 2 ? 'bg-slate-100 text-slate-600 dark:bg-slate-500/20 dark:text-slate-300 ring-1 ring-slate-400/50'
+                                        : 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 ring-1 ring-amber-500/50';
+
                                     return (
                                         <tr key={index} className={rowClass}>
-                                            <td className={`px-6 py-4 whitespace-nowrap text-sm font-black text-slate-900 dark:text-white`}>{winner.place}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${placeBg}`}>
+                                                    <span className="text-base leading-none">{placeIcon}</span>
+                                                    {winner.place}°
+                                                </span>
+                                            </td>
                                             <td className={`px-6 py-4 whitespace-nowrap text-sm font-bold ${medalColorClass} uppercase tracking-wider`}>{winner.medal}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-900 dark:text-white">{winner.competitor?.name || 'N/D'}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">{winner.competitor?.delegation || 'N/D'}</td>
@@ -209,6 +228,14 @@ export const ResultsViewer: React.FC<ResultsViewerProps> = ({ event, category, s
                         onSelectPdf={() => exportCategoryToPdf(event, category, category.pyramidMatches || [])}
                         onSelectExcel={() => exportCategoryToExcel(event, category)}
                         onSelectJson={() => exportCategoryToJson(event, category)}
+                        onSelectFinalResults={() => {
+                            console.log("Click en Premiación desde ResultsViewer");
+                            alert("Generando Reporte de Resultados Finales para esta categoría...");
+                            exportFinalResultsToPdf(event, [category]).catch(err => {
+                                console.error("Error en exportFinalResultsToPdf:", err);
+                                alert("Error al generar PDF: " + err);
+                            });
+                        }}
                     />
                     <button 
                         onClick={() => {

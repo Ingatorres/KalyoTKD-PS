@@ -7,6 +7,7 @@ interface PyramidBracketProps {
   matches: PyramidMatch[];
   isEditable?: boolean;
   onMatchUpdate?: (matches: PyramidMatch[]) => void;
+  onResetMatch?: (matchId: string) => void;
 }
 
 interface DraggableCompetitorProps {
@@ -183,6 +184,30 @@ export const PyramidBracket: React.FC<PyramidBracketProps> = ({ matches, isEdita
                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                              <span className="text-[8px] font-bold text-emerald-600 uppercase">Listo</span>
                         </div>
+                    )}
+                    {isEditable && match.winner && !match.byeWinner && (
+                        <button 
+                            onClick={() => {
+                                const pin = window.prompt("Ingrese PIN de corrección (0913):");
+                                if (pin === "0913") {
+                                    if (onMatchUpdate) {
+                                        // The actual logic will be handled by the parent or via a new helper
+                                        // But for now, we'll just trigger a callback if provided
+                                        // Actually, let's just use onMatchUpdate with the reset logic if we can
+                                        // Better: add onResetMatch to the props
+                                        if (onResetMatch) {
+                                            onResetMatch(match.id);
+                                        }
+                                    }
+                                } else if (pin !== null) {
+                                    alert("PIN Incorrecto");
+                                }
+                            }}
+                            className="bg-red-100 hover:bg-red-200 text-red-700 text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter transition-colors"
+                            title="Corregir resultado"
+                        >
+                            Corregir
+                        </button>
                     )}
                 </div>
                 

@@ -369,26 +369,7 @@ export const exportEventToPdf = async (event: Event, options: PdfExportOptions =
 
     // --- Save File ---
     const fileName = `Informe_${event.name.replace(/ /g, '_')}.pdf`;
-    
-    // Check if running in Tauri
-    // @ts-ignore
-    if (window.__TAURI__) {
-        try {
-            const pdfOutput = doc.output('arraybuffer');
-            const uint8Array = new Uint8Array(pdfOutput);
-            const savedPath = await saveFileToEventFolder(event.name, fileName, uint8Array);
-
-            if (savedPath) {
-                console.log(`PDF guardado automáticamente en: ${savedPath}`);
-                alert(`Informe PDF guardado exitosamente en: ${savedPath}`);
-            } else {
-                alert('Error al guardar el informe PDF automáticamente.');
-            }
-        } catch (error) {
-            console.error("Error al guardar PDF en Tauri:", error);
-            alert('Error crítico al guardar PDF: ' + JSON.stringify(error));
-        }
-    } else {
-        doc.save(fileName);
-    }
+    const pdfOutput = doc.output('arraybuffer');
+    const uint8Array = new Uint8Array(pdfOutput);
+    await saveFileToEventFolder(event.name, fileName, uint8Array);
 };

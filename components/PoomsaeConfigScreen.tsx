@@ -4,6 +4,7 @@ import { Event, Category, Screen, CompetitionSystem, Competitor, PoomsaeConfig, 
 import { Header } from './Header';
 import { getPoomsaeList, drawPoomsaes } from '../data/poomsaeData'; 
 import { generatePyramidBrackets } from "../src/pyramidGenerator";
+import { resetMatchInPyramid } from '../src/pyramidLogic';
 import { updatePdi, importCsvFile } from '../tauriUtils';
 import Papa from 'papaparse';
 import {
@@ -587,6 +588,26 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
     }
   };
 
+  const handleResetMatch = (matchId: string) => {
+    const updatedMatches = resetMatchInPyramid(category.pyramidMatches, matchId);
+    const updatedCategory = {
+        ...category,
+        pyramidMatches: updatedMatches
+    };
+    updateCategory(updatedCategory);
+    
+    // Sync with PDI
+    updatePdi({
+      view: 'PYRAMID_BRACKET',
+      data: {
+        categoryTitle: category.title,
+        pyramidMatches: updatedMatches,
+      }
+    });
+    
+    alert("Encuentro reiniciado. Puede volver a configurar e iniciar el encuentro.");
+  };
+
 
   const handleStartFreestyleCompetition = () => {
     if (competitors.length === 0) {
@@ -963,6 +984,7 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                             matches={category.pyramidMatches} 
                             isEditable={true} 
                             onMatchUpdate={handleBracketUpdate} 
+                            onResetMatch={handleResetMatch}
                         />
                     </div>
                 </div>

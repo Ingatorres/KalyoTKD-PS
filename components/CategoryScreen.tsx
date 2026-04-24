@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Event, Category, Screen, CompetitionSystem, PoomsaeConfig } from '../types';
 import { Header } from './Header';
 import { exportCategoryToExcel } from '../excelExporter';
-import { exportCategoryToPdf, exportMultipleCategoriesToPdf } from '../pdfExporterEnhanced';
+import { exportCategoryToPdf, exportMultipleCategoriesToPdf, exportFinalResultsToPdf } from '../pdfExporterEnhanced';
 import { exportCategoryToJson, exportMultipleCategoriesToJson } from '../jsonExporter';
 import { ExportChoiceModal } from './ExportChoiceModal';
 import { sortCategories } from '../categorySorter';
@@ -432,6 +432,10 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
         onSelectPdf={() => executeBulkExport('pdf')}
         onSelectExcel={() => executeBulkExport('excel')}
         onSelectJson={() => executeBulkExport('json')}
+        onSelectFinalResults={() => {
+            const selectedCats = event.categories.filter(c => exportTargetIds.includes(c.id));
+            exportFinalResultsToPdf(event, selectedCats);
+        }}
       />
     </div>
   );
