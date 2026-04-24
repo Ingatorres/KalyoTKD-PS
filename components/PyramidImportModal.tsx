@@ -88,10 +88,10 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
       <div className="bg-surface-container-lowest rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-outline-variant/30">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-br from-primary to-primary/90 text-white p-8 flex justify-between items-center">
+        <div className="flex-shrink-0 sticky top-0 bg-gradient-to-br from-primary to-primary/90 text-white p-8 flex justify-between items-center">
           <div>
             <h2 className="text-3xl font-black mb-1">Importar Pirámides</h2>
             <p className="text-sm text-white/80">Carga datos de torneos desde otro dispositivo</p>
@@ -108,7 +108,7 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
         <div className="overflow-y-auto flex-1 p-8 space-y-6">
           {/* Validation Errors - Visible in any step if they exist */}
           {validationErrors.length > 0 && (
-            <div className="bg-error-container/30 border-l-4 border-error rounded-2xl p-6">
+            <div className="flex-shrink-0 bg-error-container/30 border-l-4 border-error rounded-2xl p-6">
               <p className="font-black text-error text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
                 <span className="text-lg">⚠️</span> {step === 'file-select' ? 'Error al cargar' : 'Errores de validación'}
               </p>
@@ -137,7 +137,7 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
                 <button
                   onClick={handleFileSelect}
                   disabled={isLoading}
-                  className="w-full py-4 bg-primary hover:bg-primary/90 disabled:bg-outline-variant/50 text-white font-black rounded-2xl transition-all duration-300 uppercase tracking-wider text-sm disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-primary hover:bg-primary/90 disabled:bg-outline-variant/50 text-white font-black rounded-2xl transition-colors uppercase tracking-wider text-sm disabled:cursor-not-allowed"
                 >
                   {isLoading ? '⏳ Cargando...' : '📂 Seleccionar archivo JSON'}
                 </button>
@@ -182,7 +182,7 @@ export const PyramidImportModal: React.FC<PyramidImportModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 bg-surface-container border-t border-outline-variant/30 p-6 flex gap-3 justify-end">
+        <div className="flex-shrink-0 sticky bottom-0 bg-surface-container border-t border-outline-variant/30 p-6 flex gap-3 justify-end">
           <button
             onClick={onClose}
             className="px-6 py-3 bg-outline-variant/20 hover:bg-outline-variant/30 text-on-surface rounded-2xl font-black transition-colors uppercase text-xs tracking-wider"
