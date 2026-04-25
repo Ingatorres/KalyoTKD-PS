@@ -222,7 +222,15 @@ async function drawCategoryPage(
         doc.setLineWidth(0.15);
         doc.line(x, cardY + HALF, x + CARD_W, cardY + HALF);
 
-        // Poomsae abbreviation on top right
+        // Match Number (Esquina superior derecha en negrilla)
+        if (match.matchNumber) {
+            doc.setFontSize(5 * scaleFactor);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(TEXT_DARK[0], TEXT_DARK[1], TEXT_DARK[2]);
+            doc.text(`#${match.matchNumber}`, x + CARD_W - 1.5, cardY + 3.5, { align: 'right' });
+        }
+
+        // Poomsae abbreviation on top right (debajo del número de match si existe)
         if (match.poomsaes && match.poomsaes.length > 0 && match.poomsaes[0]) {
           const poomsaeText = match.poomsaes.filter(Boolean).map(p => {
             const parts = (p as string).split(' ');
@@ -231,7 +239,8 @@ async function drawCategoryPage(
           doc.setFontSize(3.5 * scaleFactor);
           doc.setFont('helvetica', 'italic');
           doc.setTextColor(MID_GRAY[0], MID_GRAY[1], MID_GRAY[2]);
-          doc.text(poomsaeText, x + CARD_W - 1.5, cardY + 3, { align: 'right' });
+          const poomsaeY = match.matchNumber ? cardY + 6.5 : cardY + 3.5;
+          doc.text(poomsaeText, x + CARD_W - 1.5, poomsaeY, { align: 'right' });
         }
 
         // === BLUE HALF ===
