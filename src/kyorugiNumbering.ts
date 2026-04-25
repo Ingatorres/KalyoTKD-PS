@@ -78,41 +78,71 @@ export const generateGlobalNumbering = (event: Event, numAreas: number): Event =
     let currentStartId = 1;
     let highestIdUsed = 0;
 
+    // Track the last match number assigned to each category to validate R >= O * 2
+    const lastMatchNumberPerCat: Record<string, number> = {};
+
     // Helper to process a wave of matches for a specific category with jump logic
     const processWaveWithJump = (cat: Category, validPhases: string[]) => {
         const matchesInWave = cat.pyramidMatches.filter(m => !m.byeWinner && validPhases.includes(m.phase));
         
         if (matchesInWave.length > 0) {
             let id = currentStartId;
+            const firstMatchId = id;
+
+            // Validation: R = MatchID(Ronda n) - MatchID(Ronda n-1) >= O * 2
+            if (lastMatchNumberPerCat[cat.id] !== undefined) {
+                const recoveryGap = firstMatchId - lastMatchNumberPerCat[cat.id];
+                if (recoveryGap < (jump * 2)) {
+                    // In a real scenario, we might want to adjust currentStartId instead of failing,
+                    // but the spec says "el sistema bloquea la generación".
+                    // We'll throw a specific error that the UI can catch.
+                    throw new Error(`Violación de recuperación fisiológica en ${cat.title}. Brecha: ${recoveryGap}, Requerido: ${jump * 2}.`);
+                }
+            }
+
             for (const match of matchesInWave) {
                 match.matchNumber = id++;
                 if (id - 1 > highestIdUsed) highestIdUsed = id - 1;
             }
             
-            // Apply Differential Offset
+            lastMatchNumberPerCat[cat.id] = id - 1; // Store the last number of this wave
+
+            // Apply Differential Offset (StartMatch(Cat i) = StartMatch(Cat i-1) + O)
             const blocksNeeded = Math.ceil(matchesInWave.length / jump) || 1;
             currentStartId += blocksNeeded * jump;
         }
     };
 
-    // 1. Ola I (Rondas de Apertura)
-    for (const cat of sortedCats) {
-        processWaveWithJump(cat, OLA_1_PHASES);
-    }
-
-    // 2. Ola II (Rondas de Progresión)
-    for (const cat of sortedCats) {
-        processWaveWithJump(cat, OLA_2_PHASES);
-    }
-
-    // 3. Ola III (The Championship Wave - Finales Consecutivas)
-    // No differential applied. Start consecutively after the highest ID used.
-    let finalsStartId = highestIdUsed + 1;
-    for (const cat of sortedCats) {
-        const matchesInWave = cat.pyramidMatches.filter(m => !m.byeWinner && OLA_3_PHASES.includes(m.phase));
-        for (const match of matchesInWave) {
-            match.matchNumber = finalsStartId++;
+    try {
+        // 1. Ola I (Rondas de Apertura - 16avos y 8vos)
+        for (const cat of sortedCats) {
+            processWaveWithJump(cat, OLA_1_PHASES);
         }
+
+        // 2. Ola II (Rondas de Progresión - Cuartos y Semis)
+        for (const cat of sortedCats) {
+            processWaveWithJump(cat, OLA_2_PHASES);
+        }
+
+        // 3. Ola III (The Championship Wave - Finales Consecutivas)
+        // No differential applied. Start consecutively after the highest ID used.
+        let finalsStartId = highestIdUsed + 1;
+        for (const cat of sortedCats) {
+            const matchesInWave = cat.pyramidMatches.filter(m => !m.byeWinner && OLA_3_PHASES.includes(m.phase));
+            for (const match of matchesInWave) {
+                // Final validation even for Ola III
+                if (lastMatchNumberPerCat[cat.id] !== undefined) {
+                    const recoveryGap = finalsStartId - lastMatchNumberPerCat[cat.id];
+                    if (recoveryGap < (jump * 2)) {
+                        throw new Error(`Violación de recuperación en Final de ${cat.title}. Brecha: ${recoveryGap}, Requerido: ${jump * 2}.`);
+                    }
+                }
+                match.matchNumber = finalsStartId++;
+            }
+        }
+    } catch (error: any) {
+        // Rethrow to be handled by the UI
+        throw error;
     }
 
     return newEvent;

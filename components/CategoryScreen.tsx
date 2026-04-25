@@ -273,9 +273,13 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
         return;
     }
 
-    const newEvent = generateGlobalNumbering(event, numAreas);
-    updateEvent(newEvent);
-    alert(`Numeración Automática completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+    try {
+        const newEvent = generateGlobalNumbering(event, numAreas);
+        updateEvent(newEvent);
+        alert(`Numeración Automática completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+    } catch (error: any) {
+        alert(`Error en la numeración: ${error.message}`);
+    }
   };
 
   const handleResetNumbering = () => {
