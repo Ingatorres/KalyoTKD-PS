@@ -34,29 +34,24 @@ const GENDER_ORDER: Record<string, number> = {
 
 const sortKyorugiCategories = (cats: Category[]): Category[] => {
     return [...cats].sort((a, b) => {
-        // 1. Age
         const ageA = AGE_ORDER[a.ageGroup] || 99;
         const ageB = AGE_ORDER[b.ageGroup] || 99;
         if (ageA !== ageB) return ageA - ageB;
 
-        // 2. Belt
         const beltA = BELT_ORDER[a.beltLevel] || 99;
         const beltB = BELT_ORDER[b.beltLevel] || 99;
         if (beltA !== beltB) return beltA - beltB;
 
-        // 3. Gender
         const genA = GENDER_ORDER[a.gender] || 99;
         const genB = GENDER_ORDER[b.gender] || 99;
         if (genA !== genB) return genA - genB;
 
-        // 4. Weight (Lexicographical or custom, simple string compare for now)
         const wA = a.weight || '';
         const wB = b.weight || '';
         return wA.localeCompare(wB);
     });
 };
 
-// Phase ordering (from earliest rounds to final)
 const PHASE_ORDER = [
     'Ronda de 128', 'Ronda de 64', '32avos de Final', '16avos de Final', 
     'Octavos de Final', 'Cuartos de Final', 'Semifinal', 'Final'
@@ -64,7 +59,7 @@ const PHASE_ORDER = [
 
 const getPhaseWeight = (phase: string): number => {
     const idx = PHASE_ORDER.indexOf(phase);
-    return idx === -1 ? 99 : idx; // Earliest rounds first
+    return idx === -1 ? 99 : idx;
 };
 
 export const generateGlobalNumbering = (event: Event, numAreas: number): Event => {
@@ -76,47 +71,75 @@ export const generateGlobalNumbering = (event: Event, numAreas: number): Event =
     const sortedCats = sortKyorugiCategories(kyorugiCats);
     const jump = getJumpDifferential(numAreas);
 
-    // Prepare match queues per category
-    const catQueues: { catId: string, matches: PyramidMatch[] }[] = sortedCats.map(cat => {
-        // Get only REAL matches (no BYEs)
+    // Group matches per category into phases
+    const catQueues: { catId: string, phases: PyramidMatch[][] }[] = sortedCats.map(cat => {
         const realMatches = cat.pyramidMatches.filter(m => !m.byeWinner);
         
-        // Sort matches by phase (earliest first), then by original internal order (top-to-bottom)
-        realMatches.sort((a, b) => {
-            const pwA = getPhaseWeight(a.phase);
-            const pwB = getPhaseWeight(b.phase);
-            if (pwA !== pwB) return pwA - pwB;
-            // Within same phase, keep original structural order (we assume they were generated top-to-bottom)
-            return 0; 
-        });
+        // Group by phase
+        const phaseMap: Record<string, PyramidMatch[]> = {};
+        for (const m of realMatches) {
+            if (!phaseMap[m.phase]) phaseMap[m.phase] = [];
+            phaseMap[m.phase].push(m);
+        }
 
-        return { catId: cat.id, matches: realMatches };
+        // Sort phases
+        const sortedPhases = Object.keys(phaseMap).sort((a, b) => getPhaseWeight(a) - getPhaseWeight(b));
+        
+        return {
+            catId: cat.id,
+            phases: sortedPhases.map(p => phaseMap[p]) // Array of arrays (each is a phase wave)
+        };
     });
 
-    let currentGlobalMatchNumber = 1;
-    let hasRemainingMatches = true;
+    let nextCheckinStartId = 1;
+    let highestIdUsed = 0;
 
-    while (hasRemainingMatches) {
-        hasRemainingMatches = false;
+    // 1. Fase I: La Ola de Rondas Iniciales (Check-in Wave)
+    for (const catQueue of catQueues) {
+        if (catQueue.phases.length > 0) {
+            const firstPhaseMatches = catQueue.phases.shift()!;
+            let id = nextCheckinStartId;
+            
+            for (const match of firstPhaseMatches) {
+                match.matchNumber = id++;
+                if (id - 1 > highestIdUsed) highestIdUsed = id - 1;
+            }
+            
+            // Apply Differential Offset
+            const blocksNeeded = Math.ceil(firstPhaseMatches.length / jump) || 1;
+            nextCheckinStartId += blocksNeeded * jump;
+        }
+    }
 
-        for (const queue of catQueues) {
-            if (queue.matches.length > 0) {
-                hasRemainingMatches = true;
+    // 2. Fase II+: La Ola de Progresión (Sequential)
+    let nextSequentialId = highestIdUsed + 1;
+    let hasMorePhases = true;
+    
+    while (hasMorePhases) {
+        hasMorePhases = false;
+        // Round robin across categories for subsequent phases
+        for (const catQueue of catQueues) {
+            if (catQueue.phases.length > 0) {
+                hasMorePhases = true;
+                const nextPhaseMatches = catQueue.phases.shift()!;
                 
-                // Take up to 'jump' matches from this category's queue
-                const matchesToNumber = queue.matches.splice(0, jump);
-                
-                for (const match of matchesToNumber) {
-                    // Find the actual match reference in the event
-                    const targetCat = newEvent.categories.find(c => c.id === queue.catId);
-                    if (targetCat) {
-                        const targetMatch = targetCat.pyramidMatches.find(m => m.id === match.id);
-                        if (targetMatch) {
-                            targetMatch.matchNumber = currentGlobalMatchNumber++;
-                        }
-                    }
+                for (const match of nextPhaseMatches) {
+                    match.matchNumber = nextSequentialId++;
                 }
             }
+        }
+    }
+
+    // Write numbers back to newEvent
+    for (const catQueue of catQueues) {
+        const targetCat = newEvent.categories.find(c => c.id === catQueue.catId);
+        if (targetCat) {
+            // The matches in the event are the same objects (since we grouped references)
+            // Wait! Did we modify references?
+            // In JavaScript, `phaseMap[m.phase].push(m)` pushes the reference.
+            // When we did `match.matchNumber = ...`, we modified the reference!
+            // And since `kyorugiCats` array elements are references to `newEvent.categories` elements,
+            // we have mutated the `newEvent` directly!
         }
     }
 
