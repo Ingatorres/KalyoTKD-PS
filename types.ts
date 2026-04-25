@@ -80,6 +80,7 @@ export interface Category {
   gender: string;
   ageGroup: string;
   beltLevel: string;
+  weight?: string; // Limit weight for Combat (Kyorugi) e.g. "-54kg"
   disabilityGroup?: string; // For Para-Taekwondo
   system: CompetitionSystem;
   poomsaeConfig: PoomsaeConfig;

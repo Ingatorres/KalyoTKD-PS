@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Event, Category, Screen, CompetitionSystem, PoomsaeConfig } from '../types';
 import { Header } from './Header';
@@ -9,6 +9,7 @@ import { ExportChoiceModal } from './ExportChoiceModal';
 import { sortCategories } from '../categorySorter';
 import { validateCategoryUniqueness, getValidationErrorMessage } from '../categoryValidator';
 import { selectExportDirectory } from '../tauriUtils';
+import { getKyorugiAgeGroups, getKyorugiWeights } from '../src/kyorugiLogic';
 
 interface CategoryScreenProps {
   event: Event | null;
@@ -126,6 +127,7 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
   const [gender, setGender] = useState('Femenino');
   const [ageGroup, setAgeGroup] = useState('Cadete (12-14)');
   const [beltLevel, setBeltLevel] = useState('Negro');
+  const [weight, setWeight] = useState('Único');
   const [system, setSystem] = useState<CompetitionSystem>(CompetitionSystem.Rounds);
   const [disabilityGroup, setDisabilityGroup] = useState('P10');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -219,8 +221,25 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
 
   const generatedTitle = useMemo(() => {
     const paraPart = discipline === 'Para-Taekwondo' ? `, ${disabilityGroup}` : '';
-    return `${discipline}${paraPart}, ${division}, ${gender}, ${ageGroup}, ${modality}, ${beltLevel}`;
-  }, [discipline, modality, division, gender, ageGroup, beltLevel, disabilityGroup]);
+    const weightPart = modality === 'Combate (Kyorugi)' ? `, ${weight}` : '';
+    return `${discipline}${paraPart}, ${division}, ${gender}, ${ageGroup}, ${modality}${weightPart}, ${beltLevel}`;
+  }, [discipline, modality, division, gender, ageGroup, beltLevel, disabilityGroup, weight]);
+
+  // Handle dynamic age groups and weight limits
+  const isKyorugi = modality === 'Combate (Kyorugi)';
+  const ageOptions = isKyorugi ? getKyorugiAgeGroups() : ['Pre-cadete', 'Cadete (12-14)', 'Junior (15-17)', 'Under 30', 'Under 40', 'Under 50', 'Under 60', 'Under 65', 'Over 65'];
+  const weightOptions = getKyorugiWeights(ageGroup, gender, discipline === 'Para-Taekwondo');
+
+  useEffect(() => {
+      if (isKyorugi && !ageOptions.includes(ageGroup)) setAgeGroup(ageOptions[0]);
+      if (!isKyorugi && !ageOptions.includes(ageGroup)) setAgeGroup(ageOptions[0]);
+  }, [isKyorugi]);
+
+  useEffect(() => {
+      if (isKyorugi && !weightOptions.includes(weight)) {
+          setWeight(weightOptions[0] || 'Único');
+      }
+  }, [ageGroup, gender, discipline, isKyorugi]);
 
   if (!event) {
     return <div>Cargando evento...</div>;
@@ -232,6 +251,7 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
       id: uuidv4(),
       title: generatedTitle,
       discipline, modality, division, gender, ageGroup, beltLevel, system,
+      weight: isKyorugi ? weight : undefined,
       poomsaeConfig: { count: 1, useLottery: true, poomsaes: [null, null]},
       competitors: [],
       scores: [],
@@ -360,11 +380,16 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
             <fieldset disabled={!isActivated}>
                 <form onSubmit={handleCreateCategory} className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${!isActivated ? 'opacity-50' : ''}`}>
                 <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Disciplina</label><select value={discipline} onChange={e => setDiscipline(e.target.value)} className={selectStyles}><option>Taekwondo</option><option>Para-Taekwondo</option></select></div>
-                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Modalidad</label><select value={modality} onChange={e => setModality(e.target.value)} className={selectStyles}><option>Traditional</option><option>Freestyle</option></select></div>
-                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">División</label><select value={division} onChange={e => setDivision(e.target.value)} className={selectStyles}><option>Individual</option><option>Pareja</option><option>Equipo</option></select></div>
+                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Modalidad</label><select value={modality} onChange={e => {setModality(e.target.value); if(e.target.value==='Combate (Kyorugi)') setSystem(CompetitionSystem.Pyramid)}} className={selectStyles}><option>Traditional</option><option>Freestyle</option><option>Combate (Kyorugi)</option></select></div>
+                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">División</label><select value={division} onChange={e => setDivision(e.target.value)} className={selectStyles}><option>Individual</option><option>Pareja</option><option>Equipo</option><option>TK3</option></select></div>
                 <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Género</label><select value={gender} onChange={e => setGender(e.target.value)} className={selectStyles}><option>Femenino</option><option>Masculino</option><option>Mixto</option></select></div>
-                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Edad</label><select value={ageGroup} onChange={e => setAgeGroup(e.target.value)} className={selectStyles}><option>Pre-cadete</option><option>Cadete (12-14)</option><option>Junior (15-17)</option><option>Under 30</option><option>Under 40</option><option>Under 50</option><option>Under 60</option><option>Under 65</option><option>Over 65</option></select></div>
+                <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Edad</label><select value={ageGroup} onChange={e => setAgeGroup(e.target.value)} className={selectStyles}>{ageOptions.map(opt => <option key={opt}>{opt}</option>)}</select></div>
                 <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Nivel (Cinturón)</label><select value={beltLevel} onChange={e => setBeltLevel(e.target.value)} className={selectStyles}><option>Principiante</option><option>Avanzado</option><option>Negro</option></select></div>
+                
+                {isKyorugi && (
+                  <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Peso (División)</label><select value={weight} onChange={e => setWeight(e.target.value)} className={selectStyles}>{weightOptions.map(opt => <option key={opt}>{opt}</option>)}</select></div>
+                )}
+                
                 <div><label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Sistema</label><select value={system} onChange={e => setSystem(e.target.value as CompetitionSystem)} className={selectStyles}><option>{CompetitionSystem.Rounds}</option><option>{CompetitionSystem.Pyramid}</option></select></div>
                 
                 {discipline === 'Para-Taekwondo' && (

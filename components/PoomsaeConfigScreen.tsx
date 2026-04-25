@@ -141,19 +141,21 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
     }
   }
 
-  // Determine if it's a Freestyle category
+  // Determine if it's a Freestyle or Kyorugi category (both skip Poomsae logic)
   const isFreestyle = category.modality === 'Freestyle';
+  const isKyorugi = category.modality === 'Combate (Kyorugi)';
+  const skipPoomsaeConfig = isFreestyle || isKyorugi;
 
-  // Effect to set poomsaeConfig for Freestyle
+  // Effect to set poomsaeConfig for Freestyle and Kyorugi
   React.useEffect(() => {
-    if (isFreestyle) {
+    if (skipPoomsaeConfig) {
       setPoomsaeConfig(prevConfig => ({
         ...prevConfig,
-        useLottery: false, // Freestyle does not use lottery
-        poomsaes: [], // No poomsaes for freestyle
+        useLottery: false, // These don't use lottery
+        poomsaes: [], // No poomsaes needed
       }));
     }
-  }, [isFreestyle]);
+  }, [skipPoomsaeConfig]);
 
   const handleNumCompetitorsChange = (num: number) => {
     const newNum = Math.max(2, num);
@@ -786,12 +788,11 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                 </div>
             </div>
         )}
-
         {/* Poomsae Config Block (Common for all systems) */}
-        {isFreestyle ? (
+        {skipPoomsaeConfig ? (
           <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl shadow-xl dark:shadow-xl mb-8 text-center border border-slate-200 dark:border-white/5">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Competencia Freestyle</h3>
-            <p className="text-slate-500 dark:text-slate-400">Esta modalidad no requiere configuración de Poomsaes ni sorteo.</p>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Competencia sin Poomsaes</h3>
+            <p className="text-slate-500 dark:text-slate-400">Esta modalidad ({category.modality}) no requiere configuración de Poomsaes ni sorteo.</p>
           </div>
         ) : (
           <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl shadow-xl dark:shadow-xl mb-8 border border-slate-200 dark:border-white/5">
@@ -947,7 +948,7 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                             <span className="text-purple-600 dark:text-purple-400">❖</span> Llave de Competencia
                         </h3>
                         <div className="flex gap-3">
-                            {(!category.pyramidMatches.some(m => m.winner && !m.byeWinner)) && (
+                            {category.pyramidMatches.some(m => !m.isReady) && !skipPoomsaeConfig && (
                                 <>
                                     <button 
                                         onClick={() => updateCategory({ ...category, pyramidMatches: [] })}
