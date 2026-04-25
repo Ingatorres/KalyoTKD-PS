@@ -250,39 +250,35 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
         return;
     }
 
-    const choice = window.prompt("Opciones de Numeración de Combate:\n\n1. AUTOMÁTICA (Algoritmo de Intercalado por áreas)\n2. MANUAL (Borra la numeración actual para llenar a mano)\n\nIngrese 1 o 2:");
+    const input = window.prompt("¿Cuántas áreas (rings) estarán activas para el intercalado automático?\n(Ej: 2, 4, 6, 8)");
+    if (!input) return;
     
-    if (choice === '2') {
-        const isConfirm = window.confirm("Esto borrará la numeración actual de TODAS las llaves de Combate. ¿Desea continuar?");
-        if (!isConfirm) return;
-
-        const newEvent = JSON.parse(JSON.stringify(event)) as Event;
-        newEvent.categories.forEach(c => {
-            if (c.modality === 'Combate (Kyorugi)' && c.pyramidMatches) {
-                c.pyramidMatches.forEach(m => {
-                    m.matchNumber = undefined; // Clear the number
-                });
-            }
-        });
-        updateEvent(newEvent);
-        alert("Numeración limpiada. Al exportar las pirámides a PDF, se generará un recuadro vacío para que puedas escribir el número a mano.");
+    const numAreas = parseInt(input);
+    if (isNaN(numAreas) || numAreas < 1) {
+        alert("Por favor, ingresa un número de áreas válido.");
         return;
     }
 
-    if (choice === '1') {
-        const input = window.prompt("¿Cuántas áreas (rings) estarán activas para el intercalado automático?\n(Ej: 2, 4, 6, 8)");
-        if (!input) return;
-        
-        const numAreas = parseInt(input);
-        if (isNaN(numAreas) || numAreas < 1) {
-            alert("Por favor, ingresa un número de áreas válido.");
-            return;
-        }
+    const newEvent = generateGlobalNumbering(event, numAreas);
+    updateEvent(newEvent);
+    alert(`Numeración Automática completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+  };
 
-        const newEvent = generateGlobalNumbering(event, numAreas);
-        updateEvent(newEvent);
-        alert(`Numeración Automática completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
-    }
+  const handleResetNumbering = () => {
+    if (!event) return;
+    const isConfirm = window.confirm("¿Desea borrar la numeración actual de TODAS las llaves de Combate? (Quedarán libres para numeración manual)");
+    if (!isConfirm) return;
+
+    const newEvent = JSON.parse(JSON.stringify(event)) as Event;
+    newEvent.categories.forEach(c => {
+        if (c.modality === 'Combate (Kyorugi)' && c.pyramidMatches) {
+            c.pyramidMatches.forEach(m => {
+                m.matchNumber = undefined; // Clear the number
+            });
+        }
+    });
+    updateEvent(newEvent);
+    alert("Numeración limpiada. Al exportar las pirámides a PDF, se generará un recuadro vacío para escribir el número a mano.");
   };
 
   if (!event) {
@@ -402,14 +398,24 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                     </button>
                     
                     {event.categories.some(c => c.modality === 'Combate (Kyorugi)') && (
-                        <button 
-                            onClick={handleKyorugiNumbering}
-                            className="bg-purple-600 text-white py-3 px-8 rounded-full font-bold shadow-lg hover:bg-purple-700 shadow-purple-900/20 transition duration-300 flex items-center gap-2 text-sm uppercase tracking-widest"
-                            title="Intercalar número de encuentros para Combate (Kyorugi)"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                            Numeración Kyorugi
-                        </button>
+                        <>
+                            <button 
+                                onClick={handleKyorugiNumbering}
+                                className="bg-purple-600 text-white py-3 px-8 rounded-full font-bold shadow-lg hover:bg-purple-700 shadow-purple-900/20 transition duration-300 flex items-center gap-2 text-sm uppercase tracking-widest"
+                                title="Intercalar número de encuentros automáticamente"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                Numeración Kyorugi
+                            </button>
+                            <button 
+                                onClick={handleResetNumbering}
+                                className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 py-3 px-6 rounded-full font-bold hover:bg-slate-300 dark:hover:bg-slate-600 transition duration-300 flex items-center gap-2 text-sm uppercase tracking-widest border border-slate-300 dark:border-slate-600"
+                                title="Limpiar numeración para llenado manual"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                                Resetear Enumeración
+                            </button>
+                        </>
                     )}
                 </div>
 
