@@ -224,10 +224,12 @@ async function drawCategoryPage(
 
         // Match Number (Esquina superior derecha en negrilla)
         if (match.matchNumber) {
-            doc.setFontSize(5 * scaleFactor);
+            const isKyorugiCard = category.modality === 'Combate (Kyorugi)';
+            const numSize = isKyorugiCard ? 6.5 : 5;
+            doc.setFontSize(numSize * scaleFactor);
             doc.setFont('helvetica', 'bold');
             doc.setTextColor(TEXT_DARK[0], TEXT_DARK[1], TEXT_DARK[2]);
-            doc.text(`#${match.matchNumber}`, x + CARD_W - 1.5, cardY + 3.5, { align: 'right' });
+            doc.text(`#${match.matchNumber}`, x + CARD_W - 1.5, cardY + (isKyorugiCard ? 4 : 3.5), { align: 'right' });
         }
 
         // Poomsae abbreviation on top right (debajo del número de match si existe)

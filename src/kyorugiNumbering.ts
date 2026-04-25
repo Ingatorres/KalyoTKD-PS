@@ -34,18 +34,32 @@ const GENDER_ORDER: Record<string, number> = {
 
 const sortKyorugiCategories = (cats: Category[]): Category[] => {
     return [...cats].sort((a, b) => {
+        // 0. Earliest Phase
+        const getEarliestPhase = (cat: Category) => {
+            const realMatches = cat.pyramidMatches?.filter(m => !m.byeWinner) || [];
+            if (realMatches.length === 0) return 99;
+            return Math.min(...realMatches.map(m => getPhaseWeight(m.phase)));
+        };
+        const phaseA = getEarliestPhase(a);
+        const phaseB = getEarliestPhase(b);
+        if (phaseA !== phaseB) return phaseA - phaseB;
+
+        // 1. Age
         const ageA = AGE_ORDER[a.ageGroup] || 99;
         const ageB = AGE_ORDER[b.ageGroup] || 99;
         if (ageA !== ageB) return ageA - ageB;
 
+        // 2. Belt
         const beltA = BELT_ORDER[a.beltLevel] || 99;
         const beltB = BELT_ORDER[b.beltLevel] || 99;
         if (beltA !== beltB) return beltA - beltB;
 
+        // 3. Gender
         const genA = GENDER_ORDER[a.gender] || 99;
         const genB = GENDER_ORDER[b.gender] || 99;
         if (genA !== genB) return genA - genB;
 
+        // 4. Weight
         const wA = a.weight || '';
         const wB = b.weight || '';
         return wA.localeCompare(wB);
