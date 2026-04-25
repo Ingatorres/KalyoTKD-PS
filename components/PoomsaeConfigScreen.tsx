@@ -295,10 +295,11 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
       const divNorm = (division || '').toLowerCase();
       const isPareja = divNorm.includes('pareja');
       const isEquipo = divNorm.includes('equipo');
+      const isTK3 = divNorm.includes('tk3');
       
-      if (!isPareja && !isEquipo) return members;
+      if (!isPareja && !isEquipo && !isTK3) return members;
 
-      const groupSize = isPareja ? 2 : 3;
+      const groupSize = isPareja ? 2 : ((isEquipo || isTK3) ? 3 : 1);
       const grouped: Competitor[] = [];
       let i = 0;
 
@@ -888,7 +889,8 @@ export const PoomsaeConfigScreen: React.FC<PoomsaeConfigScreenProps> = ({ event,
                     {(() => {
                         const isPareja = (category.division || '').toLowerCase().includes('pareja');
                         const isEquipo = (category.division || '').toLowerCase().includes('equipo');
-                        const groupSize = isPareja ? 2 : (isEquipo ? 3 : 1);
+                        const isTK3 = (category.division || '').toLowerCase().includes('tk3');
+                        const groupSize = isPareja ? 2 : ((isEquipo || isTK3) ? 3 : 1);
                         
                         let currentGroupMembers: number = 0;
                         let currentDel: string = '';

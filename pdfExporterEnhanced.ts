@@ -102,8 +102,10 @@ async function drawCategoryPage(
   const isTeamEvent = 
     category.division.toLowerCase().includes('pareja') || 
     category.division.toLowerCase().includes('equipo') || 
+    category.division.toLowerCase().includes('tk3') ||
     category.title.toLowerCase().includes('pareja') || 
-    category.title.toLowerCase().includes('equipo');
+    category.title.toLowerCase().includes('equipo') ||
+    category.title.toLowerCase().includes('tk3');
 
   // 2. Header
   const logoSize = 15;
