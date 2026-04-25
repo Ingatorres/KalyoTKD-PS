@@ -10,6 +10,7 @@ import { sortCategories } from '../categorySorter';
 import { validateCategoryUniqueness, getValidationErrorMessage } from '../categoryValidator';
 import { selectExportDirectory } from '../tauriUtils';
 import { getKyorugiAgeGroups, getKyorugiWeights } from '../src/kyorugiLogic';
+import { generateGlobalNumbering } from '../src/kyorugiNumbering';
 
 interface CategoryScreenProps {
   event: Event | null;
@@ -241,6 +242,28 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
       }
   }, [ageGroup, gender, discipline, isKyorugi]);
 
+  const handleKyorugiNumbering = () => {
+    if (!event) return;
+    const kyorugiCats = event.categories.filter(c => c.modality === 'Combate (Kyorugi)' && c.pyramidMatches && c.pyramidMatches.length > 0);
+    if (kyorugiCats.length === 0) {
+        alert("No hay categorías de Combate (Kyorugi) con llaves generadas para enumerar.");
+        return;
+    }
+
+    const input = window.prompt("¿Cuántas áreas (rings) estarán activas para el intercalado de Combate?\n(Ej: 2, 4, 6, 8)");
+    if (!input) return;
+    
+    const numAreas = parseInt(input);
+    if (isNaN(numAreas) || numAreas < 1) {
+        alert("Por favor, ingresa un número de áreas válido.");
+        return;
+    }
+
+    const newEvent = generateGlobalNumbering(event, numAreas);
+    updateEvent(newEvent);
+    alert(`Numeración global de Combate completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+  };
+
   if (!event) {
     return <div>Cargando evento...</div>;
   }
@@ -356,6 +379,17 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Exportar Seleccionadas ({selectedCategories.length})
                     </button>
+                    
+                    {event.categories.some(c => c.modality === 'Combate (Kyorugi)') && (
+                        <button 
+                            onClick={handleKyorugiNumbering}
+                            className="bg-purple-600 text-white py-3 px-8 rounded-full font-bold shadow-lg hover:bg-purple-700 shadow-purple-900/20 transition duration-300 flex items-center gap-2 text-sm uppercase tracking-widest"
+                            title="Intercalar número de encuentros para Combate (Kyorugi)"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            Numeración Kyorugi
+                        </button>
+                    )}
                 </div>
 
                 {event.status === 'completed' && (
