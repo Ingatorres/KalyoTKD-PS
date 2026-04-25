@@ -6,6 +6,7 @@ import { exportCategoryToExcel } from '../excelExporter';
 import { exportCategoryToPdf, exportMultipleCategoriesToPdf, exportFinalResultsToPdf } from '../pdfExporterEnhanced';
 import { exportCategoryToJson, exportMultipleCategoriesToJson } from '../jsonExporter';
 import { ExportChoiceModal } from './ExportChoiceModal';
+import { CategoryMatchNumberModal } from './CategoryMatchNumberModal';
 import { sortCategories } from '../categorySorter';
 import { validateCategoryUniqueness, getValidationErrorMessage } from '../categoryValidator';
 import { selectExportDirectory } from '../tauriUtils';
@@ -35,7 +36,8 @@ const TableBlock: React.FC<{
     actionText: string;
     actionButtonClass: string;
     onExport: (id: string) => void;
-}> = ({ title, borderColor, categories, onAction, actionText, actionButtonClass, event, selectedCategories, onToggleSelect, onBulkSelect, onDelete, onExport }) => {
+    onEditNumbers?: (id: string) => void;
+}> = ({ title, borderColor, categories, onAction, actionText, actionButtonClass, event, selectedCategories, onToggleSelect, onBulkSelect, onDelete, onExport, onEditNumbers }) => {
     const borderClass = borderColor === 'blue' ? 'border-blue-500' : 'border-red-500';
     const textClass = borderColor === 'blue' ? 'text-blue-800' : 'text-red-800';
 
@@ -96,6 +98,17 @@ const TableBlock: React.FC<{
                                                 )}
                                             </>
                                         )}
+                                        {cat.modality === 'Combate (Kyorugi)' && cat.pyramidMatches && cat.pyramidMatches.length > 0 && onEditNumbers && (
+                                            <button 
+                                                onClick={() => onEditNumbers(cat.id)}
+                                                className="text-purple-600 hover:text-purple-800 p-1 hover:bg-purple-500/10 rounded transition-colors"
+                                                title="Editar Numeración Manual"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                                                </svg>
+                                            </button>
+                                        )}
                                         
                                         <button 
                                             onClick={() => onDelete(cat.id)}
@@ -134,6 +147,7 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isChoiceModalOpen, setIsChoiceModalOpen] = useState(false);
   const [exportTargetIds, setExportTargetIds] = useState<string[]>([]);
+  const [numberingCategory, setNumberingCategory] = useState<Category | null>(null);
 
   const handleToggleSelect = (id: string) => {
     setSelectedCategories(prev => 
@@ -494,6 +508,10 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                 actionText="Comenzar"
                 actionButtonClass="bg-blue-600 text-white py-1 px-4 rounded hover:bg-blue-700"
                 onExport={(id) => { setExportTargetIds([id]); setIsChoiceModalOpen(true); }}
+                onEditNumbers={(id) => {
+                    const c = event.categories.find(cat => cat.id === id);
+                    if (c) setNumberingCategory(c);
+                }}
             />
              <TableBlock
                 event={event}
@@ -508,6 +526,10 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
                 actionText="Continuar"
                 actionButtonClass="bg-red-600 text-white py-1 px-4 rounded hover:bg-red-700"
                 onExport={(id) => { setExportTargetIds([id]); setIsChoiceModalOpen(true); }}
+                onEditNumbers={(id) => {
+                    const c = event.categories.find(cat => cat.id === id);
+                    if (c) setNumberingCategory(c);
+                }}
             />
         </div>
       </main>
@@ -523,6 +545,15 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
             exportFinalResultsToPdf(event, selectedCats);
         }}
       />
+
+      {numberingCategory && (
+          <CategoryMatchNumberModal 
+              category={numberingCategory}
+              event={event}
+              updateEvent={updateEvent}
+              onClose={() => setNumberingCategory(null)}
+          />
+      )}
     </div>
   );
 };

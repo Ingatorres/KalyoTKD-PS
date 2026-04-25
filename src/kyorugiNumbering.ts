@@ -44,12 +44,7 @@ const sortKyorugiCategories = (cats: Category[]): Category[] => {
         const beltB = BELT_ORDER[b.beltLevel] || 99;
         if (beltA !== beltB) return beltA - beltB;
 
-        // 3. Gender
-        const genA = GENDER_ORDER[a.gender] || 99;
-        const genB = GENDER_ORDER[b.gender] || 99;
-        if (genA !== genB) return genA - genB;
-
-        // 4. Weight (Densidad de Peso, extract number)
+        // 3. Weight (Densidad de Peso, extract number)
         const getWeightNum = (w: string) => {
             const match = w.match(/\d+/);
             return match ? parseInt(match[0], 10) : 999;
@@ -57,7 +52,13 @@ const sortKyorugiCategories = (cats: Category[]): Category[] => {
         const numA = getWeightNum(a.weight || '');
         const numB = getWeightNum(b.weight || '');
         if (numA !== numB) return numA - numB;
-        return (a.weight || '').localeCompare(b.weight || '');
+        const weightCmp = (a.weight || '').localeCompare(b.weight || '');
+        if (weightCmp !== 0) return weightCmp;
+
+        // 4. Gender (Intercalado Masculino Femenino)
+        const genA = GENDER_ORDER[a.gender] || 99;
+        const genB = GENDER_ORDER[b.gender] || 99;
+        return genA - genB;
     });
 };
 
