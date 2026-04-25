@@ -222,14 +222,23 @@ async function drawCategoryPage(
         doc.setLineWidth(0.15);
         doc.line(x, cardY + HALF, x + CARD_W, cardY + HALF);
 
-        // Match Number (Esquina superior derecha en negrilla)
+        // Match Number (Esquina superior derecha)
+        const isKyorugiCard = category.modality === 'Combate (Kyorugi)';
         if (match.matchNumber) {
-            const isKyorugiCard = category.modality === 'Combate (Kyorugi)';
             const numSize = isKyorugiCard ? 6.5 : 5;
             doc.setFontSize(numSize * scaleFactor);
             doc.setFont('helvetica', 'bold');
             doc.setTextColor(TEXT_DARK[0], TEXT_DARK[1], TEXT_DARK[2]);
             doc.text(`#${match.matchNumber}`, x + CARD_W - 1.5, cardY + (isKyorugiCard ? 4 : 3.5), { align: 'right' });
+        } else if (isKyorugiCard) {
+            // Casilla libre para numeración manual
+            doc.setDrawColor(MID_GRAY[0], MID_GRAY[1], MID_GRAY[2]);
+            doc.setLineWidth(0.1);
+            doc.roundedRect(x + CARD_W - 5.5, cardY + 1, 4.5, 3.5, 0.5, 0.5);
+            doc.setFontSize(3 * scaleFactor);
+            doc.setTextColor(MID_GRAY[0], MID_GRAY[1], MID_GRAY[2]);
+            doc.setFont('helvetica', 'normal');
+            doc.text('#', x + CARD_W - 4.5, cardY + 3.5);
         }
 
         // Poomsae abbreviation on top right (debajo del número de match si existe)

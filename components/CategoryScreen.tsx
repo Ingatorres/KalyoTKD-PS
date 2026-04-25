@@ -250,18 +250,39 @@ export const CategoryScreen: React.FC<CategoryScreenProps> = ({ event, isActivat
         return;
     }
 
-    const input = window.prompt("¿Cuántas áreas (rings) estarán activas para el intercalado de Combate?\n(Ej: 2, 4, 6, 8)");
-    if (!input) return;
+    const choice = window.prompt("Opciones de Numeración de Combate:\n\n1. AUTOMÁTICA (Algoritmo de Intercalado por áreas)\n2. MANUAL (Borra la numeración actual para llenar a mano)\n\nIngrese 1 o 2:");
     
-    const numAreas = parseInt(input);
-    if (isNaN(numAreas) || numAreas < 1) {
-        alert("Por favor, ingresa un número de áreas válido.");
+    if (choice === '2') {
+        const isConfirm = window.confirm("Esto borrará la numeración actual de TODAS las llaves de Combate. ¿Desea continuar?");
+        if (!isConfirm) return;
+
+        const newEvent = JSON.parse(JSON.stringify(event)) as Event;
+        newEvent.categories.forEach(c => {
+            if (c.modality === 'Combate (Kyorugi)' && c.pyramidMatches) {
+                c.pyramidMatches.forEach(m => {
+                    m.matchNumber = undefined; // Clear the number
+                });
+            }
+        });
+        updateEvent(newEvent);
+        alert("Numeración limpiada. Al exportar las pirámides a PDF, se generará un recuadro vacío para que puedas escribir el número a mano.");
         return;
     }
 
-    const newEvent = generateGlobalNumbering(event, numAreas);
-    updateEvent(newEvent);
-    alert(`Numeración global de Combate completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+    if (choice === '1') {
+        const input = window.prompt("¿Cuántas áreas (rings) estarán activas para el intercalado automático?\n(Ej: 2, 4, 6, 8)");
+        if (!input) return;
+        
+        const numAreas = parseInt(input);
+        if (isNaN(numAreas) || numAreas < 1) {
+            alert("Por favor, ingresa un número de áreas válido.");
+            return;
+        }
+
+        const newEvent = generateGlobalNumbering(event, numAreas);
+        updateEvent(newEvent);
+        alert(`Numeración Automática completada con éxito. Se intercalaron encuentros para ${numAreas} áreas.`);
+    }
   };
 
   if (!event) {
