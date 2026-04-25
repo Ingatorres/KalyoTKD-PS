@@ -34,16 +34,6 @@ const GENDER_ORDER: Record<string, number> = {
 
 const sortKyorugiCategories = (cats: Category[]): Category[] => {
     return [...cats].sort((a, b) => {
-        // 0. Earliest Phase
-        const getEarliestPhase = (cat: Category) => {
-            const realMatches = cat.pyramidMatches?.filter(m => !m.byeWinner) || [];
-            if (realMatches.length === 0) return 99;
-            return Math.min(...realMatches.map(m => getPhaseWeight(m.phase)));
-        };
-        const phaseA = getEarliestPhase(a);
-        const phaseB = getEarliestPhase(b);
-        if (phaseA !== phaseB) return phaseA - phaseB;
-
         // 1. Age
         const ageA = AGE_ORDER[a.ageGroup] || 99;
         const ageB = AGE_ORDER[b.ageGroup] || 99;
@@ -59,22 +49,21 @@ const sortKyorugiCategories = (cats: Category[]): Category[] => {
         const genB = GENDER_ORDER[b.gender] || 99;
         if (genA !== genB) return genA - genB;
 
-        // 4. Weight
-        const wA = a.weight || '';
-        const wB = b.weight || '';
-        return wA.localeCompare(wB);
+        // 4. Weight (Densidad de Peso, extract number)
+        const getWeightNum = (w: string) => {
+            const match = w.match(/\d+/);
+            return match ? parseInt(match[0], 10) : 999;
+        };
+        const numA = getWeightNum(a.weight || '');
+        const numB = getWeightNum(b.weight || '');
+        if (numA !== numB) return numA - numB;
+        return (a.weight || '').localeCompare(b.weight || '');
     });
 };
 
-const PHASE_ORDER = [
-    'Ronda de 128', 'Ronda de 64', '32avos de Final', '16avos de Final', 
-    'Octavos de Final', 'Cuartos de Final', 'Semifinal', 'Final'
-];
-
-const getPhaseWeight = (phase: string): number => {
-    const idx = PHASE_ORDER.indexOf(phase);
-    return idx === -1 ? 99 : idx;
-};
+const OLA_1_PHASES = ['Ronda de 128', 'Ronda de 64', '32avos de Final', '16avos de Final', 'Octavos de Final'];
+const OLA_2_PHASES = ['Cuartos de Final', 'Semifinal'];
+const OLA_3_PHASES = ['Final'];
 
 export const generateGlobalNumbering = (event: Event, numAreas: number): Event => {
     const newEvent = JSON.parse(JSON.stringify(event)) as Event;
@@ -85,62 +74,43 @@ export const generateGlobalNumbering = (event: Event, numAreas: number): Event =
     const sortedCats = sortKyorugiCategories(kyorugiCats);
     const jump = getJumpDifferential(numAreas);
 
-    // Group matches per category into phases
-    const catQueues: { catId: string, phases: PyramidMatch[][] }[] = sortedCats.map(cat => {
-        const realMatches = cat.pyramidMatches.filter(m => !m.byeWinner);
-        
-        // Group by phase
-        const phaseMap: Record<string, PyramidMatch[]> = {};
-        for (const m of realMatches) {
-            if (!phaseMap[m.phase]) phaseMap[m.phase] = [];
-            phaseMap[m.phase].push(m);
-        }
-
-        // Sort phases
-        const sortedPhases = Object.keys(phaseMap).sort((a, b) => getPhaseWeight(a) - getPhaseWeight(b));
-        
-        return {
-            catId: cat.id,
-            phases: sortedPhases.map(p => phaseMap[p]) // Array of arrays (each is a phase wave)
-        };
-    });
-
-    let nextCheckinStartId = 1;
+    let currentStartId = 1;
     let highestIdUsed = 0;
 
-    // 1. Fase I: La Ola de Rondas Iniciales (Check-in Wave)
-    for (const catQueue of catQueues) {
-        if (catQueue.phases.length > 0) {
-            const firstPhaseMatches = catQueue.phases.shift()!;
-            let id = nextCheckinStartId;
-            
-            for (const match of firstPhaseMatches) {
+    // Helper to process a wave of matches for a specific category with jump logic
+    const processWaveWithJump = (cat: Category, validPhases: string[]) => {
+        const matchesInWave = cat.pyramidMatches.filter(m => !m.byeWinner && validPhases.includes(m.phase));
+        
+        if (matchesInWave.length > 0) {
+            let id = currentStartId;
+            for (const match of matchesInWave) {
                 match.matchNumber = id++;
                 if (id - 1 > highestIdUsed) highestIdUsed = id - 1;
             }
             
             // Apply Differential Offset
-            const blocksNeeded = Math.ceil(firstPhaseMatches.length / jump) || 1;
-            nextCheckinStartId += blocksNeeded * jump;
+            const blocksNeeded = Math.ceil(matchesInWave.length / jump) || 1;
+            currentStartId += blocksNeeded * jump;
         }
+    };
+
+    // 1. Ola I (Rondas de Apertura)
+    for (const cat of sortedCats) {
+        processWaveWithJump(cat, OLA_1_PHASES);
     }
 
-    // 2. Fase II+: La Ola de Progresión (Sequential)
-    let nextSequentialId = highestIdUsed + 1;
-    let hasMorePhases = true;
-    
-    while (hasMorePhases) {
-        hasMorePhases = false;
-        // Round robin across categories for subsequent phases
-        for (const catQueue of catQueues) {
-            if (catQueue.phases.length > 0) {
-                hasMorePhases = true;
-                const nextPhaseMatches = catQueue.phases.shift()!;
-                
-                for (const match of nextPhaseMatches) {
-                    match.matchNumber = nextSequentialId++;
-                }
-            }
+    // 2. Ola II (Rondas de Progresión)
+    for (const cat of sortedCats) {
+        processWaveWithJump(cat, OLA_2_PHASES);
+    }
+
+    // 3. Ola III (The Championship Wave - Finales Consecutivas)
+    // No differential applied. Start consecutively after the highest ID used.
+    let finalsStartId = highestIdUsed + 1;
+    for (const cat of sortedCats) {
+        const matchesInWave = cat.pyramidMatches.filter(m => !m.byeWinner && OLA_3_PHASES.includes(m.phase));
+        for (const match of matchesInWave) {
+            match.matchNumber = finalsStartId++;
         }
     }
 
