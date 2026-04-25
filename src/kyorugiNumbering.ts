@@ -114,18 +114,5 @@ export const generateGlobalNumbering = (event: Event, numAreas: number): Event =
         }
     }
 
-    // Write numbers back to newEvent
-    for (const catQueue of catQueues) {
-        const targetCat = newEvent.categories.find(c => c.id === catQueue.catId);
-        if (targetCat) {
-            // The matches in the event are the same objects (since we grouped references)
-            // Wait! Did we modify references?
-            // In JavaScript, `phaseMap[m.phase].push(m)` pushes the reference.
-            // When we did `match.matchNumber = ...`, we modified the reference!
-            // And since `kyorugiCats` array elements are references to `newEvent.categories` elements,
-            // we have mutated the `newEvent` directly!
-        }
-    }
-
     return newEvent;
 };
